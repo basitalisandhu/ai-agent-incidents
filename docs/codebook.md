@@ -2,8 +2,7 @@
 
 This is the coding scheme of the dataset, reproduced from the codebook of the paper
 *AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control
-Plane for Securing LLM Agents* (Muhammad Basit Ali, 2026; code and data at
-https://github.com/basitalisandhu/llm-agent-control-plane). The definitions below
+Plane for Securing LLM Agents* (Muhammad Basit Ali, 2026). The definitions below
 are the ones under which the 80 seed events were coded, and every new record must
 follow them. The number in parentheses after a value is the number of seed events
 that carry it. An asterisk after an event number (for example D-28\*) marks an event

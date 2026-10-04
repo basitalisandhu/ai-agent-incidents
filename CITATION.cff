@@ -26,5 +26,4 @@ preferred-citation:
     - family-names: Ali
       given-names: Muhammad Basit
   year: 2026
-  url: "https://github.com/basitalisandhu/llm-agent-control-plane"
-  notes: "Manuscript. Code, data and the codebook are at the repository URL."
+  notes: "Manuscript. The codebook is reproduced in docs/codebook.md of this repository."

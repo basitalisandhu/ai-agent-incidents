@@ -1,6 +1,6 @@
 # AI Agent Incidents
 
-> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 80 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu) as part of Masoon, open-source trust infrastructure for AI agents.
+> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 80 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu).
 
 Key facts:
 
@@ -11,7 +11,7 @@ Key facts:
 - Unit and sampling: one primary source's account of one event; dates are the month of the public report; a convenience sample of what was made public, so shares computed from it do not estimate population shares.
 - Coding: by the author of the paper under the codebook; every source was opened and read; the paper reports two further blind codings and their agreement. Mappings are given only where the source supports them; an empty list means no confident mapping.
 - Record fields: id, date (YYYY-MM or YYYY-MM-DD), name, type, lens, vector, channel_in, authority, channel_out, adversarial, outcome, cve, sources (url, title, publisher), summary, mappings (owasp_llm, owasp_agentic, mitre_atlas), affected (vendors, products, frameworks), tags, status.
-- Citation: Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents. Version 1.0.0, 2026. https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme is from: Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents. 2026. https://github.com/basitalisandhu/llm-agent-control-plane
+- Citation: Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents. Version 1.0.0, 2026. https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme is from: Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents. 2026. Manuscript.
 
 ## Downloads
 
@@ -30,7 +30,6 @@ Key facts:
 - [Verification log](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/verification-log.md): which source URLs were re-checked and when.
 - [CITATION.cff](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/CITATION.cff): dataset and paper citations.
 - [Frequently asked questions](https://basitalisandhu.github.io/ai-agent-incidents/#faq): is there a public dataset, how incidents are coded, commercial use, adding an incident, citing, limits.
-- [Masoon](https://basitalisandhu.github.io/masoon/): the credential broker, policy layer, Semgrep rules, threat-model CLI and review skills that use this dataset.
 - [Browse the dataset](https://basitalisandhu.github.io/ai-agent-incidents/): searchable table with one page per event at incidents/<id>.html.
 
 ## Frequently asked questions
@@ -53,7 +52,7 @@ One event is one JSON file and one pull request: copy an existing record, give i
 
 ### How do I cite the dataset?
 
-Use the citation in CITATION.cff (GitHub shows it under "Cite this repository"): Muhammad Basit Ali, AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents, version 1.0.0, 2026, https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme comes from the paper AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents (Ali, 2026), whose code and original data are at https://github.com/basitalisandhu/llm-agent-control-plane; cite both when you use the coding.
+Use the citation in CITATION.cff (GitHub shows it under "Cite this repository"): Muhammad Basit Ali, AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents, version 1.0.0, 2026, https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme comes from the paper AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents (Ali, 2026), whose codebook is reproduced in https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/codebook.md; cite both when you use the coding.
 
 ### What can the dataset not tell you?
 

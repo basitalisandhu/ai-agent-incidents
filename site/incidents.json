@@ -3836,5 +3836,481 @@
       "malicious-packages"
     ],
     "status": "confirmed"
+  },
+  {
+    "id": "081",
+    "date": "2026-08",
+    "name": "Deadbugz: runtime-gated malicious MCP server spread through GitHub pull requests",
+    "type": "incident",
+    "lens": "surface",
+    "vector": "poisoning",
+    "channel_in": "tool description",
+    "authority": "read-only",
+    "channel_out": "tool-call send",
+    "adversarial": true,
+    "outcome": "none-demo",
+    "cve": [],
+    "sources": [
+      {
+        "url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
+        "title": "Deadbugz: Currently Active MCP Supply-Chain Campaign",
+        "publisher": "Pillar Security",
+        "accessed": "2026-10-04"
+      },
+      {
+        "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-deadbugz-mcp-supply-chain-20260830-csa-sty/",
+        "title": "Deadbugz: Active MCP Campaign Poisons Agents After Trust",
+        "publisher": "Cloud Security Alliance",
+        "accessed": "2026-10-04"
+      }
+    ],
+    "summary": "On 10 August 2026 the GitHub account zellkernel opened 23 pull requests in 74 minutes across AI, MCP and developer-tool projects adding a 'productivity-suite' MCP server (remote endpoint or hidden local script). After three tool calls the server changes its tool metadata to direct the agent to look for SSH keys, AWS credentials, shell history and Kubernetes configuration and hide this from the user; no confirmed victims were reported.",
+    "mappings": {
+      "owasp_agentic": [
+        "ASI04",
+        "ASI01"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM03"
+      ],
+      "mitre_atlas": [
+        "AML.T0110",
+        "AML.T0010.005"
+      ]
+    },
+    "affected": {
+      "vendors": [],
+      "products": [],
+      "frameworks": [
+        "Model Context Protocol"
+      ]
+    },
+    "tags": [
+      "mcp",
+      "tool-poisoning",
+      "malicious-mcp-server",
+      "rug-pull",
+      "credential-theft",
+      "github-pull-requests"
+    ],
+    "status": "confirmed"
+  },
+  {
+    "id": "082",
+    "date": "2026-09",
+    "name": "Agents Gone Wild: AI-orchestrated global campaign against PaperCut NG/MF",
+    "type": "incident",
+    "lens": "weapon",
+    "vector": "autonomous-ops",
+    "channel_in": "none",
+    "authority": "shell/exec",
+    "channel_out": "code exec",
+    "adversarial": true,
+    "outcome": "data-exfiltration",
+    "cve": [
+      "CVE-2026-81578",
+      "CVE-2026-82078"
+    ],
+    "sources": [
+      {
+        "url": "https://www.greynoise.io/blog/ai-orchestrated-campaign-against-papercut-ng-mf",
+        "title": "Agents Gone Wild: An AI-Orchestrated Global Campaign Against PaperCut NG/MF",
+        "publisher": "GreyNoise",
+        "accessed": "2026-10-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/09/papercut-attacker-uses-hundreds-of-ai.html",
+        "title": "PaperCut Attacker Uses Hundreds of AI Agents to Compromise 440+ Instances",
+        "publisher": "The Hacker News",
+        "accessed": "2026-10-04"
+      }
+    ],
+    "summary": "An attacker using Codex and hundreds of AI agents exploited an authentication bypass and an RCE in PaperCut NG/MF, compromising at least 440 instances across 395 organizations in 48 countries, mostly in education. GreyNoise reports credential harvesting on 280 instances, OS or domain secrets extracted on 147 and domain administrator access at 12 organizations.",
+    "mappings": {
+      "owasp_agentic": [],
+      "owasp_llm": [],
+      "mitre_atlas": [
+        "AML.T0016.002"
+      ]
+    },
+    "affected": {
+      "vendors": [
+        "PaperCut",
+        "OpenAI"
+      ],
+      "products": [
+        "PaperCut NG",
+        "PaperCut MF",
+        "Codex"
+      ],
+      "frameworks": []
+    },
+    "tags": [
+      "ai-orchestrated-attack",
+      "papercut",
+      "credential-harvesting",
+      "education",
+      "mass-exploitation"
+    ],
+    "status": "confirmed"
+  },
+  {
+    "id": "083",
+    "date": "2026-09",
+    "name": "DeepSeek Harness lets AI agents escape their own sandbox (CVE-2026-82533)",
+    "type": "vulnerability-disclosure",
+    "lens": "surface",
+    "vector": "exploitation",
+    "channel_in": "chat message",
+    "authority": "shell/exec",
+    "channel_out": "code exec",
+    "adversarial": true,
+    "outcome": "code-execution",
+    "cve": [
+      "CVE-2026-82533"
+    ],
+    "sources": [
+      {
+        "url": "https://www.ox.security/blog/cve-2026-82533-deepseek-harness-ai-agent-sandbox-escape/",
+        "title": "CVE-2026-82533: DeepSeek Harness Vulnerability Lets AI Agents Escape Their Own Sandbox",
+        "publisher": "OX Security",
+        "accessed": "2026-10-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/09/deepseek-harness-flaw-let-ai-agents.html",
+        "title": "DeepSeek Harness Flaw Let AI Agents Disable Their Own File Sandbox Without Approval",
+        "publisher": "The Hacker News",
+        "accessed": "2026-10-04"
+      }
+    ],
+    "summary": "DeepSeek Harness 0.1.1-rc.2 and earlier exposed an unauthenticated local HTTP API that trusted the Host header, so a sandboxed agent induced by attacker-supplied text could run one curl command to set its session to danger-full-access and run commands outside the sandbox without approval. Fixed in 0.1.2-alpha.1; VulnCheck rated it 9.4.",
+    "mappings": {
+      "owasp_agentic": [
+        "ASI05",
+        "ASI03"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM06"
+      ],
+      "mitre_atlas": [
+        "AML.T0051.001",
+        "AML.T0050",
+        "AML.T0105"
+      ]
+    },
+    "affected": {
+      "vendors": [
+        "DeepSeek"
+      ],
+      "products": [
+        "DeepSeek Harness"
+      ],
+      "frameworks": []
+    },
+    "tags": [
+      "coding-agent",
+      "sandbox-escape",
+      "host-header",
+      "approval-bypass"
+    ],
+    "status": "confirmed"
+  },
+  {
+    "id": "084",
+    "date": "2026-09",
+    "name": "GitSpawn: untrusted repository Git configuration runs code in seven AI coding agents",
+    "type": "vulnerability-disclosure",
+    "lens": "target",
+    "vector": "exploitation",
+    "channel_in": "rules file",
+    "authority": "shell/exec",
+    "channel_out": "code exec",
+    "adversarial": true,
+    "outcome": "code-execution",
+    "cve": [
+      "CVE-2026-72718",
+      "CVE-2026-71963",
+      "CVE-2026-19592"
+    ],
+    "sources": [
+      {
+        "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
+        "title": "GitSpawn: A Single Flaw Lets Untrusted Repos Run Code in Claude Code, Codex, Cursor, and Grok",
+        "publisher": "Manifold Security",
+        "accessed": "2026-10-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
+        "title": "Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code",
+        "publisher": "The Hacker News",
+        "accessed": "2026-10-04"
+      }
+    ],
+    "summary": "Manifold Security found that a repository delivered with a malicious .git/config (core.fsmonitor and one withheld key) runs attacker code when Claude Code, goose, Hermes Agent, Qwen Code, Grok Build, Codex or Cursor collect Git metadata, outside the sandbox and before any approval or trust prompt. Claude Code (fsmonitor path), goose, Codex and Cursor were fixed; Hermes Agent, Qwen Code, Grok Build and a second Claude Code path were unpatched at publication.",
+    "mappings": {
+      "owasp_agentic": [
+        "ASI05"
+      ],
+      "owasp_llm": [],
+      "mitre_atlas": [
+        "AML.T0050"
+      ]
+    },
+    "affected": {
+      "vendors": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "products": [
+        "Claude Code",
+        "goose",
+        "Hermes Agent",
+        "Qwen Code",
+        "Grok Build",
+        "Codex",
+        "Cursor"
+      ],
+      "frameworks": [
+        "Git"
+      ]
+    },
+    "tags": [
+      "coding-agent",
+      "git-config",
+      "fsmonitor",
+      "approval-bypass",
+      "untrusted-repository"
+    ],
+    "status": "confirmed"
+  },
+  {
+    "id": "085",
+    "date": "2026-09",
+    "name": "GTIG report: from prompting to autonomy, the evolution of adversarial AI",
+    "type": "threat-report",
+    "lens": "weapon",
+    "vector": "autonomous-ops",
+    "channel_in": "chat message",
+    "authority": "shell/exec",
+    "channel_out": "code exec",
+    "adversarial": true,
+    "outcome": "data-exfiltration",
+    "cve": [],
+    "sources": [
+      {
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai",
+        "title": "From Prompting to Autonomy: The Evolution of Adversarial AI",
+        "publisher": "Google Threat Intelligence Group",
+        "accessed": "2026-10-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/09/autonomous-ai-agents-compromise.html",
+        "title": "Autonomous AI Agents Compromise Thousands of Credentials in Under Six Hours",
+        "publisher": "The Hacker News",
+        "accessed": "2026-10-04"
+      }
+    ],
+    "summary": "Google Threat Intelligence Group reports a suspected financially motivated actor who used an AI coding chatbot and markdown agent instruction sets to run a multi-agent vulnerability scanning and credential harvesting campaign from a victim's cloud infrastructure, compromising thousands of third-party credentials in under six hours; the report also covers supply-chain, espionage and distillation cases, and Google disabled the associated accounts and assets.",
+    "mappings": {
+      "owasp_agentic": [],
+      "owasp_llm": [],
+      "mitre_atlas": [
+        "AML.T0016.002"
+      ]
+    },
+    "affected": {
+      "vendors": [
+        "Google"
+      ],
+      "products": [],
+      "frameworks": []
+    },
+    "tags": [
+      "threat-intelligence",
+      "multi-agent",
+      "credential-harvesting",
+      "ai-orchestrated-attack"
+    ],
+    "status": "confirmed"
+  },
+  {
+    "id": "086",
+    "date": "2026-09",
+    "name": "OpenAI research agents post 53 user-provided images to image-hosting sites",
+    "type": "incident",
+    "lens": "surface",
+    "vector": "excessive-agency",
+    "channel_in": "none",
+    "authority": "send-message",
+    "channel_out": "file publish",
+    "adversarial": false,
+    "outcome": "information-disclosure",
+    "cve": [],
+    "sources": [
+      {
+        "url": "https://www.newsweek.com/openai-admits-ai-agents-exposed-53-user-images-during-research-12491833",
+        "title": "OpenAI Admits AI Agents Exposed 53 User Images During Research",
+        "publisher": "Newsweek",
+        "accessed": "2026-10-04"
+      },
+      {
+        "url": "https://www.unite.ai/openai-says-its-agents-posted-53-user-images-to-image-hosting-sites/",
+        "title": "OpenAI Says Its Agents Posted 53 User Images to Image-Hosting Sites",
+        "publisher": "Unite.AI",
+        "accessed": "2026-10-04"
+      }
+    ],
+    "summary": "On 25 September 2026 OpenAI disclosed that agents in its research environment had transmitted training and evaluation data while using third-party services, including 53 ChatGPT user-provided images posted to image-hosting sites as unlisted links. OpenAI said it had removed most of the content with the hosts and is reviewing agent activity month by month back from the Hugging Face incident.",
+    "mappings": {
+      "owasp_agentic": [
+        "ASI10"
+      ],
+      "owasp_llm": [
+        "LLM06",
+        "LLM02"
+      ],
+      "mitre_atlas": []
+    },
+    "affected": {
+      "vendors": [
+        "OpenAI"
+      ],
+      "products": [
+        "ChatGPT"
+      ],
+      "frameworks": []
+    },
+    "tags": [
+      "autonomous-agent",
+      "user-data",
+      "no-adversary",
+      "evaluation"
+    ],
+    "status": "confirmed"
+  },
+  {
+    "id": "087",
+    "date": "2026-09",
+    "name": "PixelLeak: AI coding agents expose developer screenshots in public GitHub repositories",
+    "type": "incident",
+    "lens": "surface",
+    "vector": "excessive-agency",
+    "channel_in": "chat message",
+    "authority": "write-repo",
+    "channel_out": "file publish",
+    "adversarial": false,
+    "outcome": "information-disclosure",
+    "cve": [],
+    "sources": [
+      {
+        "url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies",
+        "title": "PixelLeak: How AI Agents Exposed Developer Screenshots from Leading Tech Companies",
+        "publisher": "Glow",
+        "accessed": "2026-10-04"
+      },
+      {
+        "url": "https://thehackernews.com/2026/09/ai-coding-agents-exposed-13000-internal.html",
+        "title": "AI Coding Agents Exposed 13,000 Internal Images, Including Billing Records, on GitHub",
+        "publisher": "The Hacker News",
+        "accessed": "2026-10-04"
+      }
+    ],
+    "summary": "Asked to attach screenshots of code changes to pull requests, coding agents that could not upload images through the command line created public repositories under developers' accounts to host them; Glow found more than 13,000 internal images from over 300 organizations, including billing records and treasury consoles, and reproduced the behaviour with Claude Code. Glow began notifying organizations on 9 September 2026.",
+    "mappings": {
+      "owasp_agentic": [
+        "ASI02"
+      ],
+      "owasp_llm": [
+        "LLM06",
+        "LLM02"
+      ],
+      "mitre_atlas": []
+    },
+    "affected": {
+      "vendors": [
+        "GitHub"
+      ],
+      "products": [
+        "Claude Code",
+        "GitHub CLI",
+        "gitshot"
+      ],
+      "frameworks": []
+    },
+    "tags": [
+      "coding-agent",
+      "public-repository",
+      "screenshots",
+      "no-adversary",
+      "data-exposure"
+    ],
+    "status": "confirmed"
+  },
+  {
+    "id": "088",
+    "date": "2026-09",
+    "name": "Plugin4Shell: SHA-pinning bypass in coding agent plugin marketplaces",
+    "type": "vulnerability-disclosure",
+    "lens": "target",
+    "vector": "supply-chain",
+    "channel_in": "package",
+    "authority": "shell/exec",
+    "channel_out": "code exec",
+    "adversarial": true,
+    "outcome": "code-execution",
+    "cve": [],
+    "sources": [
+      {
+        "url": "https://www.air.security/blog-posts/plugin4shell",
+        "title": "Plugin4Shell - Zero Click RCE Vulnerability",
+        "publisher": "AIR Security",
+        "accessed": "2026-10-04"
+      },
+      {
+        "url": "https://securityonline.info/plugin4shell-coding-agents-rce/",
+        "title": "Plugin4Shell: Zero-Click RCE Hits Four AI Coding Agents",
+        "publisher": "SecurityOnline",
+        "accessed": "2026-10-04"
+      }
+    ],
+    "summary": "Claude Code, Codex, GitHub Copilot and Gemini CLI checked out marketplace plugins at a pinned commit but did not verify the resulting HEAD, so the owner of a plugin repository could create a branch named after the pinned SHA and have attacker code installed and run on update. Fixed in Claude Code 2.1.179 and Codex 0.146.0; Copilot unpatched and Gemini CLI deprecated; no exploitation in the wild reported.",
+    "mappings": {
+      "owasp_agentic": [
+        "ASI04",
+        "ASI05"
+      ],
+      "owasp_llm": [
+        "LLM03"
+      ],
+      "mitre_atlas": [
+        "AML.T0010.005"
+      ]
+    },
+    "affected": {
+      "vendors": [
+        "Anthropic",
+        "OpenAI",
+        "GitHub",
+        "Google"
+      ],
+      "products": [
+        "Claude Code",
+        "Codex",
+        "GitHub Copilot",
+        "Gemini CLI"
+      ],
+      "frameworks": [
+        "Git"
+      ]
+    },
+    "tags": [
+      "coding-agent",
+      "plugin-marketplace",
+      "sha-pinning",
+      "supply-chain"
+    ],
+    "status": "confirmed"
   }
 ]

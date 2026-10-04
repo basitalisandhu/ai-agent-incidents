@@ -1,12 +1,12 @@
 # AI Agent Incidents
 
-> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 80 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu).
+> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 88 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu).
 
 Key facts:
 
-- Size on the last build: 80 events (25 incidents, 45 vulnerability disclosures, 10 threat reports); 22 carry at least one CVE; 62 are mapped to the OWASP LLM Top 10, 51 to the OWASP Agentic Top 10 and 66 to MITRE ATLAS.
-- Lens counts: surface 47 (the AI is a conduit to another party's assets), weapon 14 (the AI is the attacker's instrument), target 19 (the AI system itself is attacked, exposed or disrupted).
-- Most common vectors: indirect-injection (27), autonomous-ops (10), exploitation (7), supply-chain (5), direct-injection (4), excessive-agency (4).
+- Size on the last build: 88 events (29 incidents, 48 vulnerability disclosures, 11 threat reports); 25 carry at least one CVE; 67 are mapped to the OWASP LLM Top 10, 57 to the OWASP Agentic Top 10 and 72 to MITRE ATLAS.
+- Lens counts: surface 51 (the AI is a conduit to another party's assets), weapon 16 (the AI is the attacker's instrument), target 21 (the AI system itself is attacked, exposed or disrupted).
+- Most common vectors: indirect-injection (27), autonomous-ops (12), exploitation (9), excessive-agency (6), supply-chain (6), direct-injection (4).
 - Licence: data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), attribution to Muhammad Basit Ali and https://github.com/basitalisandhu/ai-agent-incidents; code MIT. Commercial use is allowed with attribution.
 - Unit and sampling: one primary source's account of one event; dates are the month of the public report; a convenience sample of what was made public, so shares computed from it do not estimate population shares.
 - Coding: by the author of the paper under the codebook; every source was opened and read; the paper reports two further blind codings and their agreement. Mappings are given only where the source supports them; an empty list means no confident mapping.

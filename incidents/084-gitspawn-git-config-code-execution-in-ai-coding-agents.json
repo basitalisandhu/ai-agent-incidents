@@ -1,0 +1,68 @@
+{
+  "id": "084",
+  "date": "2026-09",
+  "name": "GitSpawn: untrusted repository Git configuration runs code in seven AI coding agents",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "exploitation",
+  "channel_in": "rules file",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2026-72718",
+    "CVE-2026-71963",
+    "CVE-2026-19592"
+  ],
+  "sources": [
+    {
+      "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
+      "title": "GitSpawn: A Single Flaw Lets Untrusted Repos Run Code in Claude Code, Codex, Cursor, and Grok",
+      "publisher": "Manifold Security",
+      "accessed": "2026-10-04"
+    },
+    {
+      "url": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
+      "title": "Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code",
+      "publisher": "The Hacker News",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "summary": "Manifold Security found that a repository delivered with a malicious .git/config (core.fsmonitor and one withheld key) runs attacker code when Claude Code, goose, Hermes Agent, Qwen Code, Grok Build, Codex or Cursor collect Git metadata, outside the sandbox and before any approval or trust prompt. Claude Code (fsmonitor path), goose, Codex and Cursor were fixed; Hermes Agent, Qwen Code, Grok Build and a second Claude Code path were unpatched at publication.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI05"
+    ],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic",
+      "OpenAI"
+    ],
+    "products": [
+      "Claude Code",
+      "goose",
+      "Hermes Agent",
+      "Qwen Code",
+      "Grok Build",
+      "Codex",
+      "Cursor"
+    ],
+    "frameworks": [
+      "Git"
+    ]
+  },
+  "tags": [
+    "coding-agent",
+    "git-config",
+    "fsmonitor",
+    "approval-bypass",
+    "untrusted-repository"
+  ],
+  "status": "confirmed"
+}

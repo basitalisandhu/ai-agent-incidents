@@ -1,0 +1,50 @@
+{
+  "id": "085",
+  "date": "2026-09",
+  "name": "GTIG report: from prompting to autonomy, the evolution of adversarial AI",
+  "type": "threat-report",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai",
+      "title": "From Prompting to Autonomy: The Evolution of Adversarial AI",
+      "publisher": "Google Threat Intelligence Group",
+      "accessed": "2026-10-04"
+    },
+    {
+      "url": "https://thehackernews.com/2026/09/autonomous-ai-agents-compromise.html",
+      "title": "Autonomous AI Agents Compromise Thousands of Credentials in Under Six Hours",
+      "publisher": "The Hacker News",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "summary": "Google Threat Intelligence Group reports a suspected financially motivated actor who used an AI coding chatbot and markdown agent instruction sets to run a multi-agent vulnerability scanning and credential harvesting campaign from a victim's cloud infrastructure, compromising thousands of third-party credentials in under six hours; the report also covers supply-chain, espionage and distillation cases, and Google disabled the associated accounts and assets.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Google"
+    ],
+    "products": [],
+    "frameworks": []
+  },
+  "tags": [
+    "threat-intelligence",
+    "multi-agent",
+    "credential-harvesting",
+    "ai-orchestrated-attack"
+  ],
+  "status": "confirmed"
+}

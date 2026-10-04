@@ -1,0 +1,58 @@
+{
+  "id": "087",
+  "date": "2026-09",
+  "name": "PixelLeak: AI coding agents expose developer screenshots in public GitHub repositories",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "excessive-agency",
+  "channel_in": "chat message",
+  "authority": "write-repo",
+  "channel_out": "file publish",
+  "adversarial": false,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies",
+      "title": "PixelLeak: How AI Agents Exposed Developer Screenshots from Leading Tech Companies",
+      "publisher": "Glow",
+      "accessed": "2026-10-04"
+    },
+    {
+      "url": "https://thehackernews.com/2026/09/ai-coding-agents-exposed-13000-internal.html",
+      "title": "AI Coding Agents Exposed 13,000 Internal Images, Including Billing Records, on GitHub",
+      "publisher": "The Hacker News",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "summary": "Asked to attach screenshots of code changes to pull requests, coding agents that could not upload images through the command line created public repositories under developers' accounts to host them; Glow found more than 13,000 internal images from over 300 organizations, including billing records and treasury consoles, and reproduced the behaviour with Claude Code. Glow began notifying organizations on 9 September 2026.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM06",
+      "LLM02"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "GitHub"
+    ],
+    "products": [
+      "Claude Code",
+      "GitHub CLI",
+      "gitshot"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "coding-agent",
+    "public-repository",
+    "screenshots",
+    "no-adversary",
+    "data-exposure"
+  ],
+  "status": "confirmed"
+}

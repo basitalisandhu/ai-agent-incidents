@@ -1,12 +1,12 @@
 # AI Agent Incidents
 
-> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 80 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu).
+> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 88 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu).
 
 Key facts:
 
-- Size on the last build: 80 events (25 incidents, 45 vulnerability disclosures, 10 threat reports); 22 carry at least one CVE; 62 are mapped to the OWASP LLM Top 10, 51 to the OWASP Agentic Top 10 and 66 to MITRE ATLAS.
-- Lens counts: surface 47 (the AI is a conduit to another party's assets), weapon 14 (the AI is the attacker's instrument), target 19 (the AI system itself is attacked, exposed or disrupted).
-- Most common vectors: indirect-injection (27), autonomous-ops (10), exploitation (7), supply-chain (5), direct-injection (4), excessive-agency (4).
+- Size on the last build: 88 events (29 incidents, 48 vulnerability disclosures, 11 threat reports); 25 carry at least one CVE; 67 are mapped to the OWASP LLM Top 10, 57 to the OWASP Agentic Top 10 and 72 to MITRE ATLAS.
+- Lens counts: surface 51 (the AI is a conduit to another party's assets), weapon 16 (the AI is the attacker's instrument), target 21 (the AI system itself is attacked, exposed or disrupted).
+- Most common vectors: indirect-injection (27), autonomous-ops (12), exploitation (9), excessive-agency (6), supply-chain (6), direct-injection (4).
 - Licence: data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), attribution to Muhammad Basit Ali and https://github.com/basitalisandhu/ai-agent-incidents; code MIT. Commercial use is allowed with attribution.
 - Unit and sampling: one primary source's account of one event; dates are the month of the public report; a convenience sample of what was made public, so shares computed from it do not estimate population shares.
 - Coding: by the author of the paper under the codebook; every source was opened and read; the paper reports two further blind codings and their agreement. Mappings are given only where the source supports them; an empty list means no confident mapping.
@@ -36,7 +36,7 @@ Key facts:
 
 ### Is there a public dataset of AI agent security incidents?
 
-Yes, this one: 80 publicly documented events from 2023-02 to 2026-09 (25 incidents, 45 vulnerability disclosures, 10 threat reports), one schema-validated JSON record each, coded under a written codebook and mapped to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Download it as JSON (https://basitalisandhu.github.io/ai-agent-incidents/incidents.json) or CSV (https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv), subscribe to the RSS feed, or read the repository at https://github.com/basitalisandhu/ai-agent-incidents. The data is CC BY 4.0.
+Yes, this one: 88 publicly documented events from 2023-02 to 2026-09 (29 incidents, 48 vulnerability disclosures, 11 threat reports), one schema-validated JSON record each, coded under a written codebook and mapped to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Download it as JSON (https://basitalisandhu.github.io/ai-agent-incidents/incidents.json) or CSV (https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv), subscribe to the RSS feed, or read the repository at https://github.com/basitalisandhu/ai-agent-incidents. The data is CC BY 4.0.
 
 ### How are incidents coded?
 
@@ -142,3 +142,11 @@ One line per event: id, date, name, type, lens, vector, authority, outcome, CVE 
 - 078 (2026-09) Anthropic September 2026 threat report. threat-report; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/078.html
 - 079 (2026-09) OpenAI agent breach of Australian government portals including Medicare statistics. incident; lens weapon; vector autonomous-ops; authority shell/exec; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/079.html
 - 080 (2026-09) OpenAI agents upload malicious packages to RubyGems. incident; lens weapon; vector autonomous-ops; authority shell/exec; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/080.html
+- 081 (2026-08) Deadbugz: runtime-gated malicious MCP server spread through GitHub pull requests. incident; lens surface; vector poisoning; authority read-only; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/081.html
+- 082 (2026-09) Agents Gone Wild: AI-orchestrated global campaign against PaperCut NG/MF. incident; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. CVE: CVE-2026-81578; CVE-2026-82078. https://basitalisandhu.github.io/ai-agent-incidents/incidents/082.html
+- 083 (2026-09) DeepSeek Harness lets AI agents escape their own sandbox (CVE-2026-82533). vulnerability-disclosure; lens surface; vector exploitation; authority shell/exec; outcome code-execution. CVE: CVE-2026-82533. https://basitalisandhu.github.io/ai-agent-incidents/incidents/083.html
+- 084 (2026-09) GitSpawn: untrusted repository Git configuration runs code in seven AI coding agents. vulnerability-disclosure; lens target; vector exploitation; authority shell/exec; outcome code-execution. CVE: CVE-2026-72718; CVE-2026-71963; CVE-2026-19592. https://basitalisandhu.github.io/ai-agent-incidents/incidents/084.html
+- 085 (2026-09) GTIG report: from prompting to autonomy, the evolution of adversarial AI. threat-report; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/085.html
+- 086 (2026-09) OpenAI research agents post 53 user-provided images to image-hosting sites. incident; lens surface; vector excessive-agency; authority send-message; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/086.html
+- 087 (2026-09) PixelLeak: AI coding agents expose developer screenshots in public GitHub repositories. incident; lens surface; vector excessive-agency; authority write-repo; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/087.html
+- 088 (2026-09) Plugin4Shell: SHA-pinning bypass in coding agent plugin marketplaces. vulnerability-disclosure; lens target; vector supply-chain; authority shell/exec; outcome code-execution. https://basitalisandhu.github.io/ai-agent-incidents/incidents/088.html

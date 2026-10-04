@@ -136,7 +136,7 @@ Open, structured dataset of publicly documented security incidents, vulnerabilit
 
 Canonical source and contribution rules: https://github.com/basitalisandhu/ai-agent-incidents. Browsable site with one page per event, RSS feed, stats and a machine-readable summary (llms.txt): https://basitalisandhu.github.io/ai-agent-incidents/. This mirror is regenerated from the repository by `scripts/push_to_hf.py`; open issues and pull requests there, not here.
 
-Part of Hisar, open-source trust infrastructure for AI agents: https://basitalisandhu.github.io/hisar/
+Part of Masoon, open-source trust infrastructure for AI agents: https://basitalisandhu.github.io/masoon/
 
 ## Files
 

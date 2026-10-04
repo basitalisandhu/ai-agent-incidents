@@ -1,6 +1,6 @@
 # AI Agent Incidents
 
-> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 80 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu) as part of Hisar, open-source trust infrastructure for AI agents.
+> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 80 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu) as part of Masoon, open-source trust infrastructure for AI agents.
 
 Key facts:
 
@@ -30,7 +30,7 @@ Key facts:
 - [Verification log](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/verification-log.md): which source URLs were re-checked and when.
 - [CITATION.cff](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/CITATION.cff): dataset and paper citations.
 - [Frequently asked questions](https://basitalisandhu.github.io/ai-agent-incidents/#faq): is there a public dataset, how incidents are coded, commercial use, adding an incident, citing, limits.
-- [Hisar](https://basitalisandhu.github.io/hisar/): the credential broker, policy layer, Semgrep rules, threat-model CLI and review skills that use this dataset.
+- [Masoon](https://basitalisandhu.github.io/masoon/): the credential broker, policy layer, Semgrep rules, threat-model CLI and review skills that use this dataset.
 - [Browse the dataset](https://basitalisandhu.github.io/ai-agent-incidents/): searchable table with one page per event at incidents/<id>.html.
 
 ## Frequently asked questions

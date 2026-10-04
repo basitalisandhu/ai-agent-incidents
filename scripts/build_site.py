@@ -72,7 +72,7 @@ OG_IMAGE = "og-image.png"
 CODED_FIELDS = ["type", "lens", "vector", "channel_in", "authority", "channel_out", "adversarial", "outcome"]
 
 HF_URL = "https://huggingface.co/datasets/basitalisandhu/ai-agent-incidents"
-HISAR_URL = "https://basitalisandhu.github.io/hisar/"
+MASOON_URL = "https://basitalisandhu.github.io/masoon/"
 INDEXNOW_KEY_FILE = Path(__file__).resolve().parent / "indexnow_key.txt"
 
 # Crawlers and fetchers named explicitly in robots.txt. Everything is allowed anyway; the explicit
@@ -543,7 +543,7 @@ def page_foot():
     return ("<footer>CC BY 4.0 data, MIT code. "
             "<a href=\"%s\">Source repository</a> "
             "<a href=\"%s\">Paper and codebook</a> "
-            "Part of Hisar, open-source trust infrastructure for AI agents.</footer>\n"
+            "Part of Masoon, open-source trust infrastructure for AI agents.</footer>\n"
             "</div>\n</body>\n</html>\n" % (esc(REPO_URL), esc("https://github.com/basitalisandhu/llm-agent-control-plane")))
 
 
@@ -825,7 +825,7 @@ def llms_header(stats):
              "vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, "
              "and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and "
              "MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu) as part of "
-             "Hisar, open-source trust infrastructure for AI agents." % (stats["total"], period["from"], period["to"]),
+             "Masoon, open-source trust infrastructure for AI agents." % (stats["total"], period["from"], period["to"]),
              "",
              "Key facts:", "",
              "- Size on the last build: %d events (%d incidents, %d vulnerability disclosures, %d threat reports); "
@@ -862,7 +862,7 @@ def llms_header(stats):
              "- [Verification log](%s/blob/main/docs/verification-log.md): which source URLs were re-checked and when." % REPO_URL,
              "- [CITATION.cff](%s/blob/main/CITATION.cff): dataset and paper citations." % REPO_URL,
              "- [Frequently asked questions](%s#faq): is there a public dataset, how incidents are coded, commercial use, adding an incident, citing, limits." % SITE_URL,
-             "- [Hisar](%s): the credential broker, policy layer, Semgrep rules, threat-model CLI and review skills that use this dataset." % HISAR_URL,
+             "- [Masoon](%s): the credential broker, policy layer, Semgrep rules, threat-model CLI and review skills that use this dataset." % MASOON_URL,
              "- [Browse the dataset](%s): searchable table with one page per event at incidents/<id>.html." % SITE_URL]
     return lines
 

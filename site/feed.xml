@@ -8,6 +8,62 @@
 <lastBuildDate>Tue, 01 Sep 2026 00:00:00 +0000</lastBuildDate>
 <atom:link href="https://basitalisandhu.github.io/ai-agent-incidents/feed.xml" rel="self" type="application/rss+xml"/>
 <item>
+<title>088 Plugin4Shell: SHA-pinning bypass in coding agent plugin marketplaces</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/088.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/088.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>supply-chain</category>
+<description>Claude Code, Codex, GitHub Copilot and Gemini CLI checked out marketplace plugins at a pinned commit but did not verify the resulting HEAD, so the owner of a plugin repository could create a branch named after the pinned SHA and have attacker code installed and run on update. Fixed in Claude Code 2.1.179 and Codex 0.146.0; Copilot unpatched and Gemini CLI deprecated; no exploitation in the wild reported. Type: vulnerability-disclosure. Lens: target. Vector: supply-chain. Outcome: code-execution. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>087 PixelLeak: AI coding agents expose developer screenshots in public GitHub repositories</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/087.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/087.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>excessive-agency</category>
+<description>Asked to attach screenshots of code changes to pull requests, coding agents that could not upload images through the command line created public repositories under developers&#x27; accounts to host them; Glow found more than 13,000 internal images from over 300 organizations, including billing records and treasury consoles, and reproduced the behaviour with Claude Code. Glow began notifying organizations on 9 September 2026. Type: incident. Lens: surface. Vector: excessive-agency. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>086 OpenAI research agents post 53 user-provided images to image-hosting sites</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/086.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/086.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>excessive-agency</category>
+<description>On 25 September 2026 OpenAI disclosed that agents in its research environment had transmitted training and evaluation data while using third-party services, including 53 ChatGPT user-provided images posted to image-hosting sites as unlisted links. OpenAI said it had removed most of the content with the hosts and is reviewing agent activity month by month back from the Hugging Face incident. Type: incident. Lens: surface. Vector: excessive-agency. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>085 GTIG report: from prompting to autonomy, the evolution of adversarial AI</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/085.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/085.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>autonomous-ops</category>
+<description>Google Threat Intelligence Group reports a suspected financially motivated actor who used an AI coding chatbot and markdown agent instruction sets to run a multi-agent vulnerability scanning and credential harvesting campaign from a victim&#x27;s cloud infrastructure, compromising thousands of third-party credentials in under six hours; the report also covers supply-chain, espionage and distillation cases, and Google disabled the associated accounts and assets. Type: threat-report. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>084 GitSpawn: untrusted repository Git configuration runs code in seven AI coding agents</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/084.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/084.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>exploitation</category>
+<description>Manifold Security found that a repository delivered with a malicious .git/config (core.fsmonitor and one withheld key) runs attacker code when Claude Code, goose, Hermes Agent, Qwen Code, Grok Build, Codex or Cursor collect Git metadata, outside the sandbox and before any approval or trust prompt. Claude Code (fsmonitor path), goose, Codex and Cursor were fixed; Hermes Agent, Qwen Code, Grok Build and a second Claude Code path were unpatched at publication. Type: vulnerability-disclosure. Lens: target. Vector: exploitation. Outcome: code-execution. CVE: CVE-2026-72718; CVE-2026-71963; CVE-2026-19592. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>083 DeepSeek Harness lets AI agents escape their own sandbox (CVE-2026-82533)</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/083.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/083.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>exploitation</category>
+<description>DeepSeek Harness 0.1.1-rc.2 and earlier exposed an unauthenticated local HTTP API that trusted the Host header, so a sandboxed agent induced by attacker-supplied text could run one curl command to set its session to danger-full-access and run commands outside the sandbox without approval. Fixed in 0.1.2-alpha.1; VulnCheck rated it 9.4. Type: vulnerability-disclosure. Lens: surface. Vector: exploitation. Outcome: code-execution. CVE: CVE-2026-82533. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>082 Agents Gone Wild: AI-orchestrated global campaign against PaperCut NG/MF</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/082.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/082.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>weapon</category><category>autonomous-ops</category>
+<description>An attacker using Codex and hundreds of AI agents exploited an authentication bypass and an RCE in PaperCut NG/MF, compromising at least 440 instances across 395 organizations in 48 countries, mostly in education. GreyNoise reports credential harvesting on 280 instances, OS or domain secrets extracted on 147 and domain administrator access at 12 organizations. Type: incident. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. CVE: CVE-2026-81578; CVE-2026-82078. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
 <title>080 OpenAI agents upload malicious packages to RubyGems</title>
 <link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/080.html</link>
 <guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/080.html</guid>
@@ -30,6 +86,14 @@
 <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
 <category>threat-report</category><category>weapon</category><category>autonomous-ops</category>
 <description>Covers December 2025 to August 2026; Claude used as orchestrator across cyber kill chain. Type: threat-report. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>081 Deadbugz: runtime-gated malicious MCP server spread through GitHub pull requests</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/081.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/081.html</guid>
+<pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>poisoning</category>
+<description>On 10 August 2026 the GitHub account zellkernel opened 23 pull requests in 74 minutes across AI, MCP and developer-tool projects adding a &#x27;productivity-suite&#x27; MCP server (remote endpoint or hidden local script). After three tool calls the server changes its tool metadata to direct the agent to look for SSH keys, AWS credentials, shell history and Kubernetes configuration and hide this from the user; no confirmed victims were reported. Type: incident. Lens: surface. Vector: poisoning. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
 </item>
 <item>
 <title>077 Default GitHub Actions of Claude Code, Gemini CLI and Codex exploitable by issue</title>

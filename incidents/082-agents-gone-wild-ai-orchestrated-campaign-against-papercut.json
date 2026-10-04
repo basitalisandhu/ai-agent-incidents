@@ -1,0 +1,59 @@
+{
+  "id": "082",
+  "date": "2026-09",
+  "name": "Agents Gone Wild: AI-orchestrated global campaign against PaperCut NG/MF",
+  "type": "incident",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "none",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [
+    "CVE-2026-81578",
+    "CVE-2026-82078"
+  ],
+  "sources": [
+    {
+      "url": "https://www.greynoise.io/blog/ai-orchestrated-campaign-against-papercut-ng-mf",
+      "title": "Agents Gone Wild: An AI-Orchestrated Global Campaign Against PaperCut NG/MF",
+      "publisher": "GreyNoise",
+      "accessed": "2026-10-04"
+    },
+    {
+      "url": "https://thehackernews.com/2026/09/papercut-attacker-uses-hundreds-of-ai.html",
+      "title": "PaperCut Attacker Uses Hundreds of AI Agents to Compromise 440+ Instances",
+      "publisher": "The Hacker News",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "summary": "An attacker using Codex and hundreds of AI agents exploited an authentication bypass and an RCE in PaperCut NG/MF, compromising at least 440 instances across 395 organizations in 48 countries, mostly in education. GreyNoise reports credential harvesting on 280 instances, OS or domain secrets extracted on 147 and domain administrator access at 12 organizations.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "PaperCut",
+      "OpenAI"
+    ],
+    "products": [
+      "PaperCut NG",
+      "PaperCut MF",
+      "Codex"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "ai-orchestrated-attack",
+    "papercut",
+    "credential-harvesting",
+    "education",
+    "mass-exploitation"
+  ],
+  "status": "confirmed"
+}

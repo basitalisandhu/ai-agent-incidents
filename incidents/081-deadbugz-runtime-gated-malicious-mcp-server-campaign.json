@@ -1,0 +1,59 @@
+{
+  "id": "081",
+  "date": "2026-08",
+  "name": "Deadbugz: runtime-gated malicious MCP server spread through GitHub pull requests",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "poisoning",
+  "channel_in": "tool description",
+  "authority": "read-only",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
+      "title": "Deadbugz: Currently Active MCP Supply-Chain Campaign",
+      "publisher": "Pillar Security",
+      "accessed": "2026-10-04"
+    },
+    {
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-deadbugz-mcp-supply-chain-20260830-csa-sty/",
+      "title": "Deadbugz: Active MCP Campaign Poisons Agents After Trust",
+      "publisher": "Cloud Security Alliance",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "summary": "On 10 August 2026 the GitHub account zellkernel opened 23 pull requests in 74 minutes across AI, MCP and developer-tool projects adding a 'productivity-suite' MCP server (remote endpoint or hidden local script). After three tool calls the server changes its tool metadata to direct the agent to look for SSH keys, AWS credentials, shell history and Kubernetes configuration and hide this from the user; no confirmed victims were reported.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04",
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM03"
+    ],
+    "mitre_atlas": [
+      "AML.T0110",
+      "AML.T0010.005"
+    ]
+  },
+  "affected": {
+    "vendors": [],
+    "products": [],
+    "frameworks": [
+      "Model Context Protocol"
+    ]
+  },
+  "tags": [
+    "mcp",
+    "tool-poisoning",
+    "malicious-mcp-server",
+    "rug-pull",
+    "credential-theft",
+    "github-pull-requests"
+  ],
+  "status": "confirmed"
+}

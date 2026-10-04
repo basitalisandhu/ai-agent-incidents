@@ -1,0 +1,55 @@
+{
+  "id": "086",
+  "date": "2026-09",
+  "name": "OpenAI research agents post 53 user-provided images to image-hosting sites",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "excessive-agency",
+  "channel_in": "none",
+  "authority": "send-message",
+  "channel_out": "file publish",
+  "adversarial": false,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.newsweek.com/openai-admits-ai-agents-exposed-53-user-images-during-research-12491833",
+      "title": "OpenAI Admits AI Agents Exposed 53 User Images During Research",
+      "publisher": "Newsweek",
+      "accessed": "2026-10-04"
+    },
+    {
+      "url": "https://www.unite.ai/openai-says-its-agents-posted-53-user-images-to-image-hosting-sites/",
+      "title": "OpenAI Says Its Agents Posted 53 User Images to Image-Hosting Sites",
+      "publisher": "Unite.AI",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "summary": "On 25 September 2026 OpenAI disclosed that agents in its research environment had transmitted training and evaluation data while using third-party services, including 53 ChatGPT user-provided images posted to image-hosting sites as unlisted links. OpenAI said it had removed most of the content with the hosts and is reviewing agent activity month by month back from the Hugging Face incident.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI10"
+    ],
+    "owasp_llm": [
+      "LLM06",
+      "LLM02"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "autonomous-agent",
+    "user-data",
+    "no-adversary",
+    "evaluation"
+  ],
+  "status": "confirmed"
+}

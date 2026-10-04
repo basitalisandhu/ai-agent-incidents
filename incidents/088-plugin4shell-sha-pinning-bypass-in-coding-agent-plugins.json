@@ -1,0 +1,65 @@
+{
+  "id": "088",
+  "date": "2026-09",
+  "name": "Plugin4Shell: SHA-pinning bypass in coding agent plugin marketplaces",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "supply-chain",
+  "channel_in": "package",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.air.security/blog-posts/plugin4shell",
+      "title": "Plugin4Shell - Zero Click RCE Vulnerability",
+      "publisher": "AIR Security",
+      "accessed": "2026-10-04"
+    },
+    {
+      "url": "https://securityonline.info/plugin4shell-coding-agents-rce/",
+      "title": "Plugin4Shell: Zero-Click RCE Hits Four AI Coding Agents",
+      "publisher": "SecurityOnline",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "summary": "Claude Code, Codex, GitHub Copilot and Gemini CLI checked out marketplace plugins at a pinned commit but did not verify the resulting HEAD, so the owner of a plugin repository could create a branch named after the pinned SHA and have attacker code installed and run on update. Fixed in Claude Code 2.1.179 and Codex 0.146.0; Copilot unpatched and Gemini CLI deprecated; no exploitation in the wild reported.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04",
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM03"
+    ],
+    "mitre_atlas": [
+      "AML.T0010.005"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic",
+      "OpenAI",
+      "GitHub",
+      "Google"
+    ],
+    "products": [
+      "Claude Code",
+      "Codex",
+      "GitHub Copilot",
+      "Gemini CLI"
+    ],
+    "frameworks": [
+      "Git"
+    ]
+  },
+  "tags": [
+    "coding-agent",
+    "plugin-marketplace",
+    "sha-pinning",
+    "supply-chain"
+  ],
+  "status": "confirmed"
+}

@@ -59,7 +59,7 @@ maintained, contributor-friendly record.
 ## Frequently asked questions
 
 **Is there a public dataset of AI agent security incidents?**
-Yes, this one: 80 publicly documented events from February 2023 to September 2026 (25 incidents, 45 vulnerability disclosures, 10 threat reports), one schema-validated JSON record each, coded under a written codebook and mapped to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Download it as [JSON](https://basitalisandhu.github.io/ai-agent-incidents/incidents.json) or [CSV](https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv), browse it on the [site](https://basitalisandhu.github.io/ai-agent-incidents/), subscribe to the [RSS feed](https://basitalisandhu.github.io/ai-agent-incidents/feed.xml), or load the [Hugging Face mirror](https://huggingface.co/datasets/basitalisandhu/ai-agent-incidents). The data is CC BY 4.0. Current counts are in [docs/stats.md](docs/stats.md).
+Yes, this one: 88 publicly documented events from February 2023 to September 2026 (29 incidents, 48 vulnerability disclosures, 11 threat reports), one schema-validated JSON record each, coded under a written codebook and mapped to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Download it as [JSON](https://basitalisandhu.github.io/ai-agent-incidents/incidents.json) or [CSV](https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv), browse it on the [site](https://basitalisandhu.github.io/ai-agent-incidents/), subscribe to the [RSS feed](https://basitalisandhu.github.io/ai-agent-incidents/feed.xml), or load the [Hugging Face mirror](https://huggingface.co/datasets/basitalisandhu/ai-agent-incidents). The data is CC BY 4.0. Current counts are in [docs/stats.md](docs/stats.md).
 
 **How are incidents coded?**
 Every event is coded from a primary source that was opened and read, on eight fields defined in [docs/codebook.md](docs/codebook.md): `type` (incident, vulnerability disclosure or threat report), `lens` (the role AI plays: weapon, target or surface), `vector` (how the attack or failure got in), `channel_in`, `authority` (what the AI component could do), `channel_out` (how the effect left the system), `adversarial` (whether an attack technique is involved) and `outcome` (the most severe harm realised or demonstrated). Each record also carries mappings to the OWASP LLM Top 10, the OWASP Agentic Top 10 and MITRE ATLAS, given only where the source supports them. The paper behind the seed data reports two further blind codings and their agreement (kappa 0.82 for lens and 0.87 for vector with the second coder).
@@ -80,7 +80,7 @@ It is a convenience sample of events that were made public, so it over-represent
 
 | | |
 |---|---|
-| Records | 80 events (25 incidents, 45 vulnerability disclosures, 10 threat reports) |
+| Records | 88 events (29 incidents, 48 vulnerability disclosures, 11 threat reports) |
 | Period | February 2023 to September 2026 (month of public report) |
 | Unit | One primary source's account of one incident, advisory or report |
 | Coded fields | `type`, `lens`, `vector`, `channel_in`, `authority`, `channel_out`, `adversarial`, `outcome` |

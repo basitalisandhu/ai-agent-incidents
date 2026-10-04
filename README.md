@@ -20,9 +20,6 @@ table, one page per event, [RSS feed](https://basitalisandhu.github.io/ai-agent-
 [CSV](https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv),
 [stats](https://basitalisandhu.github.io/ai-agent-incidents/stats.json)).
 
-Part of **Masoon**, open-source trust infrastructure for AI agents: who they are, what
-they may touch, and proof of what they did.
-
 ## Why this exists
 
 Security discussion treats "AI" as one problem. The public record says it is at least
@@ -36,9 +33,9 @@ dataset existed in a form that can be queried, diffed, validated in CI and cited
 
 The seed data and the coding scheme come from the paper *AI as Weapon, Target, and
 Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents*
-(Muhammad Basit Ali, 2026), whose code, experiments and original CSV live at
-[llm-agent-control-plane](https://github.com/basitalisandhu/llm-agent-control-plane).
-This repository turns that dataset into a maintained, contributor-friendly record.
+(Muhammad Basit Ali, 2026); its codebook is reproduced in
+[docs/codebook.md](docs/codebook.md). This repository turns that dataset into a
+maintained, contributor-friendly record.
 
 ## Who it is for
 
@@ -74,7 +71,7 @@ Yes. The data is licensed [CC BY 4.0](LICENSE-DATA): use, copy, modify and redis
 One event is one JSON file and one pull request: copy an existing record, give it the next free id, fill every field from a public primary source, run `python3 scripts/validate.py`, and open the pull request. If you would rather not write JSON, use the [issue form](.github/ISSUE_TEMPLATE/new_incident.yml). Only events with a public primary source are accepted; this is not a place to disclose new vulnerabilities. The checklist is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 **How do I cite the dataset?**
-Use [CITATION.cff](CITATION.cff) (GitHub shows it under "Cite this repository"): Muhammad Basit Ali, *AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents*, version 1.0.0, 2026, https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme comes from the paper *AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents* (Ali, 2026), whose code and original data are at [llm-agent-control-plane](https://github.com/basitalisandhu/llm-agent-control-plane); cite both when you use the coding.
+Use [CITATION.cff](CITATION.cff) (GitHub shows it under "Cite this repository"): Muhammad Basit Ali, *AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents*, version 1.0.0, 2026, https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme comes from the paper *AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents* (Ali, 2026), whose codebook is reproduced in [docs/codebook.md](docs/codebook.md); cite both when you use the coding.
 
 **What can the dataset not tell you?**
 It is a convenience sample of events that were made public, so it over-represents what vendors and researchers chose to disclose and says nothing about how common any class of event is in the population. Mappings are the maintainer's reading of each source against the published frameworks; an empty mapping list means no confident mapping, not that none applies. Dates are the month of the public report, not of the event. Each record links its primary source so every claim can be checked.
@@ -233,8 +230,7 @@ AI-agent and LLM-application security incidents. Version 1.0.0, 2026.
 https://github.com/basitalisandhu/ai-agent-incidents
 
 Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a
-Deterministic Control Plane for Securing LLM Agents. 2026.
-https://github.com/basitalisandhu/llm-agent-control-plane
+Deterministic Control Plane for Securing LLM Agents. 2026. Manuscript.
 ```
 
 ## To-do
@@ -245,7 +241,7 @@ https://github.com/basitalisandhu/llm-agent-control-plane
   genai.owasp.org once it can be fetched; the ids were cross-checked against the
   OWASP GenAI Security Project's GitHub repositories.
 - Add a `controls` field: the control (provenance, approval, least authority, egress
-  mediation) that would have stopped each event, tied to the Masoon components below.
+  mediation) that would have stopped each event.
 - Keep adding events after September 2026.
 
 ## Licence
@@ -255,15 +251,10 @@ under [CC BY 4.0](LICENSE-DATA). Code (`scripts/`, `tests/`, workflows, site
 templates) is licensed under [MIT](LICENSE). Attribution: Muhammad Basit Ali,
 https://github.com/basitalisandhu/ai-agent-incidents.
 
-## Related repositories (Masoon)
+## Related projects
 
-- [masoon](https://github.com/basitalisandhu/masoon): the platform front door, with the
-  [docs site](https://basitalisandhu.github.io/masoon/).
-- [Masoon Broker](https://basitalisandhu.github.io/masoon/masoon-broker.html): scoped, short-lived
-  credentials for AI agents with human approvals, kill switch and tamper-evident audit.
-- [llm-agent-control-plane](https://github.com/basitalisandhu/llm-agent-control-plane):
-  the paper, its deterministic policy enforcement point, the evaluation and the original
-  dataset.
+More tools by the same author: https://github.com/basitalisandhu
+
 - [agentic-semgrep-rules](https://github.com/basitalisandhu/agentic-semgrep-rules):
   Semgrep rule pack for insecure agent code: unbounded tool permissions, eval of model
   output, SSRF through tool URLs, prompt interpolation, MCP servers without auth.

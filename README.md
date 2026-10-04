@@ -20,7 +20,7 @@ table, one page per event, [RSS feed](https://basitalisandhu.github.io/ai-agent-
 [CSV](https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv),
 [stats](https://basitalisandhu.github.io/ai-agent-incidents/stats.json)).
 
-Part of **Hisar**, open-source trust infrastructure for AI agents: who they are, what
+Part of **Masoon**, open-source trust infrastructure for AI agents: who they are, what
 they may touch, and proof of what they did.
 
 ## Why this exists
@@ -245,7 +245,7 @@ https://github.com/basitalisandhu/llm-agent-control-plane
   genai.owasp.org once it can be fetched; the ids were cross-checked against the
   OWASP GenAI Security Project's GitHub repositories.
 - Add a `controls` field: the control (provenance, approval, least authority, egress
-  mediation) that would have stopped each event, tied to the Hisar components below.
+  mediation) that would have stopped each event, tied to the Masoon components below.
 - Keep adding events after September 2026.
 
 ## Licence
@@ -255,11 +255,11 @@ under [CC BY 4.0](LICENSE-DATA). Code (`scripts/`, `tests/`, workflows, site
 templates) is licensed under [MIT](LICENSE). Attribution: Muhammad Basit Ali,
 https://github.com/basitalisandhu/ai-agent-incidents.
 
-## Related repositories (Hisar)
+## Related repositories (Masoon)
 
-- [hisar](https://github.com/basitalisandhu/hisar): the platform front door, with the
-  [docs site](https://basitalisandhu.github.io/hisar/).
-- [hisar-broker](https://basitalisandhu.github.io/hisar/hisar-broker.html): scoped, short-lived
+- [masoon](https://github.com/basitalisandhu/masoon): the platform front door, with the
+  [docs site](https://basitalisandhu.github.io/masoon/).
+- [Masoon Broker](https://basitalisandhu.github.io/masoon/masoon-broker.html): scoped, short-lived
   credentials for AI agents with human approvals, kill switch and tamper-evident audit.
 - [llm-agent-control-plane](https://github.com/basitalisandhu/llm-agent-control-plane):
   the paper, its deterministic policy enforcement point, the evaluation and the original

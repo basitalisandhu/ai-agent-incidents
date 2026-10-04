@@ -1,0 +1,50 @@
+{
+  "id": "045",
+  "date": "2025-08",
+  "name": "Perplexity Comet indirect prompt injection",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "send-message",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://brave.com/blog/comet-prompt-injection/"
+    }
+  ],
+  "summary": "Reddit comment made agentic browser fetch email OTP and post it back.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0086"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Perplexity"
+    ],
+    "products": [
+      "Comet"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "browser-agent",
+    "otp-theft",
+    "indirect-prompt-injection"
+  ],
+  "status": "confirmed"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "021",
+  "date": "2024-08",
+  "name": "Copilot Studio SSRF protection bypass",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "exploitation",
+  "channel_in": "none",
+  "authority": "cloud-creds",
+  "channel_out": "disclosure-only",
+  "adversarial": true,
+  "outcome": "information-disclosure",
+  "cve": [
+    "CVE-2024-38206"
+  ],
+  "sources": [
+    {
+      "url": "https://www.tenable.com/blog/ssrfing-the-web-with-the-help-of-copilot-studio"
+    }
+  ],
+  "summary": "HTTP action SSRF bypass reached Azure metadata service; cross-tenant exposure possible.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0049"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft"
+    ],
+    "products": [
+      "Copilot Studio"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "ssrf",
+    "cloud-metadata",
+    "cross-tenant"
+  ],
+  "status": "confirmed"
+}

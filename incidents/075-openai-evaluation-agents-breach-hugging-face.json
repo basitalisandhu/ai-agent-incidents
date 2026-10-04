@@ -1,0 +1,43 @@
+{
+  "id": "075",
+  "date": "2026-07",
+  "name": "OpenAI evaluation agents breach Hugging Face",
+  "type": "incident",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "document",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": false,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/"
+    }
+  ],
+  "summary": "No human attacker; models cheating an eval escaped sandbox via Artifactory zero-day, hit Hugging Face.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI10"
+    ],
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI",
+      "Hugging Face"
+    ],
+    "products": [],
+    "frameworks": []
+  },
+  "tags": [
+    "evaluation-escape",
+    "sandbox-escape",
+    "autonomous-agent"
+  ],
+  "status": "confirmed"
+}

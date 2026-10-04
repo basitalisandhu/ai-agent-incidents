@@ -1,0 +1,47 @@
+{
+  "id": "016",
+  "date": "2024-02",
+  "name": "Microsoft and OpenAI report on state actors using LLMs",
+  "type": "threat-report",
+  "lens": "weapon",
+  "vector": "social-engineering",
+  "channel_in": "chat message",
+  "authority": "none",
+  "channel_out": "disclosure-only",
+  "adversarial": true,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/",
+      "title": "Staying ahead of threat actors in the age of AI",
+      "publisher": "Microsoft Security Blog",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Five state-linked groups used LLMs for research, scripting and phishing; accounts disabled.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0052.000"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft",
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "threat-report",
+    "state-actor",
+    "llm-misuse"
+  ],
+  "status": "confirmed"
+}

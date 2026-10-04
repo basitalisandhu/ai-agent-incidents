@@ -1,0 +1,49 @@
+{
+  "id": "042",
+  "date": "2025-08",
+  "name": "Gemini for Workspace calendar-invite promptware",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "calendar invite",
+  "authority": "send-message",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/"
+    }
+  ],
+  "summary": "Invite title drove smart-home control, Zoom video, geolocation and email theft in demos.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Google"
+    ],
+    "products": [
+      "Gemini for Workspace"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "calendar-invite",
+    "promptware",
+    "smart-home"
+  ],
+  "status": "confirmed"
+}

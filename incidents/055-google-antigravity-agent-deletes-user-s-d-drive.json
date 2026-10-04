@@ -1,0 +1,44 @@
+{
+  "id": "055",
+  "date": "2025-12",
+  "name": "Google Antigravity agent deletes user's D: drive",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "excessive-agency",
+  "channel_in": "chat message",
+  "authority": "file-delete",
+  "channel_out": "data destruction",
+  "adversarial": false,
+  "outcome": "data-destruction",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/"
+    }
+  ],
+  "summary": "Turbo-mode agent cleared cache by deleting D: drive root; Google investigating.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "Google"
+    ],
+    "products": [
+      "Antigravity"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "data-destruction",
+    "file-delete",
+    "excessive-agency"
+  ],
+  "status": "confirmed"
+}

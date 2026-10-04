@@ -1,0 +1,44 @@
+{
+  "id": "020",
+  "date": "2024-06",
+  "name": "Ollama \"Probllama\" path traversal RCE",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "exploitation",
+  "channel_in": "none",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2024-37032"
+  ],
+  "sources": [
+    {
+      "url": "https://www.wiz.io/blog/probllama-ollama-vulnerability-cve-2024-37032"
+    }
+  ],
+  "summary": "Digest path traversal gave file write and RCE on Ollama servers; fixed in 0.1.34.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0049"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Ollama"
+    ],
+    "products": [
+      "Ollama"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "path-traversal",
+    "rce",
+    "inference-server"
+  ],
+  "status": "confirmed"
+}

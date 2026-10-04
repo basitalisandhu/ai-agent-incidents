@@ -1,0 +1,56 @@
+{
+  "id": "057",
+  "date": "2026-01",
+  "name": "Anthropic Git MCP server flaws chained to code execution",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "document",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2025-68143",
+    "CVE-2025-68144",
+    "CVE-2025-68145"
+  ],
+  "sources": [
+    {
+      "url": "https://www.theregister.com/security/2026/01/20/anthropic-quietly-fixed-flaws-in-its-git-mcp-server/4676059"
+    }
+  ],
+  "summary": "Path-validation and git_diff argument-injection flaws chained with Filesystem MCP for code execution.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI02",
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [
+      "mcp-server-git",
+      "Filesystem MCP server"
+    ],
+    "frameworks": [
+      "Model Context Protocol"
+    ]
+  },
+  "tags": [
+    "mcp",
+    "argument-injection",
+    "path-validation"
+  ],
+  "status": "confirmed"
+}

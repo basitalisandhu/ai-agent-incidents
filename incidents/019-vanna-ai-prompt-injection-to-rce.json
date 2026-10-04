@@ -1,0 +1,52 @@
+{
+  "id": "019",
+  "date": "2024-05",
+  "name": "Vanna.AI prompt injection to RCE",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "direct-injection",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2024-5565"
+  ],
+  "sources": [
+    {
+      "url": "https://research.jfrog.com/vulnerabilities/vanna-prompt-injection-rce-jfsa-2024-001034449/"
+    }
+  ],
+  "summary": "ask API with visualize runs LLM-generated Python; injection gives RCE.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM05"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.000",
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Vanna.AI"
+    ],
+    "products": [
+      "Vanna"
+    ],
+    "frameworks": [
+      "Vanna"
+    ]
+  },
+  "tags": [
+    "rce",
+    "generated-code-execution",
+    "text-to-sql"
+  ],
+  "status": "confirmed"
+}

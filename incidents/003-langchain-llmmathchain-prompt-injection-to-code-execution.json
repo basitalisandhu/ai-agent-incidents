@@ -1,0 +1,55 @@
+{
+  "id": "003",
+  "date": "2023-04",
+  "name": "LangChain LLMMathChain prompt injection to code execution",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "direct-injection",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2023-29374"
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/langchain-ai/langchain/issues/1026",
+      "title": "Security concerns (langchain-ai/langchain issue #1026)",
+      "publisher": "GitHub",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "LLM-generated code reached Python exec in LLMMathChain; affects LangChain through 0.0.131.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM05"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.000",
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "LangChain"
+    ],
+    "products": [
+      "LangChain"
+    ],
+    "frameworks": [
+      "LangChain"
+    ]
+  },
+  "tags": [
+    "rce",
+    "generated-code-execution",
+    "framework"
+  ],
+  "status": "confirmed"
+}

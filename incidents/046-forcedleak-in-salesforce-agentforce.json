@@ -1,0 +1,49 @@
+{
+  "id": "046",
+  "date": "2025-09",
+  "name": "ForcedLeak in Salesforce Agentforce",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce/"
+    }
+  ],
+  "summary": "Web-to-Lead injection plus $5 expired whitelisted domain; CVSS 9.4; Salesforce blocked untrusted URLs.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0093",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Salesforce"
+    ],
+    "products": [
+      "Agentforce"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "crm",
+    "expired-domain",
+    "csp-bypass"
+  ],
+  "status": "confirmed"
+}

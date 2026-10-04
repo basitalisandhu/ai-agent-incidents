@@ -1,0 +1,44 @@
+{
+  "id": "009",
+  "date": "2023-12",
+  "name": "1,500+ Hugging Face API tokens exposed in public repos",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "nhi-secrets",
+  "channel_in": "none",
+  "authority": "write-repo",
+  "channel_out": "file publish",
+  "adversarial": false,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.lasso.security/blog/1500-huggingface-api-tokens-were-exposed-leaving-millions-of-meta-llama-bloom-and-pythia-users-for-supply-chain-attacks"
+    }
+  ],
+  "summary": "Tokens spanned 723 organisations; researchers showed write access to Llama-2, Bloom, Pythia repos.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM03"
+    ],
+    "mitre_atlas": [
+      "AML.T0055"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Hugging Face"
+    ],
+    "products": [
+      "Hugging Face Hub"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "exposed-secrets",
+    "api-tokens",
+    "model-hub"
+  ],
+  "status": "confirmed"
+}

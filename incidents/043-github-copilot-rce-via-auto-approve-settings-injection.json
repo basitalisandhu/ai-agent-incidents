@@ -1,0 +1,54 @@
+{
+  "id": "043",
+  "date": "2025-08",
+  "name": "GitHub Copilot RCE via auto-approve settings injection",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "document",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2025-53773"
+  ],
+  "sources": [
+    {
+      "url": "https://embracethered.com/blog/posts/2025/github-copilot-remote-code-execution-via-prompt-injection/"
+    }
+  ],
+  "summary": "Injection set chat.tools.autoApprove in settings.json; Microsoft patched August 2025.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0081",
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "GitHub",
+      "Microsoft"
+    ],
+    "products": [
+      "GitHub Copilot",
+      "Visual Studio Code"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "rce",
+    "settings-injection",
+    "auto-approve"
+  ],
+  "status": "confirmed"
+}

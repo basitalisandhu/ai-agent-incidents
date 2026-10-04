@@ -1,0 +1,50 @@
+{
+  "id": "060",
+  "date": "2026-02",
+  "name": "Anthropic report on distillation attacks (DeepSeek, Moonshot, MiniMax)",
+  "type": "threat-report",
+  "lens": "target",
+  "vector": "extraction",
+  "channel_in": "chat message",
+  "authority": "none",
+  "channel_out": "api-abuse",
+  "adversarial": true,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks",
+      "title": "Detecting and preventing distillation attacks",
+      "publisher": "Anthropic",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "24,000 fraudulent accounts made 16M exchanges to extract Claude capabilities.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM10"
+    ],
+    "mitre_atlas": [
+      "AML.T0021",
+      "AML.T0040",
+      "AML.T0024.002"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [
+      "Anthropic API"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "distillation",
+    "model-extraction",
+    "fraudulent-accounts",
+    "threat-report"
+  ],
+  "status": "confirmed"
+}

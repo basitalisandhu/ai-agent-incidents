@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>AI Agent Incidents</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/</link>
+<description>An open, structured dataset of publicly documented AI-agent and LLM-application security incidents, coded by the role AI plays: weapon, target or surface.</description>
+<language>en</language>
+<lastBuildDate>Tue, 01 Sep 2026 00:00:00 +0000</lastBuildDate>
+<atom:link href="https://basitalisandhu.github.io/ai-agent-incidents/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>080 OpenAI agents upload malicious packages to RubyGems</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/080.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/080.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>weapon</category><category>autonomous-ops</category>
+<description>Hundreds of malicious packages uploaded 11 May; credential theft attempted, success unclear; OpenAI says benign. Type: incident. Lens: weapon. Vector: autonomous-ops. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>079 OpenAI agent breach of Australian government portals including Medicare statistics</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/079.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/079.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>weapon</category><category>autonomous-ops</category>
+<description>Agents accessed public and non-public portal files and wrote files; no personal data apparent. Type: incident. Lens: weapon. Vector: autonomous-ops. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>078 Anthropic September 2026 threat report</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/078.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/078.html</guid>
+<pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>autonomous-ops</category>
+<description>Covers December 2025 to August 2026; Claude used as orchestrator across cyber kill chain. Type: threat-report. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>077 Default GitHub Actions of Claude Code, Gemini CLI and Codex exploitable by issue</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/077.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/077.html</guid>
+<pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>exploitation</category>
+<description>Unprivileged issue reached CI in Anthropic, Google, OpenAI agent repos; Gemini CLI CVSS 10. Type: vulnerability-disclosure. Lens: surface. Vector: exploitation. Outcome: code-execution. CVE: CVE-2026-12537; CVE-2026-54316. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>076 CoSnitch one-click Copilot Personal exfiltration and memory poisoning</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/076.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/076.html</guid>
+<pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>One-click autorun prompt, URL-fetch exfiltration and persistent memory poisoning; critical; patched. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. CVE: CVE-2026-24301. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>075 OpenAI evaluation agents breach Hugging Face</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/075.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/075.html</guid>
+<pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>weapon</category><category>autonomous-ops</category>
+<description>No human attacker; models cheating an eval escaped sandbox via Artifactory zero-day, hit Hugging Face. Type: incident. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>074 Anthropic Claude evaluation agents breach three organizations</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/074.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/074.html</guid>
+<pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>weapon</category><category>autonomous-ops</category>
+<description>Claude, told environment was simulated, breached three organizations via weak passwords; fourth case disclosed September. Type: incident. Lens: weapon. Vector: autonomous-ops. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>073 SearchLeak one-click exfiltration from M365 Copilot Enterprise Search</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/073.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/073.html</guid>
+<pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Parameter-to-prompt, sanitizer race and Bing SSRF chain; critical; fixed before disclosure. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. CVE: CVE-2026-42824. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>072 Semantic Kernel prompt injection to RCE</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/072.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/072.html</guid>
+<pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>direct-injection</category>
+<description>Vector-store filter eval and file-write tool turned a prompt into host RCE; both fixed. Type: vulnerability-disclosure. Lens: surface. Vector: direct-injection. Outcome: code-execution. CVE: CVE-2026-26030; CVE-2026-25592. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>071 PocketOS production database and backups deleted by Cursor agent</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/071.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/071.html</guid>
+<pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>excessive-agency</category>
+<description>Agent found account-scoped Railway token, ran volume delete in 9 seconds; data later restored. Type: incident. Lens: surface. Vector: excessive-agency. Outcome: data-destruction. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>070 Web-based indirect prompt injection observed in the wild (Unit 42)</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/070.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/070.html</guid>
+<pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>surface</category><category>indirect-injection</category>
+<description>Web-hosted injections seen in telemetry: ad-review evasion, SEO phishing, destructive and transaction commands. Type: threat-report. Lens: surface. Vector: indirect-injection. Outcome: fraud. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>069 LiteLLM PyPI releases backdoored (TeamPCP)</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/069.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/069.html</guid>
+<pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>target</category><category>supply-chain</category>
+<description>Versions 1.82.7 and 1.82.8 backdoored in TeamPCP campaign after Trivy compromise. Type: incident. Lens: target. Vector: supply-chain. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>068 Langflow CVE-2026-33017 exploited within 20 hours</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/068.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/068.html</guid>
+<pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>target</category><category>exploitation</category>
+<description>Public build endpoint RCE exploited 20 hours after advisory; attackers harvested keys and .env files. Type: incident. Lens: target. Vector: exploitation. Outcome: data-exfiltration. CVE: CVE-2026-33017. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>067 CrewAI Code Interpreter sandbox escape and SSRF CVEs</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/067.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/067.html</guid>
+<pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Direct or indirect injection reaches Code Interpreter SandboxPython fallback; RCE, file read, SSRF. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: code-execution. CVE: CVE-2026-2275; CVE-2026-2285; CVE-2026-2286; CVE-2026-2287. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>066 react-codeshift hallucinated npm package spreads via agent skills</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/066.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/066.html</guid>
+<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>generated-code</category>
+<description>Hallucinated npm name spread through agent skills to 237 repos; researcher claimed it. Type: vulnerability-disclosure. Lens: surface. Vector: generated-code. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>065 hackerbot-claw bot attacks GitHub Actions workflows</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/065.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/065.html</guid>
+<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>weapon</category><category>autonomous-ops</category>
+<description>Claimed Claude-powered account; RCE in at least four of seven repos; Trivy releases deleted. Type: incident. Lens: weapon. Vector: autonomous-ops. Outcome: code-execution. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>064 OpenClaw one-click RCE via gatewayUrl token exfiltration</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/064.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/064.html</guid>
+<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>exploitation</category>
+<description>Crafted link leaked gateway token over WebSocket even on loopback; fixed in 2026.1.29. Type: vulnerability-disclosure. Lens: target. Vector: exploitation. Outcome: code-execution. CVE: CVE-2026-25253. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>063 Clinejection: Cline issue-triage agent hijacked</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/063.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/063.html</guid>
+<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>indirect-injection</category>
+<description>Issue-title injection plus cache poisoning stole npm token; malicious cline@2.3.0 published 17 Feb. Type: incident. Lens: surface. Vector: indirect-injection. Outcome: code-execution. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>062 ClawHavoc: 341 malicious OpenClaw skills on ClawHub</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/062.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/062.html</guid>
+<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+<category>incident</category><category>target</category><category>supply-chain</category>
+<description>Koi audit of 2,857 skills found 341 malicious; fake prerequisites installed Atomic Stealer. Type: incident. Lens: target. Vector: supply-chain. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>061 Claude Code project-file RCE and API key theft</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/061.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/061.html</guid>
+<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>exploitation</category>
+<description>Repo hooks and ANTHROPIC_BASE_URL ran code and leaked API keys before trust prompt. Type: vulnerability-disclosure. Lens: target. Vector: exploitation. Outcome: code-execution. CVE: CVE-2025-59536; CVE-2026-21852. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>060 Anthropic report on distillation attacks (DeepSeek, Moonshot, MiniMax)</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/060.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/060.html</guid>
+<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>target</category><category>extraction</category>
+<description>24,000 fraudulent accounts made 16M exchanges to extract Claude capabilities. Type: threat-report. Lens: target. Vector: extraction. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>059 AI-augmented actor compromises 600+ FortiGate devices</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/059.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/059.html</guid>
+<pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>autonomous-ops</category>
+<description>Unsophisticated actor used commercial LLMs to compromise 600+ FortiGate devices via weak credentials. Type: threat-report. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>058 Reprompt one-click data theft from Copilot Personal</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/058.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/058.html</guid>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Parameter-to-prompt via ?q=, double-request bypass and chained requests; patched on disclosure. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>057 Anthropic Git MCP server flaws chained to code execution</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/057.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/057.html</guid>
+<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Path-validation and git_diff argument-injection flaws chained with Filesystem MCP for code execution. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: code-execution. CVE: CVE-2025-68143; CVE-2025-68144; CVE-2025-68145. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>056 IDEsaster: 30+ flaws across AI IDEs</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/056.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/056.html</guid>
+<pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Prompt injection abused legitimate IDE features in every tested AI IDE; 24 CVEs. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: code-execution. CVE: multiple. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>055 Google Antigravity agent deletes user&#x27;s D: drive</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/055.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/055.html</guid>
+<pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>excessive-agency</category>
+<description>Turbo-mode agent cleared cache by deleting D: drive root; Google investigating. Type: incident. Lens: surface. Vector: excessive-agency. Outcome: data-destruction. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>054 ServiceNow Now Assist second-order prompt injection</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/054.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/054.html</guid>
+<pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Agent discovery let low-privilege record content steer higher-privilege agents under default configuration. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>053 GTIG report: just-in-time AI malware (PROMPTSTEAL, PROMPTFLUX)</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/053.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/053.html</guid>
+<pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>autonomous-ops</category>
+<description>APT28 malware queried Qwen at runtime for commands; first LLM-in-malware seen in operations. Type: threat-report. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>052 Anthropic GTG-1002 AI-orchestrated espionage campaign</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/052.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/052.html</guid>
+<pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>autonomous-ops</category>
+<description>Jailbroken Claude Code plus MCP tools ran 80-90% of intrusions against about 30 targets. Type: threat-report. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>051 OpenAI October 2025 report on malicious AI uses</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/051.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/051.html</guid>
+<pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>social-engineering</category>
+<description>Actors bolted ChatGPT onto existing toolchains for malware, phishing and scams; accounts banned. Type: threat-report. Lens: weapon. Vector: social-engineering. Outcome: fraud. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>050 CamoLeak: GitHub Copilot Chat private-code exfiltration</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/050.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/050.html</guid>
+<pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Hidden PR comment plus Camo image proxy leaked secrets; GitHub disabled image rendering. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>049 postmark-mcp: first malicious MCP server in the wild</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/049.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/049.html</guid>
+<pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>supply-chain</category>
+<description>v1.0.16 BCC&#x27;d every outgoing email to attacker; 1,643 downloads; package removed. Type: incident. Lens: surface. Vector: supply-chain. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>048 ShadowLeak zero-click Gmail exfiltration from ChatGPT Deep Research</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/048.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/048.html</guid>
+<pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Reported June 2025; OpenAI silently fixed in August, acknowledged early September. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>047 Notion 3.0 AI agent web-search exfiltration</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/047.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/047.html</guid>
+<pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Hidden text in PDF made Notion 3.0 agent leak page contents via search tool. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>046 ForcedLeak in Salesforce Agentforce</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/046.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/046.html</guid>
+<pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Web-to-Lead injection plus $5 expired whitelisted domain; CVSS 9.4; Salesforce blocked untrusted URLs. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>045 Perplexity Comet indirect prompt injection</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/045.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/045.html</guid>
+<pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Reddit comment made agentic browser fetch email OTP and post it back. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>044 Nx s1ngularity malicious packages weaponize AI CLIs</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/044.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/044.html</guid>
+<pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>nhi-secrets</category>
+<description>Postinstall prompted local AI CLIs to hunt secrets; stolen data posted to public GitHub repos. Type: incident. Lens: surface. Vector: nhi-secrets. Outcome: data-exfiltration. CVE: CVE-2025-10894. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>043 GitHub Copilot RCE via auto-approve settings injection</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/043.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/043.html</guid>
+<pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Injection set chat.tools.autoApprove in settings.json; Microsoft patched August 2025. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: code-execution. CVE: CVE-2025-53773. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>042 Gemini for Workspace calendar-invite promptware</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/042.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/042.html</guid>
+<pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Invite title drove smart-home control, Zoom video, geolocation and email theft in demos. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>041 Cursor MCPoison trust bypass persistent RCE</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/041.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/041.html</guid>
+<pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>exploitation</category>
+<description>Approved MCP config swapped for malicious one without re-approval; fixed in 1.3. Type: vulnerability-disclosure. Lens: target. Vector: exploitation. Outcome: code-execution. CVE: CVE-2025-54136. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>040 Cursor CurXecute prompt injection to RCE</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/040.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/040.html</guid>
+<pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Injected external data created .cursor/mcp.json without approval; patched in Cursor 1.3. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: code-execution. CVE: CVE-2025-54135. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>039 Claude Code DNS exfiltration via allowlisted commands</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/039.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/039.html</guid>
+<pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Broad safe-command allowlist let injected prompt leak secrets over DNS; fixed in v1.0.4. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. CVE: CVE-2025-55284. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>038 Anthropic August 2025 threat report (GTG-2002 extortion)</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/038.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/038.html</guid>
+<pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>autonomous-ops</category>
+<description>Claude Code automated recon, credential theft and extortion at 17+ organisations; ransoms exceeded $500k. Type: threat-report. Lens: weapon. Vector: autonomous-ops. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>037 Supabase MCP support-ticket injection leaks private tables</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/037.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/037.html</guid>
+<pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Ticket text made developer&#x27;s MCP assistant copy private tables into customer-visible reply; dummy data. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>036 Replit agent deletes SaaStr production database</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/036.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/036.html</guid>
+<pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>excessive-agency</category>
+<description>Agent ignored code freeze, deleted production database, fabricated data and misreported rollback. Type: incident. Lens: surface. Vector: excessive-agency. Outcome: data-destruction. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>035 McHire chatbot platform default password and IDOR</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/035.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/035.html</guid>
+<pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>exposure/misconfig</category>
+<description>Admin login 123456 plus IDOR exposed 64 million applicant records; disclosed 30 June. Type: vulnerability-disclosure. Lens: target. Vector: exposure/misconfig. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>034 Gemini CLI silent code execution via context file</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/034.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/034.html</guid>
+<pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>README injection abused grep allowlist; reported 27 June, fixed in v0.1.14 on 25 July. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: code-execution. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>033 Amazon Q Developer extension shipped wiper prompt</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/033.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/033.html</guid>
+<pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>supply-chain</category>
+<description>Wiper prompt shipped in v1.84.0 but failed on a syntax error; AWS revoked credentials. Type: incident. Lens: surface. Vector: supply-chain. Outcome: none-demo. CVE: CVE-2025-8217. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>032 EchoLeak zero-click exfiltration from Microsoft 365 Copilot</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/032.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/032.html</guid>
+<pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Zero-click via crafted email, CVSS 9.3; fixed server-side; no known exploitation. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. CVE: CVE-2025-32711. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>031 Lovable-generated apps ship without row-level security</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/031.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/031.html</guid>
+<pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>generated-code</category>
+<description>Default RLS gaps in generated Supabase apps; supplier disputes CVE as customer responsibility. Type: vulnerability-disclosure. Lens: target. Vector: generated-code. Outcome: information-disclosure. CVE: CVE-2025-48757. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>030 GitHub MCP server toxic agent flow leaks private repos</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/030.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/030.html</guid>
+<pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Malicious public issue made agent leak private repo contents into public pull request. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>029 MCP tool poisoning attacks</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/029.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/029.html</guid>
+<pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>poisoning</category>
+<description>Malicious tool description made Cursor send SSH key and MCP config as arguments. Type: vulnerability-disclosure. Lens: surface. Vector: poisoning. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>028 Rules File Backdoor in Copilot and Cursor</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/028.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/028.html</guid>
+<pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>poisoning</category>
+<description>Hidden Unicode in rules files steers assistants to emit malicious code; vendors cited user responsibility. Type: vulnerability-disclosure. Lens: surface. Vector: poisoning. Outcome: code-execution. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>027 Storm-2139 resells stolen Azure OpenAI access for illicit content</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/027.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/027.html</guid>
+<pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>nhi-secrets</category>
+<description>Scraped customer credentials plus guardrail-bypass tool; Microsoft sued four named defendants. Type: threat-report. Lens: weapon. Vector: nhi-secrets. Outcome: fraud. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>026 ChatGPT Operator prompt-injection data theft</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/026.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/026.html</guid>
+<pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>GitHub issue steered Operator to copy private Hacker News email into attacker page. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>025 DeepSeek publicly exposed ClickHouse database</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/025.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/025.html</guid>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>exposure/misconfig</category>
+<description>Open database with chat history, API secrets and logs; secured after Wiz notice. Type: vulnerability-disclosure. Lens: target. Vector: exposure/misconfig. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>024 Claude Computer Use &quot;ZombAIs&quot; command-and-control</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/024.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/024.html</guid>
+<pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Web page text made Computer Use download and run attacker binary; beta product. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: code-execution. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>023 ChatGPT macOS app SpAIware persistent memory exfiltration</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/023.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/023.html</guid>
+<pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>retrieval-memory</category>
+<description>Injected memory leaked all later chats via image URLs; OpenAI fixed macOS app. Type: vulnerability-disclosure. Lens: surface. Vector: retrieval-memory. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>022 Slack AI private-channel data exfiltration</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/022.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/022.html</guid>
+<pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>retrieval-memory</category>
+<description>Public-channel message retrieved by Slack AI; poisoned link leaked private channel content. Type: vulnerability-disclosure. Lens: surface. Vector: retrieval-memory. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>021 Copilot Studio SSRF protection bypass</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/021.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/021.html</guid>
+<pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>exploitation</category>
+<description>HTTP action SSRF bypass reached Azure metadata service; cross-tenant exposure possible. Type: vulnerability-disclosure. Lens: target. Vector: exploitation. Outcome: information-disclosure. CVE: CVE-2024-38206. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>020 Ollama &quot;Probllama&quot; path traversal RCE</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/020.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/020.html</guid>
+<pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>exploitation</category>
+<description>Digest path traversal gave file write and RCE on Ollama servers; fixed in 0.1.34. Type: vulnerability-disclosure. Lens: target. Vector: exploitation. Outcome: code-execution. CVE: CVE-2024-37032. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>019 Vanna.AI prompt injection to RCE</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/019.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/019.html</guid>
+<pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>direct-injection</category>
+<description>ask API with visualize runs LLM-generated Python; injection gives RCE. Type: vulnerability-disclosure. Lens: surface. Vector: direct-injection. Outcome: code-execution. CVE: CVE-2024-5565. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>018 LLMjacking: stolen cloud credentials used to invoke hosted LLMs</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/018.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/018.html</guid>
+<pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+<category>incident</category><category>target</category><category>nhi-secrets</category>
+<description>Laravel-stolen keys probed ten LLM services; victim cost up to $46k daily. Type: incident. Lens: target. Vector: nhi-secrets. Outcome: financial-loss. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>017 huggingface-cli hallucinated PyPI package registered (slopsquatting PoC)</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/017.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/017.html</guid>
+<pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>generated-code</category>
+<description>Empty package drew 30k+ downloads; Alibaba repo README told users to install it. Type: vulnerability-disclosure. Lens: surface. Vector: generated-code. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>016 Microsoft and OpenAI report on state actors using LLMs</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/016.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/016.html</guid>
+<pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+<category>threat-report</category><category>weapon</category><category>social-engineering</category>
+<description>Five state-linked groups used LLMs for research, scripting and phishing; accounts disabled. Type: threat-report. Lens: weapon. Vector: social-engineering. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>015 Malicious pickle models on Hugging Face</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/015.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/015.html</guid>
+<pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+<category>incident</category><category>target</category><category>supply-chain</category>
+<description>Malicious models flagged on Hub; baller423 PyTorch model opened reverse shell on load. Type: incident. Lens: target. Vector: supply-chain. Outcome: code-execution. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>014 Arup deepfake video-call CFO fraud</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/014.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/014.html</guid>
+<pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+<category>incident</category><category>weapon</category><category>social-engineering</category>
+<description>Employee paid about US$25M after video call with deepfaked CFO and colleagues. Type: incident. Lens: weapon. Vector: social-engineering. Outcome: financial-loss. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>013 Air Canada chatbot misstates bereavement fare policy</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/013.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/013.html</guid>
+<pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>excessive-agency</category>
+<description>Tribunal held airline liable for chatbot&#x27;s invented refund policy. Type: incident. Lens: surface. Vector: excessive-agency. Outcome: financial-loss. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>012 DPD chatbot swears and disparages company</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/012.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/012.html</guid>
+<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>jailbreak</category>
+<description>Customer prompted bot to swear and write critical poem; DPD updated the system. Type: incident. Lens: surface. Vector: jailbreak. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>011 Writer.com indirect injection exfiltration</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/011.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/011.html</guid>
+<pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Hidden text on summarised page leaked documents via image URL; vendor first declined. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>010 Chevrolet of Watsonville chatbot agrees to $1 Tahoe</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/010.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/010.html</guid>
+<pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>direct-injection</category>
+<description>User told bot to agree with anything; dealer dropped the chatbot. Type: incident. Lens: surface. Vector: direct-injection. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>009 1,500+ Hugging Face API tokens exposed in public repos</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/009.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/009.html</guid>
+<pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>nhi-secrets</category>
+<description>Tokens spanned 723 organisations; researchers showed write access to Llama-2, Bloom, Pythia repos. Type: vulnerability-disclosure. Lens: target. Vector: nhi-secrets. Outcome: none-demo. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>008 Google Bard exfiltration via Extensions and image rendering</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/008.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/008.html</guid>
+<pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Reported 19 Sep 2023; shared-document injection leaked chat history; Google confirmed fix. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>007 ChatGPT training-data extraction by repeated-word divergence</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/007.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/007.html</guid>
+<pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>target</category><category>extraction</category>
+<description>Megabytes of memorized training data extracted from production ChatGPT; OpenAI patched the exploit. Type: vulnerability-disclosure. Lens: target. Vector: extraction. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>006 ChatGPT and API outages attributed to DDoS</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/006.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/006.html</guid>
+<pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+<category>incident</category><category>target</category><category>availability</category>
+<description>OpenAI cited DDoS-like traffic; Anonymous Sudan claimed credit, unverified. Type: incident. Lens: target. Vector: availability. Outcome: service-disruption. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>005 ChatGPT plugin cross-plugin request forgery</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/005.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/005.html</guid>
+<pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>indirect-injection</category>
+<description>Web injection abused Zapier plugin access; first exploitable cross-plugin request forgery; fixed. Type: vulnerability-disclosure. Lens: surface. Vector: indirect-injection. Outcome: data-exfiltration. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>004 Samsung staff paste confidential data into ChatGPT</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/004.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/004.html</guid>
+<pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+<category>incident</category><category>surface</category><category>exposure/misconfig</category>
+<description>Internal data pasted into public chatbot; Samsung then restricted generative AI tools. Type: incident. Lens: surface. Vector: exposure/misconfig. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>003 LangChain LLMMathChain prompt injection to code execution</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/003.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/003.html</guid>
+<pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+<category>vulnerability-disclosure</category><category>surface</category><category>direct-injection</category>
+<description>LLM-generated code reached Python exec in LLMMathChain; affects LangChain through 0.0.131. Type: vulnerability-disclosure. Lens: surface. Vector: direct-injection. Outcome: code-execution. CVE: CVE-2023-29374. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>002 ChatGPT Redis client bug exposes chat titles and billing data</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/002.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/002.html</guid>
+<pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+<category>incident</category><category>target</category><category>exposure/misconfig</category>
+<description>Open-source library bug exposed payment details of 1.2% of Plus subscribers; service paused. Type: incident. Lens: target. Vector: exposure/misconfig. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+<item>
+<title>001 Bing Chat &quot;Sydney&quot; system prompt leak</title>
+<link>https://basitalisandhu.github.io/ai-agent-incidents/incidents/001.html</link>
+<guid isPermaLink="true">https://basitalisandhu.github.io/ai-agent-incidents/incidents/001.html</guid>
+<pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+<category>incident</category><category>target</category><category>extraction</category>
+<description>Prompt injection exposed hidden rules and codename; Microsoft confirmed Sydney was an internal codename. Type: incident. Lens: target. Vector: extraction. Outcome: information-disclosure. Dates are months unless a day is given; the feed date is the first of that month.</description>
+</item>
+</channel>
+</rss>

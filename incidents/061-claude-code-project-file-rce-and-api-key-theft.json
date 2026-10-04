@@ -1,0 +1,49 @@
+{
+  "id": "061",
+  "date": "2026-02",
+  "name": "Claude Code project-file RCE and API key theft",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "exploitation",
+  "channel_in": "rules file",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2025-59536",
+    "CVE-2026-21852"
+  ],
+  "sources": [
+    {
+      "url": "https://blog.checkpoint.com/research/check-point-researchers-expose-critical-claude-code-flaws/"
+    }
+  ],
+  "summary": "Repo hooks and ANTHROPIC_BASE_URL ran code and leaked API keys before trust prompt.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI05"
+    ],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0081",
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude Code"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "hooks",
+    "trust-prompt",
+    "api-key-theft",
+    "coding-agent"
+  ],
+  "status": "confirmed"
+}

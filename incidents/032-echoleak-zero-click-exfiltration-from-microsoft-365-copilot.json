@@ -1,0 +1,50 @@
+{
+  "id": "032",
+  "date": "2025-06",
+  "name": "EchoLeak zero-click exfiltration from Microsoft 365 Copilot",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "email",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [
+    "CVE-2025-32711"
+  ],
+  "sources": [
+    {
+      "url": "https://thehackernews.com/2025/06/zero-click-ai-vulnerability-exposes.html"
+    }
+  ],
+  "summary": "Zero-click via crafted email, CVSS 9.3; fixed server-side; no known exploitation.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "zero-click",
+    "email",
+    "markdown-image-exfiltration"
+  ],
+  "status": "confirmed"
+}

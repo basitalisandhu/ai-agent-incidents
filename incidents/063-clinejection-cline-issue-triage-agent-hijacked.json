@@ -1,0 +1,52 @@
+{
+  "id": "063",
+  "date": "2026-02",
+  "name": "Clinejection: Cline issue-triage agent hijacked",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "repo issue/pr",
+  "authority": "shell/exec",
+  "channel_out": "file publish",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://adnanthekhan.com/posts/clinejection/"
+    }
+  ],
+  "summary": "Issue-title injection plus cache poisoning stole npm token; malicious cline@2.3.0 published 17 Feb.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI04",
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0093",
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Cline"
+    ],
+    "products": [
+      "Cline"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "github-actions",
+    "issue-title-injection",
+    "npm-token",
+    "cache-poisoning"
+  ],
+  "status": "confirmed"
+}

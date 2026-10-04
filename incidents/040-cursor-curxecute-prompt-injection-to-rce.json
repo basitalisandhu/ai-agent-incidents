@@ -1,0 +1,57 @@
+{
+  "id": "040",
+  "date": "2025-08",
+  "name": "Cursor CurXecute prompt injection to RCE",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2025-54135"
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/cursor/cursor/security/advisories/GHSA-4cxx-hrm3-49rm",
+      "title": "Arbitrary code execution from Cursor Agent through a prompt injection via MCP Special Files",
+      "publisher": "GitHub",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Injected external data created .cursor/mcp.json without approval; patched in Cursor 1.3.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0081",
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Cursor"
+    ],
+    "products": [
+      "Cursor"
+    ],
+    "frameworks": [
+      "Model Context Protocol"
+    ]
+  },
+  "tags": [
+    "rce",
+    "mcp-config",
+    "coding-agent"
+  ],
+  "status": "confirmed"
+}

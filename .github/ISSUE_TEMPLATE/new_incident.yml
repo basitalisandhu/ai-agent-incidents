@@ -1,0 +1,196 @@
+name: New incident
+description: Propose a publicly documented AI-agent or LLM-application security event for the dataset.
+title: "[incident] <short name>"
+labels: ["new-incident"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. Please read docs/codebook.md before filling this in; every value below must follow it.
+        Only events with a public primary source are accepted. Do not disclose unpublished vulnerabilities here (see SECURITY.md).
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Short descriptive title, in the vendor's or researcher's wording where one exists.
+      placeholder: "EchoLeak zero-click exfiltration from Microsoft 365 Copilot"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: Month (YYYY-MM) or day (YYYY-MM-DD) in which the event was publicly reported or confirmed; not when the attack began or was fixed.
+      placeholder: "2025-06"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Primary source URL (https)
+      description: The advisory, CVE record, write-up or article that you read to code the event. One URL.
+    validations:
+      required: true
+  - type: textarea
+    id: more_sources
+    attributes:
+      label: Further sources
+      description: Optional. One https URL per line, with a title if you like.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - incident
+        - vulnerability-disclosure
+        - threat-report
+    validations:
+      required: true
+  - type: dropdown
+    id: lens
+    attributes:
+      label: Lens (the role AI plays)
+      options:
+        - surface
+        - weapon
+        - target
+    validations:
+      required: true
+  - type: dropdown
+    id: vector
+    attributes:
+      label: Vector
+      options:
+        - indirect-injection
+        - direct-injection
+        - jailbreak
+        - extraction
+        - poisoning
+        - retrieval-memory
+        - generated-code
+        - supply-chain
+        - exploitation
+        - exposure/misconfig
+        - nhi-secrets
+        - excessive-agency
+        - social-engineering
+        - autonomous-ops
+        - availability
+    validations:
+      required: true
+  - type: dropdown
+    id: channel_in
+    attributes:
+      label: Input channel (channel_in)
+      options:
+        - chat message
+        - web page
+        - document
+        - email
+        - repo issue/pr
+        - support ticket
+        - calendar invite
+        - tool description
+        - rules file
+        - package
+        - none
+    validations:
+      required: true
+  - type: dropdown
+    id: authority
+    attributes:
+      label: Authority
+      options:
+        - none
+        - read-only
+        - send-message
+        - shell/exec
+        - database
+        - write-repo
+        - cloud-creds
+        - file-delete
+        - payments
+    validations:
+      required: true
+  - type: dropdown
+    id: channel_out
+    attributes:
+      label: Output channel (channel_out)
+      options:
+        - tool-call send
+        - image/link fetch
+        - code exec
+        - file publish
+        - data destruction
+        - financial transfer
+        - api-abuse
+        - service-disruption
+        - disclosure-only
+    validations:
+      required: true
+  - type: dropdown
+    id: adversarial
+    attributes:
+      label: Adversarial
+      description: Is an attack technique part of the event?
+      options:
+        - "yes"
+        - "no"
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome (most severe harm class realised or demonstrated)
+      options:
+        - data-exfiltration
+        - information-disclosure
+        - code-execution
+        - data-destruction
+        - financial-loss
+        - fraud
+        - service-disruption
+        - none-demo
+    validations:
+      required: true
+  - type: input
+    id: cve
+    attributes:
+      label: CVE identifiers
+      description: Semicolon-separated, or leave empty. Write "multiple" if the source reports several without listing them.
+      placeholder: "CVE-2025-32711"
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One or two sentences with the facts needed to check the coding.
+    validations:
+      required: true
+  - type: input
+    id: affected
+    attributes:
+      label: Affected vendors, products and frameworks
+      description: 'As named in the source. Example "vendors: Microsoft; products: Microsoft 365 Copilot; frameworks: none".'
+  - type: input
+    id: mappings
+    attributes:
+      label: Mappings (optional)
+      description: OWASP LLM Top 10 ids (LLM01..LLM10), OWASP Agentic Top 10 ids (ASI01..ASI10) and MITRE ATLAS technique ids, only where you are confident.
+      placeholder: "LLM01, LLM02; ASI01; AML.T0051.001, AML.T0077"
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Lowercase kebab-case keywords, comma-separated.
+      placeholder: "zero-click, email, markdown-image-exfiltration"
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The primary source is public and I have read it in full.
+          required: true
+        - label: The event is not already in the dataset (I searched the site and incidents/ by name, product and CVE).
+          required: true
+        - label: The event is not an unpublished vulnerability.
+          required: true

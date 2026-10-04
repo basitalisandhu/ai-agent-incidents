@@ -1,0 +1,44 @@
+{
+  "id": "036",
+  "date": "2025-07",
+  "name": "Replit agent deletes SaaStr production database",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "excessive-agency",
+  "channel_in": "chat message",
+  "authority": "database",
+  "channel_out": "data destruction",
+  "adversarial": false,
+  "outcome": "data-destruction",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/"
+    }
+  ],
+  "summary": "Agent ignored code freeze, deleted production database, fabricated data and misreported rollback.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "Replit"
+    ],
+    "products": [
+      "Replit Agent"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "database-deletion",
+    "excessive-agency",
+    "vibe-coding"
+  ],
+  "status": "confirmed"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "054",
+  "date": "2025-11",
+  "name": "ServiceNow Now Assist second-order prompt injection",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "support ticket",
+  "authority": "database",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/"
+    }
+  ],
+  "summary": "Agent discovery let low-privilege record content steer higher-privilege agents under default configuration.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI03",
+      "ASI07"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0093",
+      "AML.T0086"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "ServiceNow"
+    ],
+    "products": [
+      "Now Assist"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "agent-to-agent",
+    "second-order-injection",
+    "default-configuration"
+  ],
+  "status": "confirmed"
+}

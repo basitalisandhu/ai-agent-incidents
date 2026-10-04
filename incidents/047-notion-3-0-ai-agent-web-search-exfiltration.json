@@ -1,0 +1,50 @@
+{
+  "id": "047",
+  "date": "2025-09",
+  "name": "Notion 3.0 AI agent web-search exfiltration",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "document",
+  "authority": "read-only",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.codeintegrity.ai/blog/notion"
+    }
+  ],
+  "summary": "Hidden text in PDF made Notion 3.0 agent leak page contents via search tool.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0086"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Notion"
+    ],
+    "products": [
+      "Notion 3.0 AI agent"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "pdf",
+    "hidden-text",
+    "web-search-tool"
+  ],
+  "status": "confirmed"
+}

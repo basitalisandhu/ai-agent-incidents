@@ -1,0 +1,54 @@
+{
+  "id": "030",
+  "date": "2025-05",
+  "name": "GitHub MCP server toxic agent flow leaks private repos",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "repo issue/pr",
+  "authority": "write-repo",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://invariantlabs.ai/blog/mcp-github-vulnerability"
+    }
+  ],
+  "summary": "Malicious public issue made agent leak private repo contents into public pull request.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI02",
+      "ASI03"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0093",
+      "AML.T0086"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "GitHub"
+    ],
+    "products": [
+      "GitHub MCP server"
+    ],
+    "frameworks": [
+      "Model Context Protocol"
+    ]
+  },
+  "tags": [
+    "mcp",
+    "toxic-agent-flow",
+    "private-repository-leak"
+  ],
+  "status": "confirmed"
+}

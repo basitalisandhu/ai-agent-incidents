@@ -1,0 +1,43 @@
+{
+  "id": "007",
+  "date": "2023-11",
+  "name": "ChatGPT training-data extraction by repeated-word divergence",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "extraction",
+  "channel_in": "chat message",
+  "authority": "none",
+  "channel_out": "disclosure-only",
+  "adversarial": true,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html"
+    }
+  ],
+  "summary": "Megabytes of memorized training data extracted from production ChatGPT; OpenAI patched the exploit.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0057"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "training-data-extraction",
+    "memorization"
+  ],
+  "status": "confirmed"
+}

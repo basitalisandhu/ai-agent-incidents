@@ -1,0 +1,56 @@
+{
+  "id": "044",
+  "date": "2025-08",
+  "name": "Nx s1ngularity malicious packages weaponize AI CLIs",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "nhi-secrets",
+  "channel_in": "package",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [
+    "CVE-2025-10894"
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c",
+      "title": "Malicious versions of Nx and some supporting plugins were published",
+      "publisher": "GitHub",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Postinstall prompted local AI CLIs to hunt secrets; stolen data posted to public GitHub repos.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04",
+      "ASI02",
+      "ASI03"
+    ],
+    "owasp_llm": [
+      "LLM03",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0011.001",
+      "AML.T0098"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Nx"
+    ],
+    "products": [
+      "Nx"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "npm",
+    "supply-chain",
+    "credential-theft",
+    "ai-cli-abuse"
+  ],
+  "status": "confirmed"
+}

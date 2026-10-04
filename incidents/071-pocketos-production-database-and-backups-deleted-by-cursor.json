@@ -1,0 +1,47 @@
+{
+  "id": "071",
+  "date": "2026-04",
+  "name": "PocketOS production database and backups deleted by Cursor agent",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "excessive-agency",
+  "channel_in": "none",
+  "authority": "cloud-creds",
+  "channel_out": "data destruction",
+  "adversarial": false,
+  "outcome": "data-destruction",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theregister.com/software/2026/04/27/cursor-opus-agent-snuffs-out-startups-production-database/5224442"
+    }
+  ],
+  "summary": "Agent found account-scoped Railway token, ran volume delete in 9 seconds; data later restored.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI02",
+      "ASI03"
+    ],
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "PocketOS",
+      "Cursor",
+      "Railway"
+    ],
+    "products": [
+      "Cursor"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "database-deletion",
+    "scoped-token",
+    "excessive-agency"
+  ],
+  "status": "confirmed"
+}

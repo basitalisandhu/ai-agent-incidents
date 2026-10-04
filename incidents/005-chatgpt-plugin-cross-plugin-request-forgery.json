@@ -1,0 +1,51 @@
+{
+  "id": "005",
+  "date": "2023-05",
+  "name": "ChatGPT plugin cross-plugin request forgery",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "send-message",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./"
+    }
+  ],
+  "summary": "Web injection abused Zapier plugin access; first exploitable cross-plugin request forgery; fixed.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0053",
+      "AML.T0086"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI",
+      "Zapier"
+    ],
+    "products": [
+      "ChatGPT plugins"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "plugin",
+    "cross-plugin-request-forgery",
+    "indirect-prompt-injection"
+  ],
+  "status": "confirmed"
+}

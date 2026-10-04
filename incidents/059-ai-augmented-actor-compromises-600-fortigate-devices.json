@@ -1,0 +1,42 @@
+{
+  "id": "059",
+  "date": "2026-02",
+  "name": "AI-augmented actor compromises 600+ FortiGate devices",
+  "type": "threat-report",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://aws.amazon.com/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale"
+    }
+  ],
+  "summary": "Unsophisticated actor used commercial LLMs to compromise 600+ FortiGate devices via weak credentials.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Fortinet"
+    ],
+    "products": [
+      "FortiGate"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "threat-report",
+    "ai-augmented-attacker",
+    "weak-credentials"
+  ],
+  "status": "confirmed"
+}

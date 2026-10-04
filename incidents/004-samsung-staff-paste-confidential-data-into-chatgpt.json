@@ -1,0 +1,43 @@
+{
+  "id": "004",
+  "date": "2023-04",
+  "name": "Samsung staff paste confidential data into ChatGPT",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "exposure/misconfig",
+  "channel_in": "chat message",
+  "authority": "none",
+  "channel_out": "disclosure-only",
+  "adversarial": false,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://techcrunch.com/2023/05/02/samsung-bans-use-of-generative-ai-tools-like-chatgpt-after-april-internal-data-leak/"
+    }
+  ],
+  "summary": "Internal data pasted into public chatbot; Samsung then restricted generative AI tools.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "Samsung",
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "data-leak",
+    "shadow-ai",
+    "acceptable-use"
+  ],
+  "status": "confirmed"
+}

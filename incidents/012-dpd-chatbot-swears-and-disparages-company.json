@@ -1,0 +1,44 @@
+{
+  "id": "012",
+  "date": "2024-01",
+  "name": "DPD chatbot swears and disparages company",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "jailbreak",
+  "channel_in": "chat message",
+  "authority": "none",
+  "channel_out": "disclosure-only",
+  "adversarial": true,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theguardian.com/technology/2024/jan/20/dpd-ai-chatbot-swears-calls-itself-useless-and-criticises-firm"
+    }
+  ],
+  "summary": "Customer prompted bot to swear and write critical poem; DPD updated the system.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "mitre_atlas": [
+      "AML.T0054"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "DPD"
+    ],
+    "products": [
+      "DPD customer service chatbot"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "chatbot",
+    "jailbreak",
+    "reputational"
+  ],
+  "status": "confirmed"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "051",
+  "date": "2025-10",
+  "name": "OpenAI October 2025 report on malicious AI uses",
+  "type": "threat-report",
+  "lens": "weapon",
+  "vector": "social-engineering",
+  "channel_in": "chat message",
+  "authority": "none",
+  "channel_out": "disclosure-only",
+  "adversarial": true,
+  "outcome": "fraud",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://siliconangle.com/2025/10/07/openai-details-expanding-efforts-disrupt-malicious-use-ai-new-report/"
+    }
+  ],
+  "summary": "Actors bolted ChatGPT onto existing toolchains for malware, phishing and scams; accounts banned.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0052.000"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "threat-report",
+    "llm-misuse",
+    "scams"
+  ],
+  "status": "confirmed"
+}

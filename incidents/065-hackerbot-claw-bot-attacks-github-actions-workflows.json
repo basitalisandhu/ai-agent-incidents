@@ -1,0 +1,38 @@
+{
+  "id": "065",
+  "date": "2026-02",
+  "name": "hackerbot-claw bot attacks GitHub Actions workflows",
+  "type": "incident",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "repo issue/pr",
+  "authority": "write-repo",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.stepsecurity.io/blog/hackerbot-claw-github-actions-exploitation"
+    }
+  ],
+  "summary": "Claimed Claude-powered account; RCE in at least four of seven repos; Trivy releases deleted.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [],
+    "products": [
+      "GitHub Actions workflows"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "github-actions",
+    "bot-account",
+    "agentic-attacker"
+  ],
+  "status": "confirmed"
+}

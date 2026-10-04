@@ -1,0 +1,53 @@
+{
+  "id": "076",
+  "date": "2026-08",
+  "name": "CoSnitch one-click Copilot Personal exfiltration and memory poisoning",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [
+    "CVE-2026-24301"
+  ],
+  "sources": [
+    {
+      "url": "https://www.varonis.com/blog/cosnitch"
+    }
+  ],
+  "summary": "One-click autorun prompt, URL-fetch exfiltration and persistent memory poisoning; critical; patched.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI06"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0011.003",
+      "AML.T0080.000",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft"
+    ],
+    "products": [
+      "Copilot Personal"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "one-click",
+    "memory-poisoning",
+    "markdown-image-exfiltration"
+  ],
+  "status": "confirmed"
+}

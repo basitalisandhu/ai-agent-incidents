@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://basitalisandhu.github.io/ai-agent-incidents/incident.schema.json",
+  "title": "AI agent incident record",
+  "description": "One publicly documented AI-agent or LLM-application security event, coded under the codebook in docs/codebook.md. The eight coded fields (type, lens, vector, channel_in, authority, channel_out, adversarial, outcome) keep the codes of the paper 'AI as Weapon, Target, and Surface' (2026) unchanged.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "date", "name", "type", "lens", "vector", "channel_in", "authority",
+    "channel_out", "adversarial", "outcome", "cve", "sources", "summary",
+    "mappings", "affected", "tags", "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[0-9]{3,}$",
+      "description": "Zero-padded sequence number in the order of date and, within a month, of name. The paper cites event n as D-n. The file is named <id>-<slug>.json."
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?$",
+      "description": "Month (YYYY-MM) or day (YYYY-MM-DD) in which the event was publicly reported or confirmed in the sources collected; not the month the attack began or was fixed."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 200,
+      "description": "Short descriptive title, in the vendor's or researcher's wording where one exists."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["incident", "vulnerability-disclosure", "threat-report"],
+      "description": "What kind of record the event is; decided by the genre of the primary source."
+    },
+    "lens": {
+      "type": "string",
+      "enum": ["weapon", "target", "surface"],
+      "description": "The role AI plays in the event."
+    },
+    "vector": {
+      "type": "string",
+      "enum": [
+        "indirect-injection", "direct-injection", "jailbreak", "extraction", "poisoning",
+        "retrieval-memory", "generated-code", "supply-chain", "exploitation",
+        "exposure/misconfig", "nhi-secrets", "excessive-agency", "social-engineering",
+        "autonomous-ops", "availability"
+      ],
+      "description": "How the attacker content or the failure got in; one value, the main mechanism in the primary source."
+    },
+    "channel_in": {
+      "type": "string",
+      "enum": [
+        "chat message", "web page", "document", "email", "repo issue/pr", "support ticket",
+        "calendar invite", "tool description", "rules file", "package", "none"
+      ],
+      "description": "The channel through which attacker content reached the AI component; for an event without an adversary, the channel of the input that triggered the behaviour."
+    },
+    "authority": {
+      "type": "string",
+      "enum": [
+        "none", "read-only", "send-message", "shell/exec", "database", "write-repo",
+        "cloud-creds", "file-delete", "payments"
+      ],
+      "description": "The capability that the compromised or misbehaving component, or the stolen or exposed credential, gave the event."
+    },
+    "channel_out": {
+      "type": "string",
+      "enum": [
+        "tool-call send", "image/link fetch", "code exec", "file publish", "data destruction",
+        "financial transfer", "api-abuse", "service-disruption", "disclosure-only"
+      ],
+      "description": "How the effect left the system or took hold."
+    },
+    "adversarial": {
+      "type": "boolean",
+      "description": "Whether an attack technique is part of the event."
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "data-exfiltration", "information-disclosure", "code-execution", "data-destruction",
+        "financial-loss", "fraud", "service-disruption", "none-demo"
+      ],
+      "description": "The most severe harm class that the primary source reports as realised or demonstrated."
+    },
+    "cve": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(CVE-[0-9]{4}-[0-9]{4,}|multiple)$"
+      },
+      "description": "CVE identifiers assigned to the event; empty if none; the single token 'multiple' where the source reports several without listing them."
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "pattern": "^https://[^\\s]+$",
+            "description": "An https URL. The first entry is the primary source that was opened and read to code the event."
+          },
+          "title": { "type": "string", "minLength": 1 },
+          "publisher": { "type": "string", "minLength": 1 },
+          "accessed": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+            "description": "Date (YYYY-MM-DD) on which the URL was last confirmed reachable."
+          }
+        }
+      },
+      "description": "Public sources. The first is the primary source."
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1000,
+      "description": "One or two sentences with the facts needed to check the coding; not coded and not used in any analysis."
+    },
+    "mappings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owasp_agentic", "owasp_llm", "mitre_atlas"],
+      "properties": {
+        "owasp_agentic": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^ASI(0[1-9]|10)$" },
+          "description": "OWASP Top 10 for Agentic Applications (2026 edition) identifiers."
+        },
+        "owasp_llm": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^LLM(0[1-9]|10)$" },
+          "description": "OWASP Top 10 for LLM Applications (2025 edition) identifiers."
+        },
+        "mitre_atlas": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^AML\\.T[0-9]{4}(\\.[0-9]{3})?$" },
+          "description": "MITRE ATLAS technique or sub-technique identifiers."
+        }
+      },
+      "description": "Cross-references to external frameworks. Empty arrays mean no confident mapping, not that none applies."
+    },
+    "affected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vendors", "products", "frameworks"],
+      "properties": {
+        "vendors": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "products": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "frameworks": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+      },
+      "description": "Organisations, products and software frameworks involved, as named in the primary source."
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "description": "Free-form lowercase kebab-case keywords for search."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["confirmed", "reported", "disputed"],
+      "description": "confirmed: the primary source was opened and read and supports the coding. reported: the event is known only second-hand or its primary source is no longer reachable. disputed: a party named in the record contests the facts or the coding."
+    }
+  }
+}

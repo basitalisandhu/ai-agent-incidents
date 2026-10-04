@@ -1,0 +1,95 @@
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Validate records
+        run: python scripts/validate.py
+
+      - name: Build the site
+        run: python scripts/build_site.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # IndexNow tells Bing (which powers ChatGPT search, Copilot and DuckDuckGo),
+  # Yandex, Naver and Seznam that pages changed, so they recrawl within hours
+  # instead of weeks. The key lives in scripts/indexnow_key.txt and the build
+  # writes it to site/<key>.txt, which proves we own the site. Google does not
+  # use IndexNow; it reads the sitemap through Search Console.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Submit every sitemap URL to IndexNow
+        continue-on-error: true
+        env:
+          SITE_HOST: basitalisandhu.github.io
+          SITE_PATH: /ai-agent-incidents/
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, re, sys, urllib.error, urllib.request
+          host, path = os.environ["SITE_HOST"], os.environ["SITE_PATH"]
+          key = pathlib.Path("scripts/indexnow_key.txt").read_text(encoding="utf-8").strip()
+          key_file = pathlib.Path("site") / (key + ".txt")
+          if key_file.read_text(encoding="utf-8").strip() != key:
+              sys.exit("site/%s.txt is missing or stale: run python3 scripts/build_site.py" % key)
+          urls = re.findall(r"<loc>(.*?)</loc>", pathlib.Path("site/sitemap.xml").read_text(encoding="utf-8"))
+          body = json.dumps({
+              "host": host,
+              "key": key,
+              "keyLocation": "https://%s%s%s.txt" % (host, path, key),
+              "urlList": urls[:10000],
+          }).encode("utf-8")
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow", data=body, method="POST",
+              headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  print("IndexNow accepted %d URLs: HTTP %s" % (len(urls), resp.status))
+          except urllib.error.HTTPError as err:
+              print("IndexNow refused: HTTP %s %s" % (err.code, err.read().decode("utf-8", "replace")[:300]))
+              sys.exit(1)
+          PY

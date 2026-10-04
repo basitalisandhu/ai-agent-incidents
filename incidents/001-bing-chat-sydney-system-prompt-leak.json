@@ -1,0 +1,46 @@
+{
+  "id": "001",
+  "date": "2023-02",
+  "name": "Bing Chat \"Sydney\" system prompt leak",
+  "type": "incident",
+  "lens": "target",
+  "vector": "extraction",
+  "channel_in": "chat message",
+  "authority": "read-only",
+  "channel_out": "disclosure-only",
+  "adversarial": true,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theverge.com/23599441/microsoft-bing-ai-sydney-secret-rules"
+    }
+  ],
+  "summary": "Prompt injection exposed hidden rules and codename; Microsoft confirmed Sydney was an internal codename.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM01",
+      "LLM07"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.000",
+      "AML.T0056"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft"
+    ],
+    "products": [
+      "Bing Chat"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "system-prompt-leak",
+    "chatbot",
+    "direct-prompt-injection"
+  ],
+  "status": "confirmed"
+}

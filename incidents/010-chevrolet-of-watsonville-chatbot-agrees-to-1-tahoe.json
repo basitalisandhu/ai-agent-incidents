@@ -1,0 +1,44 @@
+{
+  "id": "010",
+  "date": "2023-12",
+  "name": "Chevrolet of Watsonville chatbot agrees to $1 Tahoe",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "direct-injection",
+  "channel_in": "chat message",
+  "authority": "none",
+  "channel_out": "disclosure-only",
+  "adversarial": true,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theautopian.com/chevy-dealers-ai-chatbot-allegedly-recommended-fords-gave-free-access-to-chatgpt/"
+    }
+  ],
+  "summary": "User told bot to agree with anything; dealer dropped the chatbot.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.000"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Chevrolet of Watsonville"
+    ],
+    "products": [
+      "dealership chatbot"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "chatbot",
+    "customer-service",
+    "direct-prompt-injection"
+  ],
+  "status": "confirmed"
+}

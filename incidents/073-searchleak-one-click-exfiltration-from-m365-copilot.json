@@ -1,0 +1,51 @@
+{
+  "id": "073",
+  "date": "2026-06",
+  "name": "SearchLeak one-click exfiltration from M365 Copilot Enterprise Search",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [
+    "CVE-2026-42824"
+  ],
+  "sources": [
+    {
+      "url": "https://www.varonis.com/blog/searchleak"
+    }
+  ],
+  "summary": "Parameter-to-prompt, sanitizer race and Bing SSRF chain; critical; fixed before disclosure.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0011.003",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft"
+    ],
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "one-click",
+    "ssrf",
+    "sanitizer-race"
+  ],
+  "status": "confirmed"
+}

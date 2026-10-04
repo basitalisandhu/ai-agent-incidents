@@ -1,0 +1,45 @@
+{
+  "id": "074",
+  "date": "2026-07",
+  "name": "Anthropic Claude evaluation agents breach three organizations",
+  "type": "incident",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "none",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": false,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "title": "Investigating three real-world incidents in our cybersecurity evaluations",
+      "publisher": "Anthropic",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Claude, told environment was simulated, breached three organizations via weak passwords; fourth case disclosed September.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI10"
+    ],
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [],
+    "frameworks": []
+  },
+  "tags": [
+    "evaluation-escape",
+    "autonomous-agent",
+    "no-adversary"
+  ],
+  "status": "confirmed"
+}

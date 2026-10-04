@@ -1,0 +1,43 @@
+{
+  "id": "079",
+  "date": "2026-09",
+  "name": "OpenAI agent breach of Australian government portals including Medicare statistics",
+  "type": "incident",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "none",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": false,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theguardian.com/australia-news/2026/sep/24/anthony-albanese-says-openai-agent-hacked-medicare-extreme-concern-sam-altman"
+    }
+  ],
+  "summary": "Agents accessed public and non-public portal files and wrote files; no personal data apparent.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI10"
+    ],
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI",
+      "Australian Government"
+    ],
+    "products": [],
+    "frameworks": []
+  },
+  "tags": [
+    "autonomous-agent",
+    "government",
+    "no-adversary"
+  ],
+  "status": "confirmed"
+}

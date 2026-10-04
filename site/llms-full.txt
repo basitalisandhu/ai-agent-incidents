@@ -1,0 +1,145 @@
+# AI Agent Incidents
+
+> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 80 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu) as part of Hisar, open-source trust infrastructure for AI agents.
+
+Key facts:
+
+- Size on the last build: 80 events (25 incidents, 45 vulnerability disclosures, 10 threat reports); 22 carry at least one CVE; 62 are mapped to the OWASP LLM Top 10, 51 to the OWASP Agentic Top 10 and 66 to MITRE ATLAS.
+- Lens counts: surface 47 (the AI is a conduit to another party's assets), weapon 14 (the AI is the attacker's instrument), target 19 (the AI system itself is attacked, exposed or disrupted).
+- Most common vectors: indirect-injection (27), autonomous-ops (10), exploitation (7), supply-chain (5), direct-injection (4), excessive-agency (4).
+- Licence: data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), attribution to Muhammad Basit Ali and https://github.com/basitalisandhu/ai-agent-incidents; code MIT. Commercial use is allowed with attribution.
+- Unit and sampling: one primary source's account of one event; dates are the month of the public report; a convenience sample of what was made public, so shares computed from it do not estimate population shares.
+- Coding: by the author of the paper under the codebook; every source was opened and read; the paper reports two further blind codings and their agreement. Mappings are given only where the source supports them; an empty list means no confident mapping.
+- Record fields: id, date (YYYY-MM or YYYY-MM-DD), name, type, lens, vector, channel_in, authority, channel_out, adversarial, outcome, cve, sources (url, title, publisher), summary, mappings (owasp_llm, owasp_agentic, mitre_atlas), affected (vendors, products, frameworks), tags, status.
+- Citation: Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents. Version 1.0.0, 2026. https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme is from: Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents. 2026. https://github.com/basitalisandhu/llm-agent-control-plane
+
+## Downloads
+
+- [All records as JSON](https://basitalisandhu.github.io/ai-agent-incidents/incidents.json): one array, the schema is incidents.schema.json next to it.
+- [Flat CSV](https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv): the paper's fourteen columns, one row per event.
+- [JSON Schema](https://basitalisandhu.github.io/ai-agent-incidents/incident.schema.json): JSON Schema 2020-12 for one record.
+- [Statistics](https://basitalisandhu.github.io/ai-agent-incidents/stats.json): counts by year, type, lens, vector, channel, authority, outcome, status, tag and mapping id.
+- [RSS feed](https://basitalisandhu.github.io/ai-agent-incidents/feed.xml): newest records first.
+- [Hugging Face mirror](https://huggingface.co/datasets/basitalisandhu/ai-agent-incidents): the same files, regenerated from the repository.
+
+## Documentation
+
+- [Repository and contribution rules](https://github.com/basitalisandhu/ai-agent-incidents): one JSON file and one pull request per event; public primary source required.
+- [Codebook](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/codebook.md): definitions of every coded field and value.
+- [Statistics as Markdown](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/stats.md): the same counts as stats.json.
+- [Verification log](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/verification-log.md): which source URLs were re-checked and when.
+- [CITATION.cff](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/CITATION.cff): dataset and paper citations.
+- [Frequently asked questions](https://basitalisandhu.github.io/ai-agent-incidents/#faq): is there a public dataset, how incidents are coded, commercial use, adding an incident, citing, limits.
+- [Hisar](https://basitalisandhu.github.io/hisar/): the credential broker, policy layer, Semgrep rules, threat-model CLI and review skills that use this dataset.
+- [Browse the dataset](https://basitalisandhu.github.io/ai-agent-incidents/): searchable table with one page per event at incidents/<id>.html.
+
+## Frequently asked questions
+
+### Is there a public dataset of AI agent security incidents?
+
+Yes, this one: 80 publicly documented events from 2023-02 to 2026-09 (25 incidents, 45 vulnerability disclosures, 10 threat reports), one schema-validated JSON record each, coded under a written codebook and mapped to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Download it as JSON (https://basitalisandhu.github.io/ai-agent-incidents/incidents.json) or CSV (https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv), subscribe to the RSS feed, or read the repository at https://github.com/basitalisandhu/ai-agent-incidents. The data is CC BY 4.0.
+
+### How are incidents coded?
+
+Every event is coded from a primary source that was opened and read, on eight fields defined in the codebook (https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/codebook.md): type (incident, vulnerability disclosure or threat report), lens (the role AI plays: weapon, target or surface), vector (how the attack or failure got in), channel_in, authority (what the AI component could do), channel_out (how the effect left the system), adversarial (whether an attack technique is involved) and outcome (the most severe harm realised or demonstrated). Each record also carries mappings to the OWASP LLM Top 10, the OWASP Agentic Top 10 and MITRE ATLAS, given only where the source supports them. The paper behind the seed data reports two further blind codings and their agreement.
+
+### Can I use it commercially?
+
+Yes. The data is licensed CC BY 4.0: use, copy, modify and redistribute it, including in commercial products, as long as you credit the dataset (name it and link to the repository) and say if you changed it. The build and validation code is MIT. There is no warranty, and the dataset is a convenience sample of what was made public, so no share computed from it estimates a population share.
+
+### How do I add an incident?
+
+One event is one JSON file and one pull request: copy an existing record, give it the next free id, fill every field from a public primary source, run python3 scripts/validate.py, and open the pull request. If you would rather not write JSON, use the issue form at https://github.com/basitalisandhu/ai-agent-incidents/issues/new/choose. Only events with a public primary source are accepted; this is not a place to disclose new vulnerabilities. The checklist is in CONTRIBUTING.md.
+
+### How do I cite the dataset?
+
+Use the citation in CITATION.cff (GitHub shows it under "Cite this repository"): Muhammad Basit Ali, AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents, version 1.0.0, 2026, https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme comes from the paper AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents (Ali, 2026), whose code and original data are at https://github.com/basitalisandhu/llm-agent-control-plane; cite both when you use the coding.
+
+### What can the dataset not tell you?
+
+It is a convenience sample of events that were made public, so it over-represents what vendors and researchers chose to disclose and says nothing about how common any class of event is in the population. Mappings are the maintainer's reading of each source against the published frameworks; an empty mapping list means no confident mapping, not that none applies. Dates are the month of the public report, not of the event. Each record links its primary source so every claim can be checked.
+
+## Records
+
+One line per event: id, date, name, type, lens, vector, authority, outcome, CVE if any, page URL. The page holds the summary, sources, full coding, mappings and affected products.
+
+- 001 (2023-02) Bing Chat "Sydney" system prompt leak. incident; lens target; vector extraction; authority read-only; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/001.html
+- 002 (2023-03) ChatGPT Redis client bug exposes chat titles and billing data. incident; lens target; vector exposure/misconfig; authority database; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/002.html
+- 003 (2023-04) LangChain LLMMathChain prompt injection to code execution. vulnerability-disclosure; lens surface; vector direct-injection; authority shell/exec; outcome code-execution. CVE: CVE-2023-29374. https://basitalisandhu.github.io/ai-agent-incidents/incidents/003.html
+- 004 (2023-04) Samsung staff paste confidential data into ChatGPT. incident; lens surface; vector exposure/misconfig; authority none; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/004.html
+- 005 (2023-05) ChatGPT plugin cross-plugin request forgery. vulnerability-disclosure; lens surface; vector indirect-injection; authority send-message; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/005.html
+- 006 (2023-11) ChatGPT and API outages attributed to DDoS. incident; lens target; vector availability; authority none; outcome service-disruption. https://basitalisandhu.github.io/ai-agent-incidents/incidents/006.html
+- 007 (2023-11) ChatGPT training-data extraction by repeated-word divergence. vulnerability-disclosure; lens target; vector extraction; authority none; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/007.html
+- 008 (2023-11) Google Bard exfiltration via Extensions and image rendering. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/008.html
+- 009 (2023-12) 1,500+ Hugging Face API tokens exposed in public repos. vulnerability-disclosure; lens target; vector nhi-secrets; authority write-repo; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/009.html
+- 010 (2023-12) Chevrolet of Watsonville chatbot agrees to $1 Tahoe. incident; lens surface; vector direct-injection; authority none; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/010.html
+- 011 (2023-12) Writer.com indirect injection exfiltration. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/011.html
+- 012 (2024-01) DPD chatbot swears and disparages company. incident; lens surface; vector jailbreak; authority none; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/012.html
+- 013 (2024-02) Air Canada chatbot misstates bereavement fare policy. incident; lens surface; vector excessive-agency; authority none; outcome financial-loss. https://basitalisandhu.github.io/ai-agent-incidents/incidents/013.html
+- 014 (2024-02) Arup deepfake video-call CFO fraud. incident; lens weapon; vector social-engineering; authority payments; outcome financial-loss. https://basitalisandhu.github.io/ai-agent-incidents/incidents/014.html
+- 015 (2024-02) Malicious pickle models on Hugging Face. incident; lens target; vector supply-chain; authority shell/exec; outcome code-execution. https://basitalisandhu.github.io/ai-agent-incidents/incidents/015.html
+- 016 (2024-02) Microsoft and OpenAI report on state actors using LLMs. threat-report; lens weapon; vector social-engineering; authority none; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/016.html
+- 017 (2024-03) huggingface-cli hallucinated PyPI package registered (slopsquatting PoC). vulnerability-disclosure; lens surface; vector generated-code; authority shell/exec; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/017.html
+- 018 (2024-05) LLMjacking: stolen cloud credentials used to invoke hosted LLMs. incident; lens target; vector nhi-secrets; authority cloud-creds; outcome financial-loss. https://basitalisandhu.github.io/ai-agent-incidents/incidents/018.html
+- 019 (2024-05) Vanna.AI prompt injection to RCE. vulnerability-disclosure; lens surface; vector direct-injection; authority shell/exec; outcome code-execution. CVE: CVE-2024-5565. https://basitalisandhu.github.io/ai-agent-incidents/incidents/019.html
+- 020 (2024-06) Ollama "Probllama" path traversal RCE. vulnerability-disclosure; lens target; vector exploitation; authority shell/exec; outcome code-execution. CVE: CVE-2024-37032. https://basitalisandhu.github.io/ai-agent-incidents/incidents/020.html
+- 021 (2024-08) Copilot Studio SSRF protection bypass. vulnerability-disclosure; lens target; vector exploitation; authority cloud-creds; outcome information-disclosure. CVE: CVE-2024-38206. https://basitalisandhu.github.io/ai-agent-incidents/incidents/021.html
+- 022 (2024-08) Slack AI private-channel data exfiltration. vulnerability-disclosure; lens surface; vector retrieval-memory; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/022.html
+- 023 (2024-09) ChatGPT macOS app SpAIware persistent memory exfiltration. vulnerability-disclosure; lens surface; vector retrieval-memory; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/023.html
+- 024 (2024-10) Claude Computer Use "ZombAIs" command-and-control. vulnerability-disclosure; lens surface; vector indirect-injection; authority shell/exec; outcome code-execution. https://basitalisandhu.github.io/ai-agent-incidents/incidents/024.html
+- 025 (2025-01) DeepSeek publicly exposed ClickHouse database. vulnerability-disclosure; lens target; vector exposure/misconfig; authority database; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/025.html
+- 026 (2025-02) ChatGPT Operator prompt-injection data theft. vulnerability-disclosure; lens surface; vector indirect-injection; authority send-message; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/026.html
+- 027 (2025-02) Storm-2139 resells stolen Azure OpenAI access for illicit content. threat-report; lens weapon; vector nhi-secrets; authority cloud-creds; outcome fraud. https://basitalisandhu.github.io/ai-agent-incidents/incidents/027.html
+- 028 (2025-03) Rules File Backdoor in Copilot and Cursor. vulnerability-disclosure; lens surface; vector poisoning; authority write-repo; outcome code-execution. https://basitalisandhu.github.io/ai-agent-incidents/incidents/028.html
+- 029 (2025-04) MCP tool poisoning attacks. vulnerability-disclosure; lens surface; vector poisoning; authority send-message; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/029.html
+- 030 (2025-05) GitHub MCP server toxic agent flow leaks private repos. vulnerability-disclosure; lens surface; vector indirect-injection; authority write-repo; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/030.html
+- 031 (2025-05) Lovable-generated apps ship without row-level security. vulnerability-disclosure; lens target; vector generated-code; authority database; outcome information-disclosure. CVE: CVE-2025-48757. https://basitalisandhu.github.io/ai-agent-incidents/incidents/031.html
+- 032 (2025-06) EchoLeak zero-click exfiltration from Microsoft 365 Copilot. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. CVE: CVE-2025-32711. https://basitalisandhu.github.io/ai-agent-incidents/incidents/032.html
+- 033 (2025-07) Amazon Q Developer extension shipped wiper prompt. incident; lens surface; vector supply-chain; authority shell/exec; outcome none-demo. CVE: CVE-2025-8217. https://basitalisandhu.github.io/ai-agent-incidents/incidents/033.html
+- 034 (2025-07) Gemini CLI silent code execution via context file. vulnerability-disclosure; lens surface; vector indirect-injection; authority shell/exec; outcome code-execution. https://basitalisandhu.github.io/ai-agent-incidents/incidents/034.html
+- 035 (2025-07) McHire chatbot platform default password and IDOR. vulnerability-disclosure; lens target; vector exposure/misconfig; authority database; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/035.html
+- 036 (2025-07) Replit agent deletes SaaStr production database. incident; lens surface; vector excessive-agency; authority database; outcome data-destruction. https://basitalisandhu.github.io/ai-agent-incidents/incidents/036.html
+- 037 (2025-07) Supabase MCP support-ticket injection leaks private tables. vulnerability-disclosure; lens surface; vector indirect-injection; authority database; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/037.html
+- 038 (2025-08) Anthropic August 2025 threat report (GTG-2002 extortion). threat-report; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/038.html
+- 039 (2025-08) Claude Code DNS exfiltration via allowlisted commands. vulnerability-disclosure; lens surface; vector indirect-injection; authority shell/exec; outcome data-exfiltration. CVE: CVE-2025-55284. https://basitalisandhu.github.io/ai-agent-incidents/incidents/039.html
+- 040 (2025-08) Cursor CurXecute prompt injection to RCE. vulnerability-disclosure; lens surface; vector indirect-injection; authority shell/exec; outcome code-execution. CVE: CVE-2025-54135. https://basitalisandhu.github.io/ai-agent-incidents/incidents/040.html
+- 041 (2025-08) Cursor MCPoison trust bypass persistent RCE. vulnerability-disclosure; lens target; vector exploitation; authority shell/exec; outcome code-execution. CVE: CVE-2025-54136. https://basitalisandhu.github.io/ai-agent-incidents/incidents/041.html
+- 042 (2025-08) Gemini for Workspace calendar-invite promptware. vulnerability-disclosure; lens surface; vector indirect-injection; authority send-message; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/042.html
+- 043 (2025-08) GitHub Copilot RCE via auto-approve settings injection. vulnerability-disclosure; lens surface; vector indirect-injection; authority shell/exec; outcome code-execution. CVE: CVE-2025-53773. https://basitalisandhu.github.io/ai-agent-incidents/incidents/043.html
+- 044 (2025-08) Nx s1ngularity malicious packages weaponize AI CLIs. incident; lens surface; vector nhi-secrets; authority shell/exec; outcome data-exfiltration. CVE: CVE-2025-10894. https://basitalisandhu.github.io/ai-agent-incidents/incidents/044.html
+- 045 (2025-08) Perplexity Comet indirect prompt injection. vulnerability-disclosure; lens surface; vector indirect-injection; authority send-message; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/045.html
+- 046 (2025-09) ForcedLeak in Salesforce Agentforce. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/046.html
+- 047 (2025-09) Notion 3.0 AI agent web-search exfiltration. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/047.html
+- 048 (2025-09) ShadowLeak zero-click Gmail exfiltration from ChatGPT Deep Research. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/048.html
+- 049 (2025-09) postmark-mcp: first malicious MCP server in the wild. incident; lens surface; vector supply-chain; authority send-message; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/049.html
+- 050 (2025-10) CamoLeak: GitHub Copilot Chat private-code exfiltration. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/050.html
+- 051 (2025-10) OpenAI October 2025 report on malicious AI uses. threat-report; lens weapon; vector social-engineering; authority none; outcome fraud. https://basitalisandhu.github.io/ai-agent-incidents/incidents/051.html
+- 052 (2025-11) Anthropic GTG-1002 AI-orchestrated espionage campaign. threat-report; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/052.html
+- 053 (2025-11) GTIG report: just-in-time AI malware (PROMPTSTEAL, PROMPTFLUX). threat-report; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/053.html
+- 054 (2025-11) ServiceNow Now Assist second-order prompt injection. vulnerability-disclosure; lens surface; vector indirect-injection; authority database; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/054.html
+- 055 (2025-12) Google Antigravity agent deletes user's D: drive. incident; lens surface; vector excessive-agency; authority file-delete; outcome data-destruction. https://basitalisandhu.github.io/ai-agent-incidents/incidents/055.html
+- 056 (2025-12) IDEsaster: 30+ flaws across AI IDEs. vulnerability-disclosure; lens surface; vector indirect-injection; authority shell/exec; outcome code-execution. CVE: multiple. https://basitalisandhu.github.io/ai-agent-incidents/incidents/056.html
+- 057 (2026-01) Anthropic Git MCP server flaws chained to code execution. vulnerability-disclosure; lens surface; vector indirect-injection; authority shell/exec; outcome code-execution. CVE: CVE-2025-68143; CVE-2025-68144; CVE-2025-68145. https://basitalisandhu.github.io/ai-agent-incidents/incidents/057.html
+- 058 (2026-01) Reprompt one-click data theft from Copilot Personal. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/058.html
+- 059 (2026-02) AI-augmented actor compromises 600+ FortiGate devices. threat-report; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/059.html
+- 060 (2026-02) Anthropic report on distillation attacks (DeepSeek, Moonshot, MiniMax). threat-report; lens target; vector extraction; authority none; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/060.html
+- 061 (2026-02) Claude Code project-file RCE and API key theft. vulnerability-disclosure; lens target; vector exploitation; authority shell/exec; outcome code-execution. CVE: CVE-2025-59536; CVE-2026-21852. https://basitalisandhu.github.io/ai-agent-incidents/incidents/061.html
+- 062 (2026-02) ClawHavoc: 341 malicious OpenClaw skills on ClawHub. incident; lens target; vector supply-chain; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/062.html
+- 063 (2026-02) Clinejection: Cline issue-triage agent hijacked. incident; lens surface; vector indirect-injection; authority shell/exec; outcome code-execution. https://basitalisandhu.github.io/ai-agent-incidents/incidents/063.html
+- 064 (2026-02) OpenClaw one-click RCE via gatewayUrl token exfiltration. vulnerability-disclosure; lens target; vector exploitation; authority shell/exec; outcome code-execution. CVE: CVE-2026-25253. https://basitalisandhu.github.io/ai-agent-incidents/incidents/064.html
+- 065 (2026-02) hackerbot-claw bot attacks GitHub Actions workflows. incident; lens weapon; vector autonomous-ops; authority write-repo; outcome code-execution. https://basitalisandhu.github.io/ai-agent-incidents/incidents/065.html
+- 066 (2026-02) react-codeshift hallucinated npm package spreads via agent skills. vulnerability-disclosure; lens surface; vector generated-code; authority shell/exec; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/066.html
+- 067 (2026-03) CrewAI Code Interpreter sandbox escape and SSRF CVEs. vulnerability-disclosure; lens surface; vector indirect-injection; authority shell/exec; outcome code-execution. CVE: CVE-2026-2275; CVE-2026-2285; CVE-2026-2286; CVE-2026-2287. https://basitalisandhu.github.io/ai-agent-incidents/incidents/067.html
+- 068 (2026-03) Langflow CVE-2026-33017 exploited within 20 hours. incident; lens target; vector exploitation; authority shell/exec; outcome data-exfiltration. CVE: CVE-2026-33017. https://basitalisandhu.github.io/ai-agent-incidents/incidents/068.html
+- 069 (2026-03) LiteLLM PyPI releases backdoored (TeamPCP). incident; lens target; vector supply-chain; authority cloud-creds; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/069.html
+- 070 (2026-03) Web-based indirect prompt injection observed in the wild (Unit 42). threat-report; lens surface; vector indirect-injection; authority read-only; outcome fraud. https://basitalisandhu.github.io/ai-agent-incidents/incidents/070.html
+- 071 (2026-04) PocketOS production database and backups deleted by Cursor agent. incident; lens surface; vector excessive-agency; authority cloud-creds; outcome data-destruction. https://basitalisandhu.github.io/ai-agent-incidents/incidents/071.html
+- 072 (2026-05) Semantic Kernel prompt injection to RCE. vulnerability-disclosure; lens surface; vector direct-injection; authority shell/exec; outcome code-execution. CVE: CVE-2026-26030; CVE-2026-25592. https://basitalisandhu.github.io/ai-agent-incidents/incidents/072.html
+- 073 (2026-06) SearchLeak one-click exfiltration from M365 Copilot Enterprise Search. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. CVE: CVE-2026-42824. https://basitalisandhu.github.io/ai-agent-incidents/incidents/073.html
+- 074 (2026-07) Anthropic Claude evaluation agents breach three organizations. incident; lens weapon; vector autonomous-ops; authority shell/exec; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/074.html
+- 075 (2026-07) OpenAI evaluation agents breach Hugging Face. incident; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/075.html
+- 076 (2026-08) CoSnitch one-click Copilot Personal exfiltration and memory poisoning. vulnerability-disclosure; lens surface; vector indirect-injection; authority read-only; outcome data-exfiltration. CVE: CVE-2026-24301. https://basitalisandhu.github.io/ai-agent-incidents/incidents/076.html
+- 077 (2026-08) Default GitHub Actions of Claude Code, Gemini CLI and Codex exploitable by issue. vulnerability-disclosure; lens surface; vector exploitation; authority shell/exec; outcome code-execution. CVE: CVE-2026-12537; CVE-2026-54316. https://basitalisandhu.github.io/ai-agent-incidents/incidents/077.html
+- 078 (2026-09) Anthropic September 2026 threat report. threat-report; lens weapon; vector autonomous-ops; authority shell/exec; outcome data-exfiltration. https://basitalisandhu.github.io/ai-agent-incidents/incidents/078.html
+- 079 (2026-09) OpenAI agent breach of Australian government portals including Medicare statistics. incident; lens weapon; vector autonomous-ops; authority shell/exec; outcome information-disclosure. https://basitalisandhu.github.io/ai-agent-incidents/incidents/079.html
+- 080 (2026-09) OpenAI agents upload malicious packages to RubyGems. incident; lens weapon; vector autonomous-ops; authority shell/exec; outcome none-demo. https://basitalisandhu.github.io/ai-agent-incidents/incidents/080.html

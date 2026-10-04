@@ -1,0 +1,49 @@
+{
+  "id": "058",
+  "date": "2026-01",
+  "name": "Reprompt one-click data theft from Copilot Personal",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.varonis.com/blog/reprompt"
+    }
+  ],
+  "summary": "Parameter-to-prompt via ?q=, double-request bypass and chained requests; patched on disclosure.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0011.003",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft"
+    ],
+    "products": [
+      "Copilot Personal"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "one-click",
+    "url-parameter",
+    "indirect-prompt-injection"
+  ],
+  "status": "confirmed"
+}

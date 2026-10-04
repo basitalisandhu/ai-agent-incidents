@@ -1,0 +1,56 @@
+{
+  "id": "072",
+  "date": "2026-05",
+  "name": "Semantic Kernel prompt injection to RCE",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "direct-injection",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2026-26030",
+    "CVE-2026-25592"
+  ],
+  "sources": [
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+      "title": "When prompts become shells: RCE vulnerabilities in AI agent frameworks",
+      "publisher": "Microsoft Security Blog",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Vector-store filter eval and file-write tool turned a prompt into host RCE; both fixed.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM05"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.000",
+      "AML.T0050"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft"
+    ],
+    "products": [
+      "Semantic Kernel"
+    ],
+    "frameworks": [
+      "Semantic Kernel"
+    ]
+  },
+  "tags": [
+    "rce",
+    "vector-store-filter",
+    "file-write-tool"
+  ],
+  "status": "confirmed"
+}

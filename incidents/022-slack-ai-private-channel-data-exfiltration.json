@@ -1,0 +1,50 @@
+{
+  "id": "022",
+  "date": "2024-08",
+  "name": "Slack AI private-channel data exfiltration",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "retrieval-memory",
+  "channel_in": "chat message",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://promptarmor.substack.com/p/data-exfiltration-from-slack-ai-via"
+    }
+  ],
+  "summary": "Public-channel message retrieved by Slack AI; poisoned link leaked private channel content.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI06"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02",
+      "LLM08"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0070",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Salesforce"
+    ],
+    "products": [
+      "Slack AI"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "rag",
+    "markdown-link-exfiltration",
+    "indirect-prompt-injection"
+  ],
+  "status": "confirmed"
+}

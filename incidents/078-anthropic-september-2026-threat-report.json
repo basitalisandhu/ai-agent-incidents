@@ -1,0 +1,44 @@
+{
+  "id": "078",
+  "date": "2026-09",
+  "name": "Anthropic September 2026 threat report",
+  "type": "threat-report",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "title": "Detecting and countering misuse of AI: September 2026",
+      "publisher": "Anthropic",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Covers December 2025 to August 2026; Claude used as orchestrator across cyber kill chain.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude Code"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "threat-report",
+    "agentic-cyber-operations"
+  ],
+  "status": "confirmed"
+}

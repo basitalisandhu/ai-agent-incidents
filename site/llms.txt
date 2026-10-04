@@ -1,0 +1,38 @@
+# AI Agent Incidents
+
+> Open, structured dataset of publicly documented security incidents, vulnerability disclosures and threat reports involving LLM applications and AI agents: 80 events from 2023-02 to 2026-09, one schema-validated JSON record per event, coded under a written codebook by the role AI plays (weapon, target or surface), vector, input channel, authority held, output channel, whether an attack technique is involved, and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS. Data CC BY 4.0, code MIT. Maintained by Muhammad Basit Ali (GitHub: basitalisandhu) as part of Hisar, open-source trust infrastructure for AI agents.
+
+Key facts:
+
+- Size on the last build: 80 events (25 incidents, 45 vulnerability disclosures, 10 threat reports); 22 carry at least one CVE; 62 are mapped to the OWASP LLM Top 10, 51 to the OWASP Agentic Top 10 and 66 to MITRE ATLAS.
+- Lens counts: surface 47 (the AI is a conduit to another party's assets), weapon 14 (the AI is the attacker's instrument), target 19 (the AI system itself is attacked, exposed or disrupted).
+- Most common vectors: indirect-injection (27), autonomous-ops (10), exploitation (7), supply-chain (5), direct-injection (4), excessive-agency (4).
+- Licence: data CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), attribution to Muhammad Basit Ali and https://github.com/basitalisandhu/ai-agent-incidents; code MIT. Commercial use is allowed with attribution.
+- Unit and sampling: one primary source's account of one event; dates are the month of the public report; a convenience sample of what was made public, so shares computed from it do not estimate population shares.
+- Coding: by the author of the paper under the codebook; every source was opened and read; the paper reports two further blind codings and their agreement. Mappings are given only where the source supports them; an empty list means no confident mapping.
+- Record fields: id, date (YYYY-MM or YYYY-MM-DD), name, type, lens, vector, channel_in, authority, channel_out, adversarial, outcome, cve, sources (url, title, publisher), summary, mappings (owasp_llm, owasp_agentic, mitre_atlas), affected (vendors, products, frameworks), tags, status.
+- Citation: Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents. Version 1.0.0, 2026. https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme is from: Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents. 2026. https://github.com/basitalisandhu/llm-agent-control-plane
+
+## Downloads
+
+- [All records as JSON](https://basitalisandhu.github.io/ai-agent-incidents/incidents.json): one array, the schema is incidents.schema.json next to it.
+- [Flat CSV](https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv): the paper's fourteen columns, one row per event.
+- [JSON Schema](https://basitalisandhu.github.io/ai-agent-incidents/incident.schema.json): JSON Schema 2020-12 for one record.
+- [Statistics](https://basitalisandhu.github.io/ai-agent-incidents/stats.json): counts by year, type, lens, vector, channel, authority, outcome, status, tag and mapping id.
+- [RSS feed](https://basitalisandhu.github.io/ai-agent-incidents/feed.xml): newest records first.
+- [Hugging Face mirror](https://huggingface.co/datasets/basitalisandhu/ai-agent-incidents): the same files, regenerated from the repository.
+
+## Documentation
+
+- [Repository and contribution rules](https://github.com/basitalisandhu/ai-agent-incidents): one JSON file and one pull request per event; public primary source required.
+- [Codebook](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/codebook.md): definitions of every coded field and value.
+- [Statistics as Markdown](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/stats.md): the same counts as stats.json.
+- [Verification log](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/docs/verification-log.md): which source URLs were re-checked and when.
+- [CITATION.cff](https://github.com/basitalisandhu/ai-agent-incidents/blob/main/CITATION.cff): dataset and paper citations.
+- [Frequently asked questions](https://basitalisandhu.github.io/ai-agent-incidents/#faq): is there a public dataset, how incidents are coded, commercial use, adding an incident, citing, limits.
+- [Hisar](https://basitalisandhu.github.io/hisar/): the credential broker, policy layer, Semgrep rules, threat-model CLI and review skills that use this dataset.
+- [Browse the dataset](https://basitalisandhu.github.io/ai-agent-incidents/): searchable table with one page per event at incidents/<id>.html.
+
+## Optional
+
+- [Every record, one line each](https://basitalisandhu.github.io/ai-agent-incidents/llms-full.txt): id, date, name, type, lens, vector, outcome and URL.

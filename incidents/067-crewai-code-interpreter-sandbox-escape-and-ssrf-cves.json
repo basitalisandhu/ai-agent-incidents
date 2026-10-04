@@ -1,0 +1,57 @@
+{
+  "id": "067",
+  "date": "2026-03",
+  "name": "CrewAI Code Interpreter sandbox escape and SSRF CVEs",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2026-2275",
+    "CVE-2026-2285",
+    "CVE-2026-2286",
+    "CVE-2026-2287"
+  ],
+  "sources": [
+    {
+      "url": "https://www.kb.cert.org/vuls/id/221883"
+    }
+  ],
+  "summary": "Direct or indirect injection reaches Code Interpreter SandboxPython fallback; RCE, file read, SSRF.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM05",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0050",
+      "AML.T0105"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "CrewAI"
+    ],
+    "products": [
+      "CrewAI"
+    ],
+    "frameworks": [
+      "CrewAI"
+    ]
+  },
+  "tags": [
+    "code-interpreter",
+    "sandbox-escape",
+    "ssrf"
+  ],
+  "status": "confirmed"
+}

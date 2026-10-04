@@ -1,0 +1,48 @@
+{
+  "id": "050",
+  "date": "2025-10",
+  "name": "CamoLeak: GitHub Copilot Chat private-code exfiltration",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "repo issue/pr",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.legitsecurity.com/blog/camoleak-critical-github-copilot-vulnerability-leaks-private-source-code"
+    }
+  ],
+  "summary": "Hidden PR comment plus Camo image proxy leaked secrets; GitHub disabled image rendering.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "GitHub"
+    ],
+    "products": [
+      "GitHub Copilot Chat"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "camo-proxy",
+    "hidden-comment",
+    "markdown-image-exfiltration"
+  ],
+  "status": "confirmed"
+}

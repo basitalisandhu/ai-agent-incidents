@@ -1,0 +1,43 @@
+{
+  "id": "070",
+  "date": "2026-03",
+  "name": "Web-based indirect prompt injection observed in the wild (Unit 42)",
+  "type": "threat-report",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "read-only",
+  "channel_out": "disclosure-only",
+  "adversarial": true,
+  "outcome": "fraud",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/"
+    }
+  ],
+  "summary": "Web-hosted injections seen in telemetry: ad-review evasion, SEO phishing, destructive and transaction commands.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001"
+    ]
+  },
+  "affected": {
+    "vendors": [],
+    "products": [],
+    "frameworks": []
+  },
+  "tags": [
+    "threat-report",
+    "in-the-wild",
+    "seo-phishing",
+    "indirect-prompt-injection"
+  ],
+  "status": "confirmed"
+}

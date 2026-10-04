@@ -1,0 +1,48 @@
+{
+  "id": "017",
+  "date": "2024-03",
+  "name": "huggingface-cli hallucinated PyPI package registered (slopsquatting PoC)",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "generated-code",
+  "channel_in": "package",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.lasso.security/blog/ai-package-hallucinations"
+    }
+  ],
+  "summary": "Empty package drew 30k+ downloads; Alibaba repo README told users to install it.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04"
+    ],
+    "owasp_llm": [
+      "LLM03",
+      "LLM09"
+    ],
+    "mitre_atlas": [
+      "AML.T0062",
+      "AML.T0060"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "PyPI"
+    ],
+    "products": [
+      "huggingface-cli (hallucinated PyPI package)"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "slopsquatting",
+    "package-hallucination",
+    "pypi"
+  ],
+  "status": "confirmed"
+}

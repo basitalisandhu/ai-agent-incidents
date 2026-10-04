@@ -1,0 +1,49 @@
+{
+  "id": "008",
+  "date": "2023-11",
+  "name": "Google Bard exfiltration via Extensions and image rendering",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "document",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://embracethered.com/blog/posts/2023/google-bard-data-exfiltration/"
+    }
+  ],
+  "summary": "Reported 19 Sep 2023; shared-document injection leaked chat history; Google confirmed fix.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Google"
+    ],
+    "products": [
+      "Bard",
+      "Bard Extensions"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "markdown-image-exfiltration",
+    "shared-document",
+    "indirect-prompt-injection"
+  ],
+  "status": "confirmed"
+}

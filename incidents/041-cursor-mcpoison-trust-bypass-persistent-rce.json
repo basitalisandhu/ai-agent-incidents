@@ -1,0 +1,48 @@
+{
+  "id": "041",
+  "date": "2025-08",
+  "name": "Cursor MCPoison trust bypass persistent RCE",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "exploitation",
+  "channel_in": "repo issue/pr",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2025-54136"
+  ],
+  "sources": [
+    {
+      "url": "https://research.checkpoint.com/2025/cursor-vulnerability-mcpoison/"
+    }
+  ],
+  "summary": "Approved MCP config swapped for malicious one without re-approval; fixed in 1.3.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI05"
+    ],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0081"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Cursor"
+    ],
+    "products": [
+      "Cursor"
+    ],
+    "frameworks": [
+      "Model Context Protocol"
+    ]
+  },
+  "tags": [
+    "trust-bypass",
+    "mcp-config",
+    "persistence"
+  ],
+  "status": "confirmed"
+}

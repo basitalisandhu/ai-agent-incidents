@@ -1,0 +1,50 @@
+{
+  "id": "028",
+  "date": "2025-03",
+  "name": "Rules File Backdoor in Copilot and Cursor",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "poisoning",
+  "channel_in": "rules file",
+  "authority": "write-repo",
+  "channel_out": "file publish",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.pillar.security/blog/new-vulnerability-in-github-copilot-and-cursor-how-hackers-can-weaponize-code-agents"
+    }
+  ],
+  "summary": "Hidden Unicode in rules files steers assistants to emit malicious code; vendors cited user responsibility.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI06",
+      "ASI04"
+    ],
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0081"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "GitHub",
+      "Cursor"
+    ],
+    "products": [
+      "GitHub Copilot",
+      "Cursor"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "rules-file",
+    "hidden-unicode",
+    "coding-assistant"
+  ],
+  "status": "confirmed"
+}

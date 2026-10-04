@@ -1,0 +1,49 @@
+{
+  "id": "026",
+  "date": "2025-02",
+  "name": "ChatGPT Operator prompt-injection data theft",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "repo issue/pr",
+  "authority": "send-message",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://embracethered.com/blog/posts/2025/chatgpt-operator-prompt-injection-exploits/"
+    }
+  ],
+  "summary": "GitHub issue steered Operator to copy private Hacker News email into attacker page.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0086"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI"
+    ],
+    "products": [
+      "Operator"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "browser-agent",
+    "indirect-prompt-injection"
+  ],
+  "status": "confirmed"
+}

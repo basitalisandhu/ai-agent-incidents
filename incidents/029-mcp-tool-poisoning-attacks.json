@@ -1,0 +1,51 @@
+{
+  "id": "029",
+  "date": "2025-04",
+  "name": "MCP tool poisoning attacks",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "poisoning",
+  "channel_in": "tool description",
+  "authority": "send-message",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks"
+    }
+  ],
+  "summary": "Malicious tool description made Cursor send SSH key and MCP config as arguments.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04",
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM03"
+    ],
+    "mitre_atlas": [
+      "AML.T0110",
+      "AML.T0051.001",
+      "AML.T0086"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Cursor"
+    ],
+    "products": [
+      "Cursor"
+    ],
+    "frameworks": [
+      "Model Context Protocol"
+    ]
+  },
+  "tags": [
+    "mcp",
+    "tool-poisoning"
+  ],
+  "status": "confirmed"
+}

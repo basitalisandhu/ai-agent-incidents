@@ -1,0 +1,44 @@
+{
+  "id": "002",
+  "date": "2023-03",
+  "name": "ChatGPT Redis client bug exposes chat titles and billing data",
+  "type": "incident",
+  "lens": "target",
+  "vector": "exposure/misconfig",
+  "channel_in": "none",
+  "authority": "database",
+  "channel_out": "disclosure-only",
+  "adversarial": false,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://openai.com/index/march-20-chatgpt-outage/"
+    }
+  ],
+  "summary": "Open-source library bug exposed payment details of 1.2% of Plus subscribers; service paused.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT"
+    ],
+    "frameworks": [
+      "redis-py"
+    ]
+  },
+  "tags": [
+    "data-exposure",
+    "library-bug",
+    "outage"
+  ],
+  "status": "confirmed"
+}

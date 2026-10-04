@@ -1,0 +1,51 @@
+{
+  "id": "024",
+  "date": "2024-10",
+  "name": "Claude Computer Use \"ZombAIs\" command-and-control",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://embracethered.com/blog/posts/2024/claude-computer-use-c2-the-zombais-are-coming/"
+    }
+  ],
+  "summary": "Web page text made Computer Use download and run attacker binary; beta product.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM06"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0100",
+      "AML.T0050",
+      "AML.T0108"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [
+      "Computer Use (beta)"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "computer-use-agent",
+    "command-and-control",
+    "malware-download"
+  ],
+  "status": "confirmed"
+}

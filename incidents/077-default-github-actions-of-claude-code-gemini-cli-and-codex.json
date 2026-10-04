@@ -1,0 +1,47 @@
+{
+  "id": "077",
+  "date": "2026-08",
+  "name": "Default GitHub Actions of Claude Code, Gemini CLI and Codex exploitable by issue",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "exploitation",
+  "channel_in": "repo issue/pr",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2026-12537",
+    "CVE-2026-54316"
+  ],
+  "sources": [
+    {
+      "url": "https://thehackernews.com/2026/08/claude-code-and-gemini-cli-flaws-let.html"
+    }
+  ],
+  "summary": "Unprivileged issue reached CI in Anthropic, Google, OpenAI agent repos; Gemini CLI CVSS 10.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic",
+      "Google",
+      "OpenAI"
+    ],
+    "products": [
+      "Claude Code",
+      "Gemini CLI",
+      "Codex"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "github-actions",
+    "ci-permissions",
+    "pwn-request"
+  ],
+  "status": "confirmed"
+}

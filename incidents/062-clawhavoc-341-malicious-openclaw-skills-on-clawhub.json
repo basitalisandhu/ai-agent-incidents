@@ -1,0 +1,48 @@
+{
+  "id": "062",
+  "date": "2026-02",
+  "name": "ClawHavoc: 341 malicious OpenClaw skills on ClawHub",
+  "type": "incident",
+  "lens": "target",
+  "vector": "supply-chain",
+  "channel_in": "package",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html"
+    }
+  ],
+  "summary": "Koi audit of 2,857 skills found 341 malicious; fake prerequisites installed Atomic Stealer.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04"
+    ],
+    "owasp_llm": [
+      "LLM03"
+    ],
+    "mitre_atlas": [
+      "AML.T0010.005",
+      "AML.T0104",
+      "AML.T0011.002"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenClaw"
+    ],
+    "products": [
+      "ClawHub"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "agent-skills",
+    "marketplace",
+    "infostealer"
+  ],
+  "status": "confirmed"
+}

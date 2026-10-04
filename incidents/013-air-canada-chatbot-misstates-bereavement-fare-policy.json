@@ -1,0 +1,42 @@
+{
+  "id": "013",
+  "date": "2024-02",
+  "name": "Air Canada chatbot misstates bereavement fare policy",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "excessive-agency",
+  "channel_in": "chat message",
+  "authority": "none",
+  "channel_out": "disclosure-only",
+  "adversarial": false,
+  "outcome": "financial-loss",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theguardian.com/world/2024/feb/16/air-canada-chatbot-lawsuit"
+    }
+  ],
+  "summary": "Tribunal held airline liable for chatbot's invented refund policy.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "Air Canada"
+    ],
+    "products": [
+      "Air Canada chatbot"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "hallucination",
+    "liability",
+    "tribunal-ruling"
+  ],
+  "status": "confirmed"
+}

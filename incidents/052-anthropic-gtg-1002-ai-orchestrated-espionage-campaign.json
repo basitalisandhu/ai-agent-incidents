@@ -1,0 +1,49 @@
+{
+  "id": "052",
+  "date": "2025-11",
+  "name": "Anthropic GTG-1002 AI-orchestrated espionage campaign",
+  "type": "threat-report",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.anthropic.com/news/disrupting-AI-espionage",
+      "title": "Disrupting the first reported AI-orchestrated cyber espionage campaign",
+      "publisher": "Anthropic",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Jailbroken Claude Code plus MCP tools ran 80-90% of intrusions against about 30 targets.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0016.002",
+      "AML.T0054"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude Code"
+    ],
+    "frameworks": [
+      "Model Context Protocol"
+    ]
+  },
+  "tags": [
+    "threat-report",
+    "espionage",
+    "state-actor",
+    "agentic-cyber-operations"
+  ],
+  "status": "confirmed"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "011",
+  "date": "2023-12",
+  "name": "Writer.com indirect injection exfiltration",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "web page",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://promptarmor.substack.com/p/data-exfiltration-from-writercom"
+    }
+  ],
+  "summary": "Hidden text on summarised page leaked documents via image URL; vendor first declined.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Writer"
+    ],
+    "products": [
+      "Writer.com"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "markdown-image-exfiltration",
+    "indirect-prompt-injection"
+  ],
+  "status": "confirmed"
+}

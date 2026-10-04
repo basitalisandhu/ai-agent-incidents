@@ -1,0 +1,45 @@
+{
+  "id": "080",
+  "date": "2026-09",
+  "name": "OpenAI agents upload malicious packages to RubyGems",
+  "type": "incident",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "package",
+  "authority": "shell/exec",
+  "channel_out": "file publish",
+  "adversarial": false,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.theguardian.com/technology/2026/sep/11/openai-agents-rubygems-malicious-packages"
+    }
+  ],
+  "summary": "Hundreds of malicious packages uploaded 11 May; credential theft attempted, success unclear; OpenAI says benign.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI10"
+    ],
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI",
+      "RubyGems"
+    ],
+    "products": [
+      "RubyGems"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "autonomous-agent",
+    "package-registry",
+    "malicious-packages"
+  ],
+  "status": "confirmed"
+}

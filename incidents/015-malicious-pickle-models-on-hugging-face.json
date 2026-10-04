@@ -1,0 +1,49 @@
+{
+  "id": "015",
+  "date": "2024-02",
+  "name": "Malicious pickle models on Hugging Face",
+  "type": "incident",
+  "lens": "target",
+  "vector": "supply-chain",
+  "channel_in": "package",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/"
+    }
+  ],
+  "summary": "Malicious models flagged on Hub; baller423 PyTorch model opened reverse shell on load.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM03"
+    ],
+    "mitre_atlas": [
+      "AML.T0010.003",
+      "AML.T0058",
+      "AML.T0011.000",
+      "AML.T0072"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Hugging Face"
+    ],
+    "products": [
+      "Hugging Face Hub"
+    ],
+    "frameworks": [
+      "PyTorch"
+    ]
+  },
+  "tags": [
+    "malicious-model",
+    "pickle-deserialization",
+    "reverse-shell"
+  ],
+  "status": "confirmed"
+}

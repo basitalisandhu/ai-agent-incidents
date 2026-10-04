@@ -1,0 +1,48 @@
+{
+  "id": "066",
+  "date": "2026-02",
+  "name": "react-codeshift hallucinated npm package spreads via agent skills",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "generated-code",
+  "channel_in": "package",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": false,
+  "outcome": "none-demo",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.aikido.dev/blog/slopsquatting-ai-package-hallucination-attacks"
+    }
+  ],
+  "summary": "Hallucinated npm name spread through agent skills to 237 repos; researcher claimed it.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04"
+    ],
+    "owasp_llm": [
+      "LLM03",
+      "LLM09"
+    ],
+    "mitre_atlas": [
+      "AML.T0062",
+      "AML.T0060"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "npm"
+    ],
+    "products": [
+      "react-codeshift (hallucinated npm package)"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "slopsquatting",
+    "npm",
+    "agent-skills"
+  ],
+  "status": "confirmed"
+}

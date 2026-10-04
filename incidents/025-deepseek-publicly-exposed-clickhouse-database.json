@@ -1,0 +1,43 @@
+{
+  "id": "025",
+  "date": "2025-01",
+  "name": "DeepSeek publicly exposed ClickHouse database",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "exposure/misconfig",
+  "channel_in": "none",
+  "authority": "database",
+  "channel_out": "disclosure-only",
+  "adversarial": false,
+  "outcome": "information-disclosure",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak"
+    }
+  ],
+  "summary": "Open database with chat history, API secrets and logs; secured after Wiz notice.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "DeepSeek"
+    ],
+    "products": [
+      "DeepSeek"
+    ],
+    "frameworks": [
+      "ClickHouse"
+    ]
+  },
+  "tags": [
+    "exposed-database",
+    "misconfiguration"
+  ],
+  "status": "confirmed"
+}

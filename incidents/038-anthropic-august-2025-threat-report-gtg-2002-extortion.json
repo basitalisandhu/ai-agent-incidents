@@ -1,0 +1,45 @@
+{
+  "id": "038",
+  "date": "2025-08",
+  "name": "Anthropic August 2025 threat report (GTG-2002 extortion)",
+  "type": "threat-report",
+  "lens": "weapon",
+  "vector": "autonomous-ops",
+  "channel_in": "chat message",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
+      "title": "Detecting and countering misuse of AI: August 2025",
+      "publisher": "Anthropic",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Claude Code automated recon, credential theft and extortion at 17+ organisations; ransoms exceeded $500k.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0016.002"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude Code"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "threat-report",
+    "extortion",
+    "agentic-cyber-operations"
+  ],
+  "status": "confirmed"
+}

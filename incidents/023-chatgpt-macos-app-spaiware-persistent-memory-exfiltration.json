@@ -1,0 +1,49 @@
+{
+  "id": "023",
+  "date": "2024-09",
+  "name": "ChatGPT macOS app SpAIware persistent memory exfiltration",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "retrieval-memory",
+  "channel_in": "web page",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://embracethered.com/blog/posts/2024/chatgpt-macos-app-persistent-data-exfiltration/"
+    }
+  ],
+  "summary": "Injected memory leaked all later chats via image URLs; OpenAI fixed macOS app.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI06"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0080.000",
+      "AML.T0077"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT macOS app"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "memory-poisoning",
+    "persistence",
+    "markdown-image-exfiltration"
+  ],
+  "status": "confirmed"
+}

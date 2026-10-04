@@ -1,0 +1,49 @@
+{
+  "id": "048",
+  "date": "2025-09",
+  "name": "ShadowLeak zero-click Gmail exfiltration from ChatGPT Deep Research",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "email",
+  "authority": "read-only",
+  "channel_out": "image/link fetch",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://www.infosecurity-magazine.com/news/vulnerability-chatgpt-agent-gmail/"
+    }
+  ],
+  "summary": "Reported June 2025; OpenAI silently fixed in August, acknowledged early September.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0057"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT Deep Research"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "zero-click",
+    "gmail",
+    "service-side-exfiltration"
+  ],
+  "status": "confirmed"
+}

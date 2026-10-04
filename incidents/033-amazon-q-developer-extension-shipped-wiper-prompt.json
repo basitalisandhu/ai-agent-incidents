@@ -1,0 +1,50 @@
+{
+  "id": "033",
+  "date": "2025-07",
+  "name": "Amazon Q Developer extension shipped wiper prompt",
+  "type": "incident",
+  "lens": "surface",
+  "vector": "supply-chain",
+  "channel_in": "repo issue/pr",
+  "authority": "shell/exec",
+  "channel_out": "data destruction",
+  "adversarial": true,
+  "outcome": "none-demo",
+  "cve": [
+    "CVE-2025-8217"
+  ],
+  "sources": [
+    {
+      "url": "https://aws.amazon.com/security/security-bulletins/AWS-2025-015/"
+    }
+  ],
+  "summary": "Wiper prompt shipped in v1.84.0 but failed on a syntax error; AWS revoked credentials.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04",
+      "ASI05"
+    ],
+    "owasp_llm": [
+      "LLM03"
+    ],
+    "mitre_atlas": [
+      "AML.T0010.001",
+      "AML.T0101"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Amazon Web Services"
+    ],
+    "products": [
+      "Amazon Q Developer (VS Code extension)"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "supply-chain",
+    "wiper",
+    "ide-extension"
+  ],
+  "status": "confirmed"
+}

@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below, and cite the paper it was created for."
+type: dataset
+title: "AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents"
+abstract: "Structured, schema-validated records of publicly documented security events involving LLM applications and AI agents, coded by the role AI plays (weapon, target, surface), vector, input channel, authority, output channel and outcome, and cross-referenced to the OWASP Top 10 for LLM Applications, the OWASP Top 10 for Agentic Applications and MITRE ATLAS."
+authors:
+  - family-names: Ali
+    given-names: Muhammad Basit
+    alias: basitalisandhu
+version: 1.0.0
+date-released: "2026-10-03"
+license: CC-BY-4.0
+repository-code: "https://github.com/basitalisandhu/ai-agent-incidents"
+url: "https://basitalisandhu.github.io/ai-agent-incidents/"
+keywords:
+  - ai-security
+  - llm-security
+  - agent-security
+  - prompt-injection
+  - incident-dataset
+  - threat-intelligence
+preferred-citation:
+  type: unpublished
+  title: "AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents"
+  authors:
+    - family-names: Ali
+      given-names: Muhammad Basit
+  year: 2026
+  url: "https://github.com/basitalisandhu/llm-agent-control-plane"
+  notes: "Manuscript. Code, data and the codebook are at the repository URL."

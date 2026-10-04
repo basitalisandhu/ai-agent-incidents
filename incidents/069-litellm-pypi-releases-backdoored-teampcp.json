@@ -1,0 +1,52 @@
+{
+  "id": "069",
+  "date": "2026-03",
+  "name": "LiteLLM PyPI releases backdoored (TeamPCP)",
+  "type": "incident",
+  "lens": "target",
+  "vector": "supply-chain",
+  "channel_in": "package",
+  "authority": "cloud-creds",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-teampcp-supply-chain-campaign/",
+      "title": "LiteLLM and Telnyx compromised on PyPI: Tracing the TeamPCP supply chain campaign",
+      "publisher": "Datadog Security Labs",
+      "accessed": "2026-10-03"
+    }
+  ],
+  "summary": "Versions 1.82.7 and 1.82.8 backdoored in TeamPCP campaign after Trivy compromise.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI04"
+    ],
+    "owasp_llm": [
+      "LLM03"
+    ],
+    "mitre_atlas": [
+      "AML.T0010.001",
+      "AML.T0011.001"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "BerriAI"
+    ],
+    "products": [
+      "LiteLLM"
+    ],
+    "frameworks": [
+      "LiteLLM"
+    ]
+  },
+  "tags": [
+    "pypi",
+    "supply-chain",
+    "teampcp"
+  ],
+  "status": "confirmed"
+}

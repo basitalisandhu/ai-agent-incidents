@@ -1,0 +1,44 @@
+{
+  "id": "006",
+  "date": "2023-11",
+  "name": "ChatGPT and API outages attributed to DDoS",
+  "type": "incident",
+  "lens": "target",
+  "vector": "availability",
+  "channel_in": "none",
+  "authority": "none",
+  "channel_out": "service-disruption",
+  "adversarial": true,
+  "outcome": "service-disruption",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://gizmodo.com/chatgpt-blames-outages-ddos-hackers-gpt-rollout-stalled-1851006900"
+    }
+  ],
+  "summary": "OpenAI cited DDoS-like traffic; Anonymous Sudan claimed credit, unverified.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM10"
+    ],
+    "mitre_atlas": [
+      "AML.T0029"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenAI"
+    ],
+    "products": [
+      "ChatGPT",
+      "OpenAI API"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "ddos",
+    "availability"
+  ],
+  "status": "confirmed"
+}

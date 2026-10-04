@@ -1,0 +1,51 @@
+{
+  "id": "039",
+  "date": "2025-08",
+  "name": "Claude Code DNS exfiltration via allowlisted commands",
+  "type": "vulnerability-disclosure",
+  "lens": "surface",
+  "vector": "indirect-injection",
+  "channel_in": "document",
+  "authority": "shell/exec",
+  "channel_out": "tool-call send",
+  "adversarial": true,
+  "outcome": "data-exfiltration",
+  "cve": [
+    "CVE-2025-55284"
+  ],
+  "sources": [
+    {
+      "url": "https://embracethered.com/blog/posts/2025/claude-code-exfiltration-via-dns-requests/"
+    }
+  ],
+  "summary": "Broad safe-command allowlist let injected prompt leak secrets over DNS; fixed in v1.0.4.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI01",
+      "ASI02"
+    ],
+    "owasp_llm": [
+      "LLM01",
+      "LLM02"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001",
+      "AML.T0086"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Anthropic"
+    ],
+    "products": [
+      "Claude Code"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "dns-exfiltration",
+    "command-allowlist",
+    "coding-agent"
+  ],
+  "status": "confirmed"
+}

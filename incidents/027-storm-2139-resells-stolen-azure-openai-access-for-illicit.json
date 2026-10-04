@@ -1,0 +1,47 @@
+{
+  "id": "027",
+  "date": "2025-02",
+  "name": "Storm-2139 resells stolen Azure OpenAI access for illicit content",
+  "type": "threat-report",
+  "lens": "weapon",
+  "vector": "nhi-secrets",
+  "channel_in": "none",
+  "authority": "cloud-creds",
+  "channel_out": "api-abuse",
+  "adversarial": true,
+  "outcome": "fraud",
+  "cve": [],
+  "sources": [
+    {
+      "url": "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/"
+    }
+  ],
+  "summary": "Scraped customer credentials plus guardrail-bypass tool; Microsoft sued four named defendants.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [
+      "LLM10"
+    ],
+    "mitre_atlas": [
+      "AML.T0012",
+      "AML.T0040",
+      "AML.T0054"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "Microsoft"
+    ],
+    "products": [
+      "Azure OpenAI Service"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "stolen-credentials",
+    "hacking-as-a-service",
+    "guardrail-bypass",
+    "threat-report"
+  ],
+  "status": "confirmed"
+}

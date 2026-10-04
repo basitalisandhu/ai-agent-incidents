@@ -1,0 +1,46 @@
+{
+  "id": "064",
+  "date": "2026-02",
+  "name": "OpenClaw one-click RCE via gatewayUrl token exfiltration",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "exploitation",
+  "channel_in": "web page",
+  "authority": "shell/exec",
+  "channel_out": "code exec",
+  "adversarial": true,
+  "outcome": "code-execution",
+  "cve": [
+    "CVE-2026-25253"
+  ],
+  "sources": [
+    {
+      "url": "https://depthfirst.com/post/1-click-rce-to-steal-your-moltbot-data-and-keys"
+    }
+  ],
+  "summary": "Crafted link leaked gateway token over WebSocket even on loopback; fixed in 2026.1.29.",
+  "mappings": {
+    "owasp_agentic": [
+      "ASI03"
+    ],
+    "owasp_llm": [],
+    "mitre_atlas": [
+      "AML.T0011.003"
+    ]
+  },
+  "affected": {
+    "vendors": [
+      "OpenClaw"
+    ],
+    "products": [
+      "OpenClaw"
+    ],
+    "frameworks": []
+  },
+  "tags": [
+    "one-click",
+    "websocket",
+    "token-exfiltration"
+  ],
+  "status": "confirmed"
+}

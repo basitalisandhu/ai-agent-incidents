@@ -1,0 +1,46 @@
+{
+  "id": "031",
+  "date": "2025-05",
+  "name": "Lovable-generated apps ship without row-level security",
+  "type": "vulnerability-disclosure",
+  "lens": "target",
+  "vector": "generated-code",
+  "channel_in": "none",
+  "authority": "database",
+  "channel_out": "disclosure-only",
+  "adversarial": false,
+  "outcome": "information-disclosure",
+  "cve": [
+    "CVE-2025-48757"
+  ],
+  "sources": [
+    {
+      "url": "https://mattpalmer.io/posts/2025/05/CVE-2025-48757/"
+    }
+  ],
+  "summary": "Default RLS gaps in generated Supabase apps; supplier disputes CVE as customer responsibility.",
+  "mappings": {
+    "owasp_agentic": [],
+    "owasp_llm": [],
+    "mitre_atlas": []
+  },
+  "affected": {
+    "vendors": [
+      "Lovable",
+      "Supabase"
+    ],
+    "products": [
+      "Lovable"
+    ],
+    "frameworks": [
+      "Supabase"
+    ]
+  },
+  "tags": [
+    "vibe-coding",
+    "insecure-generated-code",
+    "row-level-security",
+    "disputed-cve"
+  ],
+  "status": "confirmed"
+}

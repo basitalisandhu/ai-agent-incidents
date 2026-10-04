@@ -681,7 +681,7 @@ def build_index(records, stats, og_image=None):
     out.append("<header class=\"top\"><h1>%s</h1><p>%s</p>" % (esc(SITE_TITLE), esc(TAGLINE)))
     out.append("<p class=\"nav\"><a href=\"%s\">GitHub</a><a href=\"incidents.json\">JSON</a><a href=\"incidents.csv\">CSV</a>"
                "<a href=\"stats.json\">Stats</a><a href=\"feed.xml\">RSS</a><a href=\"incident.schema.json\">Schema</a>"
-               "<a href=\"%sblob/main/docs/codebook.md\">Codebook</a><a href=\"%sblob/main/CONTRIBUTING.md\">Add an incident</a></p>" % (esc(REPO_URL), esc(REPO_URL), esc(REPO_URL)))
+               "<a href=\"%s/blob/main/docs/codebook.md\">Codebook</a><a href=\"%s/blob/main/CONTRIBUTING.md\">Add an incident</a></p>" % (esc(REPO_URL), esc(REPO_URL), esc(REPO_URL)))
     out.append("<div class=\"chips\">%s</div></header>" % chip_html)
     out.append("<div class=\"controls\"><input id=\"q\" type=\"search\" placeholder=\"Search name, summary, CVE, vendor, tag, mapping id\" aria-label=\"Search\">%s<button id=\"clear\" type=\"button\">Clear filters</button></div>" % "".join(selects))
     out.append("<p class=\"count\" id=\"count\"></p>")
@@ -723,7 +723,7 @@ def build_record_page(r, prev_r, next_r, filename, og_image=None):
         else:
             out.append("<dt>%s</dt><dd><span class=\"code\">%s</span></dd>" % (k, esc(v)))
     out.append("<dt>cve</dt><dd>%s</dd>" % (esc("; ".join(r["cve"])) if r["cve"] else "none"))
-    out.append("</dl><p class=\"meta\" style=\"margin-top:10px\">Definitions: <a href=\"%sblob/main/docs/codebook.md\">codebook</a>.</p></div>" % esc(REPO_URL))
+    out.append("</dl><p class=\"meta\" style=\"margin-top:10px\">Definitions: <a href=\"%s/blob/main/docs/codebook.md\">codebook</a>.</p></div>" % esc(REPO_URL))
     out.append("<div class=\"card\"><h2>Sources</h2><ul class=\"plain\">")
     for s in r["sources"]:
         label = s.get("title") or s["url"]
@@ -746,7 +746,7 @@ def build_record_page(r, prev_r, next_r, filename, og_image=None):
         out.append("<dt>%s</dt><dd>%s</dd>" % (k, esc(", ".join(a[k])) if a[k] else "none listed"))
     out.append("<dt>tags</dt><dd>%s</dd>" % (" ".join("<span class=\"chip\">%s</span>" % esc(t) for t in r["tags"]) if r["tags"] else "none"))
     out.append("</dl></div>")
-    out.append("<p class=\"meta\">Record: <a href=\"%sblob/main/incidents/%s\">incidents/%s</a> &middot; <a href=\"../incidents.json\">all records as JSON</a></p>" % (esc(REPO_URL), esc(filename), esc(filename)))
+    out.append("<p class=\"meta\">Record: <a href=\"%s/blob/main/incidents/%s\">incidents/%s</a> &middot; <a href=\"../incidents.json\">all records as JSON</a></p>" % (esc(REPO_URL), esc(filename), esc(filename)))
     out.append("<div class=\"pager\">")
     out.append("<span>%s</span>" % ("<a href=\"%s.html\">&larr; %s %s</a>" % (esc(prev_r["id"]), esc(prev_r["id"]), esc(prev_r["name"])) if prev_r else ""))
     out.append("<span>%s</span>" % ("<a href=\"%s.html\">%s %s &rarr;</a>" % (esc(next_r["id"]), esc(next_r["id"]), esc(next_r["name"])) if next_r else ""))

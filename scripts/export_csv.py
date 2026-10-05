@@ -15,6 +15,7 @@ status live in the JSON records. Standard library only.
 import argparse
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -62,12 +63,28 @@ def write_csv(records, out_path):
             w.writerow(record_to_row(rec))
 
 
+def month(value):
+    """Parse a month without accepting unpadded or out-of-range values."""
+    if not re.fullmatch(r"[0-9]{4}-(0[1-9]|1[0-2])", value):
+        raise argparse.ArgumentTypeError("expected a month in YYYY-MM format")
+    return value
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--incidents", default="incidents")
     ap.add_argument("--out", default="data/incidents.csv")
+    ap.add_argument("--since", type=month, help="Include records from this month (YYYY-MM).")
+    ap.add_argument("--until", type=month, help="Include records through this month (YYYY-MM).")
     args = ap.parse_args(argv)
+    if args.since and args.until and args.since > args.until:
+        ap.error("--since must not be later than --until")
     records = load_records(args.incidents)
+    records = [
+        rec for rec in records
+        if (args.since is None or rec["date"][:7] >= args.since)
+        and (args.until is None or rec["date"][:7] <= args.until)
+    ]
     write_csv(records, args.out)
     print("wrote %d row(s) to %s" % (len(records), args.out))
     return 0

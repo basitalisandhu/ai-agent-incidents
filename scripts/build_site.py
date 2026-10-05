@@ -540,7 +540,9 @@ def page_head(title, depth=0, description=None, canonical=None, jsonld=None, og_
 def page_foot():
     return ("<footer>CC BY 4.0 data, MIT code. "
             "<a href=\"%s\">Source repository</a> "
-            "<a href=\"%s\">Codebook</a></footer>\n"
+            "<a href=\"%s\">Codebook</a><br>\n"
+            "More tools by the author: <a href=\"https://basitalisandhu.github.io/\">basitalisandhu.github.io</a> "
+            "<a href=\"https://basitalisandhu.github.io/claude-skills/\">Claude Code skills catalog</a></footer>\n"
             "</div>\n</body>\n</html>\n" % (esc(REPO_URL), esc(REPO_URL + "/blob/main/docs/codebook.md")))
 
 

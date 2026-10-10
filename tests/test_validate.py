@@ -82,3 +82,22 @@ def test_data_csv_has_original_columns():
         reader = csv.DictReader(fh)
         assert reader.fieldnames == export_csv.COLUMNS
         assert len(list(reader)) == len(RECORDS)
+def test_vendor_counts_match_incident_records():
+    from collections import Counter
+
+    expected = Counter(
+        vendor
+        for record in RECORDS
+        for vendor in record["affected"]["vendors"]
+    )
+
+    stats = json.loads(
+        (ROOT / "site" / "stats.json").read_text(encoding="utf-8")
+    )
+
+    expected_sorted = dict(
+        sorted(expected.items(), key=lambda item: (-item[1], item[0]))
+    )
+
+    assert stats["by_vendor"] == expected_sorted
+    assert list(stats["by_vendor"].items()) == list(expected_sorted.items())

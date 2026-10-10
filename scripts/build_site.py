@@ -463,6 +463,14 @@ def build_stats(records):
     s["by_owasp_agentic"] = OrderedDict(sorted(Counter(i for r in records for i in r["mappings"]["owasp_agentic"]).items()))
     s["by_mitre_atlas"] = OrderedDict(sorted(Counter(i for r in records for i in r["mappings"]["mitre_atlas"]).items(), key=lambda kv: (-kv[1], kv[0])))
     s["by_tag"] = OrderedDict(sorted(Counter(t for r in records for t in r["tags"]).items(), key=lambda kv: (-kv[1], kv[0])))
+    s["by_vendor"] = OrderedDict(sorted(
+    Counter(
+        vendor
+        for r in records
+        for vendor in r["affected"]["vendors"]
+    ).items(),
+    key=lambda kv: (-kv[1], kv[0])
+))
     return s
 
 
@@ -496,6 +504,8 @@ def build_stats_md(stats):
         lt.append("| %s | %d | %d | %d |" % (lens, d.get("incident", 0), d.get("vulnerability-disclosure", 0), d.get("threat-report", 0)))
     lines.append("\n".join(lt) + "\n")
     lines.append(md_table("By status", stats["by_status"], "status"))
+    lines.append(md_table("By vendor", stats["by_vendor"], "vendor"))
+
     lines.append(md_table("By OWASP Top 10 for LLM Applications (2025)", stats["by_owasp_llm"], "id", OWASP_LLM))
     lines.append(md_table("By OWASP Top 10 for Agentic Applications (2026)", stats["by_owasp_agentic"], "id", OWASP_ASI))
     lines.append(md_table("By MITRE ATLAS technique", stats["by_mitre_atlas"], "id", ATLAS))

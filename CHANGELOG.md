@@ -8,6 +8,10 @@ data or tooling.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-13
+
+First tagged release of the dataset (88 records) and its tooling.
+
 ### Added
 
 - 88 incident records (001 to 088), from February 2023 to October 2026, each one
@@ -36,3 +40,6 @@ data or tooling.
 ### Fixed
 
 - GitHub links on the site join the repository URL with a slash (#9).
+
+[Unreleased]: https://github.com/basitalisandhu/ai-agent-incidents/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/basitalisandhu/ai-agent-incidents/releases/tag/v1.0.0

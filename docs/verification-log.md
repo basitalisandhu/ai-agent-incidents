@@ -1,5 +1,24 @@
 # Source verification log
 
+## 2026-10-13: link check from an unrestricted network
+
+All 96 source URLs of the 88 records (001 to 088) were requested with
+`python3 scripts/check_sources.py --wayback` (one GET each, redirects followed).
+Every one returned HTTP 200, so none is dead and no record changed. The 68 URLs
+that the proxy blocked on 2026-10-03 are among them.
+
+This check confirms that each page exists. It is not a re-reading of the content;
+the page title of each reachable page was compared with the record name and
+none pointed at a different event. Seven URLs now redirect to a new address
+for the same article (014 on cnn.com, 018 on sysdig.com, 036 and 055 on
+theregister.com, 046 on noma.security, 059 on aws.amazon.com, 064 on
+depthfirst.com); the stored URLs still work and were kept.
+
+A weekly workflow (`.github/workflows/sources.yml`) now runs the same check and
+fails when a URL is dead.
+
+## 2026-10-03: first check
+
 Date of check: 2026-10-03. Checker: the maintainer, from a build environment whose
 outbound web access runs through an organisation egress proxy that allows only
 some hosts. Every one of the 80 primary-source URLs was requested once. The result
@@ -17,7 +36,7 @@ No URL returned a "not found" or "gone" response, so no record was moved to
 `status: "reported"`. Hosts marked blocked should be re-checked from an
 unrestricted network; see the to-do in the README.
 
-## Reachable and read (12 of 80)
+### Reachable and read (12 of 80)
 
 | id | host | title as shown on the page | note |
 |---|---|---|---|
@@ -34,7 +53,7 @@ unrestricted network; see the to-do in the README.
 | 074 | anthropic.com | Investigating three real-world incidents in our cybersecurity evaluations | Published 30 Jul 2026. |
 | 078 | anthropic.com | Detecting and countering misuse of AI: September 2026 | Covers December 2025 to August 2026. |
 
-## Blocked by the proxy, not verified (68 of 80)
+### Blocked by the proxy, not verified (68 of 80)
 
 Hosts: adnanthekhan.com, aikido.dev, appomni.com, aws.amazon.com, blog.checkpoint.com,
 blogs.microsoft.com, brave.com, cnn.com, codeintegrity.ai, depthfirst.com,

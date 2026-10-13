@@ -1,0 +1,27 @@
+name: Source links
+
+# Weekly check that every source URL in incidents/ still resolves. Fails only when a URL is
+# dead (404, 410 or an unknown host); bot walls (403, 429) are reported but do not fail.
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check every source URL
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - name: Request every source and look up archived copies for any that fail
+        run: python scripts/check_sources.py --wayback

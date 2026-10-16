@@ -6,6 +6,8 @@ stores no secrets.
 
 ## Reporting a vulnerability in this repository
 
+Report a vulnerability privately: <https://github.com/basitalisandhu/ai-agent-incidents/security/advisories/new>
+
 If you find a problem in the scripts, the workflows or the generated site (for
 example a cross-site scripting bug in the HTML builder, or a workflow that could
 be abused from a pull request), please do not open a public issue. Use GitHub's

@@ -255,6 +255,17 @@ Deterministic Control Plane for Securing LLM Agents. 2026. Manuscript.
   mediation) that would have stopped each event.
 - Keep adding events after September 2026.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the open [good first issues](https://github.com/basitalisandhu/ai-agent-incidents/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). The plan is in [ROADMAP.md](ROADMAP.md); questions and ideas go in [Discussions](https://github.com/basitalisandhu/ai-agent-incidents/discussions).
+
+## Contributors
+
+Thank you to everyone who has had a pull request merged here:
+
+- [@ruthraguru248](https://github.com/ruthraguru248) added the vendor statistics table ([#13](https://github.com/basitalisandhu/ai-agent-incidents/pull/13)).
+- [@nawaaaaaAaar](https://github.com/nawaaaaaAaar) added inclusive month filters to the CSV exports ([#12](https://github.com/basitalisandhu/ai-agent-incidents/pull/12)).
+
 ## Licence
 
 Data (`incidents/`, `data/`, and the site's JSON, CSV and feed exports) is licensed

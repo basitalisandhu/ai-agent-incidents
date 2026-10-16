@@ -94,7 +94,10 @@ It is a convenience sample of events that were made public, so it over-represent
 ### The coding scheme in brief
 
 Full definitions, with the number of seed events per value, are in
-[docs/codebook.md](docs/codebook.md). Current counts are in [docs/stats.md](docs/stats.md).
+[docs/codebook.md](docs/codebook.md). Current counts are in [docs/stats.md](docs/stats.md), and the OWASP Agentic Top 10
+mappings cross-tabulated against the coded fields are in
+[docs/owasp-agentic-crosstab.md](docs/owasp-agentic-crosstab.md)
+(`python3 scripts/agentic_crosstab.py`).
 
 - **lens**: the role AI plays. `surface` (47): the AI is a conduit to another party's
   assets. `weapon` (14): the AI is the attacker's instrument. `target` (19): the AI
@@ -186,8 +189,8 @@ to be notified of new records.
 incidents/            one JSON record per event: <id>-<slug>.json (source of truth)
 schema/               incident.schema.json (JSON Schema 2020-12)
 data/incidents.csv    flat export in the paper's fourteen columns (generated)
-docs/                 codebook.md, stats.md (generated), verification-log.md
-scripts/              import_csv.py, export_csv.py, validate.py, build_site.py, check_sources.py, push_to_hf.py, indexnow_key.txt
+docs/                 codebook.md, stats.md and owasp-agentic-crosstab.md (generated), verification-log.md
+scripts/              import_csv.py, export_csv.py, agentic_crosstab.py, validate.py, build_site.py, check_sources.py, push_to_hf.py, indexnow_key.txt
 assets/               og-image.png, copied into the site for link previews
 site/                 generated static site (index, per-event pages, feed, JSON, CSV, stats, sitemap, robots, llms.txt, IndexNow key)
 tests/                pytest suite

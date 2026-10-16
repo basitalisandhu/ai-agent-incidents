@@ -8,6 +8,13 @@ data or tooling.
 
 ## [Unreleased]
 
+### Added
+
+- `scripts/agentic_crosstab.py` and the generated `docs/owasp-agentic-crosstab.md`:
+  the OWASP Top 10 for Agentic Applications mappings cross-tabulated against lens,
+  year, type, authority, channel_out, vector and outcome, with co-occurring pairs and
+  the events mapped to no category. A test fails when the committed file is stale.
+
 ## [1.0.0] - 2026-10-13
 
 First tagged release of the dataset (88 records) and its tooling.

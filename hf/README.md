@@ -154,6 +154,6 @@ Every event was coded from a primary source that was opened and read. The datase
 
 Data: CC BY 4.0. Attribution: Muhammad Basit Ali, https://github.com/basitalisandhu/ai-agent-incidents. Commercial use is allowed with attribution.
 
-Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents. Version 1.0.0, 2026. https://github.com/basitalisandhu/ai-agent-incidents
+Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents. Version 1.1.0, 2026. https://github.com/basitalisandhu/ai-agent-incidents
 
 Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents. 2026. Manuscript.

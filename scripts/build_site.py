@@ -56,7 +56,7 @@ INDEX_DESCRIPTION = ("Open dataset of AI agent and LLM security incidents from 2
                      "records of prompt injection, data exfiltration, supply-chain and agent-misuse events, "
                      "coded by the role AI plays and mapped to the OWASP LLM and Agentic Top 10 and MITRE ATLAS. "
                      "JSON, CSV and RSS, CC BY 4.0.")
-DATASET_VERSION = "1.0.0"   # keep in step with CITATION.cff
+DATASET_VERSION = "1.1.0"   # keep in step with CITATION.cff
 LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 PAPER_CITATION = ("Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic "
                   "Control Plane for Securing LLM Agents. 2026. Manuscript.")

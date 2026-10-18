@@ -71,7 +71,7 @@ Yes. The data is licensed [CC BY 4.0](LICENSE-DATA): use, copy, modify and redis
 One event is one JSON file and one pull request: copy an existing record, give it the next free id, fill every field from a public primary source, run `python3 scripts/validate.py`, and open the pull request. If you would rather not write JSON, use the [issue form](.github/ISSUE_TEMPLATE/new_incident.yml). Only events with a public primary source are accepted; this is not a place to disclose new vulnerabilities. The checklist is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 **How do I cite the dataset?**
-Use [CITATION.cff](CITATION.cff) (GitHub shows it under "Cite this repository"): Muhammad Basit Ali, *AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents*, version 1.0.0, 2026, https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme comes from the paper *AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents* (Ali, 2026), whose codebook is reproduced in [docs/codebook.md](docs/codebook.md); cite both when you use the coding.
+Use [CITATION.cff](CITATION.cff) (GitHub shows it under "Cite this repository"): Muhammad Basit Ali, *AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents*, version 1.1.0, 2026, https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme comes from the paper *AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents* (Ali, 2026), whose codebook is reproduced in [docs/codebook.md](docs/codebook.md); cite both when you use the coding.
 
 **What can the dataset not tell you?**
 It is a convenience sample of events that were made public, so it over-represents what vendors and researchers chose to disclose and says nothing about how common any class of event is in the population. Mappings are the maintainer's reading of each source against the published frameworks; an empty mapping list means no confident mapping, not that none applies. Dates are the month of the public report, not of the event. Each record links its primary source so every claim can be checked.
@@ -240,7 +240,7 @@ machine-readable (GitHub shows a "Cite this repository" button).
 
 ```
 Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented
-AI-agent and LLM-application security incidents. Version 1.0.0, 2026.
+AI-agent and LLM-application security incidents. Version 1.1.0, 2026.
 https://github.com/basitalisandhu/ai-agent-incidents
 
 Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a

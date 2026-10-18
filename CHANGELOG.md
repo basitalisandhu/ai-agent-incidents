@@ -8,12 +8,20 @@ data or tooling.
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-18
+
 ### Added
 
 - `scripts/agentic_crosstab.py` and the generated `docs/owasp-agentic-crosstab.md`:
   the OWASP Top 10 for Agentic Applications mappings cross-tabulated against lens,
   year, type, authority, channel_out, vector and outcome, with co-occurring pairs and
   the events mapped to no category. A test fails when the committed file is stale.
+- `ROADMAP.md`, a Contributors section and links to the Discussions boards (#23, #26).
+
+### Changed
+
+- Dependency updates: jsonschema, pytest and the GitHub Actions group (#15 to #17).
+- Harden the workflows and repository policy for the OpenSSF Scorecard (#27).
 
 ## [1.0.0] - 2026-10-13
 
@@ -48,5 +56,6 @@ First tagged release of the dataset (88 records) and its tooling.
 
 - GitHub links on the site join the repository URL with a slash (#9).
 
-[Unreleased]: https://github.com/basitalisandhu/ai-agent-incidents/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/basitalisandhu/ai-agent-incidents/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/basitalisandhu/ai-agent-incidents/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/basitalisandhu/ai-agent-incidents/releases/tag/v1.0.0

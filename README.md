@@ -218,7 +218,7 @@ python3 scripts/validate.py          # schema and integrity checks
 python3 -m pytest -q                 # the same, plus round-trip and date checks
 python3 scripts/build_site.py        # regenerates site/ and docs/stats.md
 python3 scripts/export_csv.py        # regenerates data/incidents.csv from the JSON records
-python3 scripts/export_csv.py --since 2025-01 --until 2025-12 --out data/2025.csv
+python3 scripts/export_csv.py --since 2025-01 --until 2025-12 --out 2025.csv
 python3 scripts/import_csv.py --csv some.csv   # imports rows from a CSV in the paper's format
 python3 scripts/check_sources.py --wayback   # requests every source URL; exit 1 if one is dead
 HF_TOKEN=... python3 scripts/push_to_hf.py       # uploads the CSV, JSON, schema and card to the Hugging Face mirror

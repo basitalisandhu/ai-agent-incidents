@@ -17,6 +17,7 @@ MITRE ATLAS.
 Browse it at **https://basitalisandhu.github.io/ai-agent-incidents/** (searchable
 table, one page per event, [RSS feed](https://basitalisandhu.github.io/ai-agent-incidents/feed.xml),
 [JSON](https://basitalisandhu.github.io/ai-agent-incidents/incidents.json),
+[JSONL](https://basitalisandhu.github.io/ai-agent-incidents/incidents.jsonl),
 [CSV](https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv),
 [stats](https://basitalisandhu.github.io/ai-agent-incidents/stats.json)).
 
@@ -86,7 +87,7 @@ It is a convenience sample of events that were made public, so it over-represent
 | Coded fields | `type`, `lens`, `vector`, `channel_in`, `authority`, `channel_out`, `adversarial`, `outcome` |
 | Identifying fields | `id`, `date`, `name`, `cve`, `sources`, `summary` |
 | Added fields | `mappings` (OWASP LLM Top 10 2025, OWASP Agentic Top 10 2026, MITRE ATLAS), `affected` (vendors, products, frameworks), `tags`, `status` |
-| Formats | JSON (one file per event, [schema](schema/incident.schema.json)), flat CSV ([data/incidents.csv](data/incidents.csv), the paper's original column set), site exports (JSON array, CSV, RSS, stats) |
+| Formats | JSON (one file per event, [schema](schema/incident.schema.json)), flat CSV ([data/incidents.csv](data/incidents.csv), the paper's original column set), site exports (JSON array, JSONL, CSV, RSS, stats) |
 | Coding | By the author of the paper under [docs/codebook.md](docs/codebook.md); the paper reports two further blind codings and their agreement |
 | Sampling | Convenience sample of what was public; it over-represents what vendors and researchers chose to disclose, and no share computed from it estimates a population share |
 | Licence | Data CC BY 4.0, code MIT |
@@ -178,6 +179,14 @@ print(len(exfil_by_tool), "events exfiltrated through a tool call the attacker i
 ```sh
 # Events where an agent with shell access was steered by content it read
 jq '[.[] | select(.authority == "shell/exec" and .vector == "indirect-injection") | .name]' site/incidents.json
+```
+
+For streaming ingestion, `site/incidents.jsonl` contains one UTF-8 JSON object per
+line, in id order, with exactly the same fields as the JSON array. Each build
+regenerates both exports; rebuilding unchanged records produces identical bytes.
+
+```sh
+jq -c 'select(.authority == "shell/exec")' site/incidents.jsonl
 ```
 
 Subscribe to [feed.xml](https://basitalisandhu.github.io/ai-agent-incidents/feed.xml)

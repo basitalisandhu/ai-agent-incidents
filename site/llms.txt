@@ -16,6 +16,7 @@ Key facts:
 ## Downloads
 
 - [All records as JSON](https://basitalisandhu.github.io/ai-agent-incidents/incidents.json): one array, the schema is incidents.schema.json next to it.
+- [All records as JSONL](https://basitalisandhu.github.io/ai-agent-incidents/incidents.jsonl): one JSON object per line in id order, with the same fields as the JSON array.
 - [Flat CSV](https://basitalisandhu.github.io/ai-agent-incidents/incidents.csv): the paper's fourteen columns, one row per event.
 - [JSON Schema](https://basitalisandhu.github.io/ai-agent-incidents/incident.schema.json): JSON Schema 2020-12 for one record.
 - [Statistics](https://basitalisandhu.github.io/ai-agent-incidents/stats.json): counts by year, type, lens, vector, channel, authority, outcome, status, tag and mapping id.

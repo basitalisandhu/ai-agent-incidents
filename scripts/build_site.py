@@ -39,6 +39,7 @@ import argparse
 import datetime as dt
 import html
 import json
+import re
 import shutil
 import sys
 from collections import Counter, OrderedDict
@@ -46,6 +47,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import export_csv  # noqa: E402
+from records import RecordError, load_record  # noqa: E402
 
 SITE_URL = "https://basitalisandhu.github.io/ai-agent-incidents/"
 REPO_URL = "https://github.com/basitalisandhu/ai-agent-incidents"
@@ -57,7 +59,7 @@ INDEX_DESCRIPTION = ("Open dataset of AI agent and LLM security incidents from 2
                      "records of prompt injection, data exfiltration, supply-chain and agent-misuse events, "
                      "coded by the role AI plays and mapped to the OWASP LLM and Agentic Top 10 and MITRE ATLAS. "
                      "JSON, CSV and RSS, CC BY 4.0.")
-DATASET_VERSION = "1.1.0"   # keep in step with CITATION.cff
+DATASET_VERSION = "1.2.0"   # keep in step with CITATION.cff
 LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 PAPER_CITATION = ("Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic "
                   "Control Plane for Securing LLM Agents. 2026. Manuscript.")
@@ -674,7 +676,19 @@ def build_faq_html(stats):
     return "".join(out)
 
 
-def build_index(records, stats, og_image=None):
+def digest_links(digest_dir):
+    """HTML links to every digest/YYYY-MM.md, newest first, or an empty string when there are none."""
+    import calendar
+    months = sorted((p.stem for p in Path(digest_dir).glob("*.md") if re.fullmatch(r"[0-9]{4}-(0[1-9]|1[0-2])", p.stem)),
+                    reverse=True)
+    if not months:
+        return ""
+    links = ["<a href=\"%s/blob/main/digest/%s.md\">%s %s</a>" % (
+        esc(REPO_URL), m, calendar.month_name[int(m[5:])], m[:4]) for m in months]
+    return "<p class=\"nav digests\">Monthly digests: %s</p>" % "".join(links)
+
+
+def build_index(records, stats, og_image=None, digests_html=""):
     chips = [
         ("events", stats["total"]),
         ("incidents", stats["by_type"].get("incident", 0)),
@@ -699,6 +713,7 @@ def build_index(records, stats, og_image=None):
     out.append("<p class=\"nav\"><a href=\"%s\">GitHub</a><a href=\"incidents.json\">JSON</a><a href=\"incidents.jsonl\">JSONL</a><a href=\"incidents.csv\">CSV</a>"
                "<a href=\"stats.json\">Stats</a><a href=\"feed.xml\">RSS</a><a href=\"incident.schema.json\">Schema</a>"
                "<a href=\"%s/blob/main/docs/codebook.md\">Codebook</a><a href=\"%s/blob/main/CONTRIBUTING.md\">Add an incident</a></p>" % (esc(REPO_URL), esc(REPO_URL), esc(REPO_URL)))
+    out.append(digests_html)
     out.append("<div class=\"chips\">%s</div></header>" % chip_html)
     out.append("<div class=\"controls\"><input id=\"q\" type=\"search\" placeholder=\"Search name, summary, CVE, vendor, tag, mapping id\" aria-label=\"Search\">%s<button id=\"clear\" type=\"button\">Clear filters</button></div>" % "".join(selects))
     out.append("<p class=\"count\" id=\"count\"></p>")
@@ -921,13 +936,18 @@ def main(argv=None):
     ap.add_argument("--docs", default="docs")
     ap.add_argument("--schema", default="schema/incident.schema.json")
     ap.add_argument("--assets", default=ASSETS_DIR, help="directory that may hold %s" % OG_IMAGE)
+    ap.add_argument("--digest", default="digest", help="directory of monthly digests (YYYY-MM.md) to link")
     args = ap.parse_args(argv)
 
     inc_dir = Path(args.incidents)
     site = Path(args.site)
     docs = Path(args.docs)
     files = sorted(inc_dir.glob("*.json"))
-    records = [json.loads(p.read_text(encoding="utf-8")) for p in files]
+    try:
+        records = [load_record(p) for p in files]
+    except RecordError as exc:
+        print("error: %s" % exc, file=sys.stderr)
+        return 2
     by_id = {r["id"]: p.name for r, p in zip(records, files)}
     records.sort(key=lambda r: (len(r["id"]), r["id"]))
     if not records:
@@ -945,7 +965,8 @@ def main(argv=None):
     if og_src.is_file():
         shutil.copyfile(og_src, site / OG_IMAGE)
         og_image = SITE_URL + OG_IMAGE
-    (site / "index.html").write_text(build_index(records, stats, og_image), encoding="utf-8")
+    (site / "index.html").write_text(build_index(records, stats, og_image, digest_links(args.digest)),
+                                     encoding="utf-8")
     for i, r in enumerate(records):
         prev_r = records[i - 1] if i > 0 else None
         next_r = records[i + 1] if i + 1 < len(records) else None

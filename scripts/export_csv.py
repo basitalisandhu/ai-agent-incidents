@@ -19,14 +19,22 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from records import RecordError, load_record  # noqa: E402
+
 COLUMNS = ["id", "date", "name", "type", "lens", "vector", "channel_in", "authority",
            "channel_out", "adversarial", "outcome", "cve", "url", "notes"]
+
+
+# The record fields the fourteen CSV columns come from.
+REQUIRED = ("id", "date", "name", "type", "lens", "vector", "channel_in", "authority", "channel_out",
+            "adversarial", "outcome", "cve", "sources", "summary")
 
 
 def load_records(incidents_dir):
     recs = []
     for p in sorted(Path(incidents_dir).glob("*.json")):
-        recs.append(json.loads(p.read_text(encoding="utf-8")))
+        recs.append(load_record(p, require=REQUIRED))
     recs.sort(key=lambda r: (len(r["id"]), r["id"]))
     return recs
 
@@ -79,7 +87,11 @@ def main(argv=None):
     args = ap.parse_args(argv)
     if args.since and args.until and args.since > args.until:
         ap.error("--since must not be later than --until")
-    records = load_records(args.incidents)
+    try:
+        records = load_records(args.incidents)
+    except RecordError as exc:
+        print("error: %s" % exc, file=sys.stderr)
+        return 2
     records = [
         rec for rec in records
         if (args.since is None or rec["date"][:7] >= args.since)

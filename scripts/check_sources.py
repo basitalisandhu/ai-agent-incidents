@@ -29,6 +29,9 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from records import RecordError, load_record  # noqa: E402
+
 USER_AGENT = "Mozilla/5.0 (compatible; ai-agent-incidents source check; +https://github.com/basitalisandhu/ai-agent-incidents)"
 BLOCKED = {401, 403, 429, 503}
 DEAD = {404, 410}
@@ -37,10 +40,12 @@ DEAD = {404, 410}
 def load_sources(incidents_dir, ids=None):
     """Yield (id, index, url) for every source of every record, in id order."""
     for path in sorted(Path(incidents_dir).glob("*.json")):
-        record = json.loads(path.read_text(encoding="utf-8"))
+        record = load_record(path, require=("id",))
         if ids and record["id"] not in ids:
             continue
         for index, source in enumerate(record.get("sources", [])):
+            if not isinstance(source.get("url"), str):
+                raise RecordError("%s: sources/%d has no url" % (path, index))
             yield record["id"], index, source["url"]
 
 
@@ -97,7 +102,12 @@ def main(argv=None):
     args = parser.parse_args(argv)
     ids = set(args.ids.split(",")) if args.ids else None
     counts = {}
-    for record_id, index, url in load_sources(args.incidents, ids):
+    try:
+        sources = list(load_sources(args.incidents, ids))
+    except RecordError as exc:
+        print("error: %s" % exc, file=sys.stderr)
+        return 2
+    for record_id, index, url in sources:
         verdict, detail = check_url(url)
         counts[verdict] = counts.get(verdict, 0) + 1
         line = "%s\t%s\t%s\t%s\t%s" % (record_id, index, verdict, detail, url)

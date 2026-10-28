@@ -22,6 +22,9 @@ from collections import Counter
 from itertools import combinations
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from records import RecordError, load_records  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 INCIDENTS = ROOT / "incidents"
 OUT = ROOT / "docs" / "owasp-agentic-crosstab.md"
@@ -43,7 +46,7 @@ LENSES = ("surface", "target", "weapon")
 
 
 def load(incidents_dir: Path = INCIDENTS) -> list[dict]:
-    return [json.loads(p.read_text(encoding="utf-8")) for p in sorted(incidents_dir.glob("*.json"))]
+    return load_records(incidents_dir, require=("id", "date", "type", "lens", "vector", "authority", "channel_out", "outcome", "name"))
 
 
 def asi(record: dict) -> list[str]:
@@ -159,7 +162,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--check", action="store_true", help="exit 1 if --out differs from a fresh render")
     ap.add_argument("--stdout", action="store_true", help="print the Markdown instead of writing it")
     a = ap.parse_args(argv)
-    text = render(load(a.incidents))
+    try:
+        text = render(load(a.incidents))
+    except RecordError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
     if a.stdout:
         sys.stdout.write(text)
         return 0

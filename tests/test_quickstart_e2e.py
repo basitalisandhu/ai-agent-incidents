@@ -1,15 +1,15 @@
 """End-to-end: run the README "Working with the repository" block in a fresh copy and venv.
 
-The repository's tracked files are copied to a temporary directory (standing in for the
-`git clone`), a new venv is created and `pip install -r requirements-dev.txt` runs in it, then
-every command of the block that needs no network or token runs as written. The regenerated
-site/, docs/stats.md and data/incidents.csv must equal the committed ones. Installing needs
+The `git clone` is a clone of this checkout (HEAD, with its history, which digest.py needs;
+CI checks out with fetch-depth 0), a new venv is created and `pip install -r
+requirements-dev.txt` runs in it, then every command of the block that needs no network or
+token runs as written. The regenerated site/, docs/stats.md, data/incidents.csv and
+digest/2026-10.md must equal the committed ones. Installing needs
 the network, so this runs only when AI_INCIDENTS_E2E=1; CI sets it in the quickstart job.
 """
 import filecmp
 import os
 import re
-import shutil
 import subprocess
 import venv
 from pathlib import Path
@@ -29,13 +29,8 @@ def _block():
 
 
 def test_readme_block_on_a_fresh_copy(tmp_path):
-    files = subprocess.run(["git", "-C", str(ROOT), "ls-files", "-z"], capture_output=True, check=True).stdout
     work = tmp_path / "ai-agent-incidents"
-    for name in filter(None, files.decode().split("\0")):
-        dest = work / name
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        if (ROOT / name).is_file():
-            shutil.copy2(ROOT / name, dest)
+    subprocess.run(["git", "clone", "--quiet", str(ROOT), str(work)], check=True, capture_output=True)
     venv.create(tmp_path / "venv", with_pip=True)
     bin_dir = tmp_path / "venv" / ("Scripts" if os.name == "nt" else "bin")
     env = {"PATH": "%s%s/usr/bin:/bin" % (bin_dir, os.pathsep), "HOME": str(tmp_path), "LC_ALL": "C.UTF-8"}
@@ -48,6 +43,7 @@ def test_readme_block_on_a_fresh_copy(tmp_path):
         assert proc.returncode == 0, (command, proc.stdout[-2000:], proc.stderr[-2000:])
     assert (work / "data" / "incidents.csv").read_bytes() == (ROOT / "data" / "incidents.csv").read_bytes()
     assert (work / "docs" / "stats.md").read_bytes() == (ROOT / "docs" / "stats.md").read_bytes()
+    assert (work / "digest" / "2026-10.md").read_bytes() == (ROOT / "digest" / "2026-10.md").read_bytes()
     diff = filecmp.dircmp(work / "site", ROOT / "site")
     assert not diff.left_only and not diff.right_only and not diff.diff_files
     assert (work / "2025.csv").read_text(encoding="utf-8").count("\n") > 1

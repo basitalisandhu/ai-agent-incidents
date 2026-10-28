@@ -11,7 +11,7 @@ Key facts:
 - Unit and sampling: one primary source's account of one event; dates are the month of the public report; a convenience sample of what was made public, so shares computed from it do not estimate population shares.
 - Coding: by the author of the paper under the codebook; every source was opened and read; the paper reports two further blind codings and their agreement. Mappings are given only where the source supports them; an empty list means no confident mapping.
 - Record fields: id, date (YYYY-MM or YYYY-MM-DD), name, type, lens, vector, channel_in, authority, channel_out, adversarial, outcome, cve, sources (url, title, publisher), summary, mappings (owasp_llm, owasp_agentic, mitre_atlas), affected (vendors, products, frameworks), tags, status.
-- Citation: Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents. Version 1.1.0, 2026. https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme is from: Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents. 2026. Manuscript.
+- Citation: Muhammad Basit Ali. AI Agent Incidents: an open dataset of publicly documented AI-agent and LLM-application security incidents. Version 1.2.0, 2026. https://github.com/basitalisandhu/ai-agent-incidents. The coding scheme is from: Muhammad Basit Ali. AI as Weapon, Target, and Surface: A Threat Taxonomy and a Deterministic Control Plane for Securing LLM Agents. 2026. Manuscript.
 
 ## Downloads
 

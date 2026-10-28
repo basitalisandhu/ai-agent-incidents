@@ -25,6 +25,9 @@ import sys
 import unicodedata
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from records import RecordError, read_json  # noqa: E402
+
 COLUMNS = ["id", "date", "name", "type", "lens", "vector", "channel_in", "authority",
            "channel_out", "adversarial", "outcome", "cve", "url", "notes"]
 
@@ -112,13 +115,18 @@ def load_existing(out_dir):
     found = {}
     for p in sorted(out_dir.glob("*.json")):
         try:
-            data = json.loads(p.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            print("warning: cannot parse %s: %s" % (p, e), file=sys.stderr)
+            data = read_json(p)
+        except RecordError as e:
+            print("warning: %s" % e, file=sys.stderr)
             continue
-        if isinstance(data, dict) and "id" in data:
+        if isinstance(data, dict) and isinstance(data.get("id"), str):
             found[data["id"]] = (p, data)
     return found
+
+
+def _fail(message):
+    print("error: %s" % message, file=sys.stderr)
+    return 2
 
 
 def main(argv=None):
@@ -130,31 +138,51 @@ def main(argv=None):
     args = ap.parse_args(argv)
 
     out_dir = Path(args.out)
-    out_dir.mkdir(parents=True, exist_ok=True)
     enrichment = {}
     if args.enrichment:
-        enrichment = json.loads(Path(args.enrichment).read_text(encoding="utf-8"))
+        try:
+            enrichment = read_json(args.enrichment)
+        except RecordError as exc:
+            return _fail(str(exc))
+        if not isinstance(enrichment, dict) or not all(isinstance(v, dict) for v in enrichment.values()):
+            return _fail("%s: the enrichment file must be a JSON object of objects keyed by id" % args.enrichment)
+
+    try:
+        with open(args.csv, newline="", encoding="utf-8") as fh:
+            reader = csv.DictReader(fh)
+            missing = [c for c in COLUMNS if c not in (reader.fieldnames or [])]
+            if missing:
+                return _fail("%s: CSV is missing columns: %s" % (args.csv, ", ".join(missing)))
+            rows = [(reader.line_num, row) for row in reader]
+    except OSError as exc:
+        return _fail("%s: cannot read: %s" % (args.csv, exc.strerror or exc))
+    except UnicodeDecodeError as exc:
+        return _fail("%s: not UTF-8 text (byte %d); save it as UTF-8" % (args.csv, exc.start))
+    except csv.Error as exc:
+        return _fail("%s: not a readable CSV: %s" % (args.csv, exc))
+
+    out_dir.mkdir(parents=True, exist_ok=True)
     existing = {} if args.overwrite else load_existing(out_dir)
 
-    with open(args.csv, newline="", encoding="utf-8") as fh:
-        reader = csv.DictReader(fh)
-        missing = [c for c in COLUMNS if c not in (reader.fieldnames or [])]
-        if missing:
-            print("error: CSV is missing columns: %s" % ", ".join(missing), file=sys.stderr)
-            return 2
-        rows = list(reader)
-
-    written = 0
+    # Build every record before writing any, so a bad row leaves the directory untouched.
+    planned = []
     seen = set()
-    for row in rows:
+    for line, row in rows:
+        if None in row or any(row[c] is None for c in COLUMNS):
+            return _fail("%s line %d: expected %d fields" % (args.csv, line, len(reader.fieldnames)))
         rid = row["id"].strip()
         if rid in seen:
-            print("error: duplicate id %s in CSV" % rid, file=sys.stderr)
-            return 2
+            return _fail("duplicate id %s in CSV" % rid)
         seen.add(rid)
         prev_path, prev = existing.get(rid, (None, None))
-        rec = row_to_record(row, prev, enrichment.get(rid))
-        path = prev_path or out_dir / ("%s-%s.json" % (rid, slugify(rec["name"])))
+        try:
+            rec = row_to_record(row, prev, enrichment.get(rid))
+        except ValueError as exc:
+            return _fail("%s line %d: %s" % (args.csv, line, exc))
+        planned.append((prev_path or out_dir / ("%s-%s.json" % (rid, slugify(rec["name"]))), rec))
+
+    written = 0
+    for path, rec in planned:
         path.write_text(json.dumps(rec, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         written += 1
 

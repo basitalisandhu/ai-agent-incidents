@@ -15,6 +15,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from records import RecordError, read_json  # noqa: E402
+
 try:
     from jsonschema import Draft202012Validator
 except ImportError:  # pragma: no cover
@@ -38,21 +41,25 @@ def validate_dir(incidents_dir, schema_path):
         if not m:
             errors.append("%s: file name must be <id>-<slug>.json" % path)
         try:
-            rec = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            errors.append("%s: invalid JSON: %s" % (path, e))
+            rec = read_json(path)
+        except RecordError as e:
+            errors.append(str(e))
             continue
-        for err in sorted(validator.iter_errors(rec), key=lambda e: list(e.path)):
+        for err in sorted(validator.iter_errors(rec), key=lambda e: [str(p) for p in e.path]):
             where = "/".join(str(p) for p in err.path) or "(root)"
-            errors.append("%s: %s: %s" % (path, where, err.message))
+            errors.append("%s: %s: %s" % (path, where, err.message[:300]))
+        if not isinstance(rec, dict):
+            continue
         rid = rec.get("id")
+        if not isinstance(rid, str):
+            continue
         if m and rid is not None and m.group("id") != rid:
             errors.append("%s: file name id %s does not match record id %s" % (path, m.group("id"), rid))
         if rid in seen_ids:
             errors.append("%s: duplicate id %s (also in %s)" % (path, rid, seen_ids[rid]))
         seen_ids[rid] = path
         cve = rec.get("cve") or []
-        if "multiple" in cve and len(cve) != 1:
+        if isinstance(cve, list) and "multiple" in cve and len(cve) != 1:
             errors.append("%s: cve 'multiple' must be the only item" % path)
     return len(files), errors
 

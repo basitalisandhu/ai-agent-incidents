@@ -8,6 +8,34 @@ data or tooling.
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-10-28
+
+No records changed in this release; it adds tooling.
+
+### Added
+
+- `scripts/digest.py` writes a monthly digest, `digest/YYYY-MM.md`, of the records added to the
+  dataset in a month (by first commit): counts by type, lens, vector and outcome, vendors named
+  more than once and a linked list of the records. The first digest, `digest/2026-10.md`, covers
+  October 2026, and the site's front page links every digest (#21).
+- `site/incidents.jsonl`, a deterministic JSONL export for ingestion (#29, thanks @nawaaaaaAaar).
+- `scripts/records.py`, one safe reader for every script: a damaged record now stops
+  `export_csv.py`, `build_site.py`, `agentic_crosstab.py` and `check_sources.py` with one line
+  naming the file and the first problem (exit 2), instead of a traceback.
+- A Troubleshooting section in the README.
+- Tests: seeded, time-bounded fuzz tests that damage records one field at a time and run every
+  script; 1x/10x scaling tests; an end-to-end test that runs the README "Working with the
+  repository" block in a fresh copy and venv, in a new CI job.
+
+### Fixed
+
+- `validate.py` crashed on a record file that is not UTF-8, is nested too deeply to parse, is
+  not a JSON object, or has a non-string `id`; each is now reported as an error for that file.
+- `import_csv.py` crashed on a short row, a bad `adversarial` value, a missing or non-UTF-8 CSV,
+  and an enrichment file that is not an object; it now exits 2 with the file and line, and
+  writes nothing until every row is valid (it used to write the rows before the bad one).
+- `check_sources.py` crashed on a source without a `url`.
+
 ## [1.1.0] - 2026-10-18
 
 ### Added

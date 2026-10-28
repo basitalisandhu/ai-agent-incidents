@@ -1,5 +1,5 @@
 The dataset in this repository (the files under incidents/, data/ and the generated
-site/incidents.json, site/incidents.csv and site/feed.xml) is licensed under the
+site/incidents.json, site/incidents.csv, site/incidents.jsonl and site/feed.xml) is licensed under the
 Creative Commons Attribution 4.0 International License (CC BY 4.0).
 Canonical text: https://creativecommons.org/licenses/by/4.0/legalcode
 

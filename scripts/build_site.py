@@ -10,6 +10,7 @@ Outputs (all written from scratch on every run):
                                 vanilla JS; no external resources; works from file://
     site/incidents/<id>.html    one page per record with sources and mappings
     site/incidents.json         every record, as an array
+    site/incidents.jsonl        every record, one JSON object per line, in id order
     site/incidents.csv          the flat CSV (same content as data/incidents.csv)
     site/incident.schema.json   copy of the schema
     site/stats.json             counts by year, type, lens, vector, channel, authority,
@@ -586,6 +587,8 @@ def dataset_jsonld(stats, og_image=None):
     d["distribution"] = [
         OrderedDict([("@type", "DataDownload"), ("name", "All records as JSON"),
                      ("contentUrl", SITE_URL + "incidents.json"), ("encodingFormat", "application/json")]),
+        OrderedDict([("@type", "DataDownload"), ("name", "All records as JSONL"),
+                     ("contentUrl", SITE_URL + "incidents.jsonl"), ("encodingFormat", "application/x-ndjson")]),
         OrderedDict([("@type", "DataDownload"), ("name", "Flat export as CSV"),
                      ("contentUrl", SITE_URL + "incidents.csv"), ("encodingFormat", "text/csv")]),
     ]
@@ -693,7 +696,7 @@ def build_index(records, stats, og_image=None):
     out = [page_head(INDEX_TITLE, description=INDEX_DESCRIPTION, canonical=SITE_URL,
                      jsonld=[dataset_jsonld(stats, og_image), faq_jsonld(stats)], og_image=og_image)]
     out.append("<header class=\"top\"><h1>%s</h1><p>%s</p>" % (esc(SITE_TITLE), esc(TAGLINE)))
-    out.append("<p class=\"nav\"><a href=\"%s\">GitHub</a><a href=\"incidents.json\">JSON</a><a href=\"incidents.csv\">CSV</a>"
+    out.append("<p class=\"nav\"><a href=\"%s\">GitHub</a><a href=\"incidents.json\">JSON</a><a href=\"incidents.jsonl\">JSONL</a><a href=\"incidents.csv\">CSV</a>"
                "<a href=\"stats.json\">Stats</a><a href=\"feed.xml\">RSS</a><a href=\"incident.schema.json\">Schema</a>"
                "<a href=\"%s/blob/main/docs/codebook.md\">Codebook</a><a href=\"%s/blob/main/CONTRIBUTING.md\">Add an incident</a></p>" % (esc(REPO_URL), esc(REPO_URL), esc(REPO_URL)))
     out.append("<div class=\"chips\">%s</div></header>" % chip_html)
@@ -859,6 +862,7 @@ def llms_header(stats):
              "",
              "## Downloads", "",
              "- [All records as JSON](%sincidents.json): one array, the schema is incidents.schema.json next to it." % SITE_URL,
+             "- [All records as JSONL](%sincidents.jsonl): one JSON object per line in id order, with the same fields as the JSON array." % SITE_URL,
              "- [Flat CSV](%sincidents.csv): the paper's fourteen columns, one row per event." % SITE_URL,
              "- [JSON Schema](%sincident.schema.json): JSON Schema 2020-12 for one record." % SITE_URL,
              "- [Statistics](%sstats.json): counts by year, type, lens, vector, channel, authority, outcome, status, tag and mapping id." % SITE_URL,
@@ -948,6 +952,9 @@ def main(argv=None):
         (site / "incidents" / ("%s.html" % r["id"])).write_text(
             build_record_page(r, prev_r, next_r, by_id[r["id"]], og_image), encoding="utf-8")
     (site / "incidents.json").write_text(json.dumps(records, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    with (site / "incidents.jsonl").open("w", encoding="utf-8", newline="\n") as stream:
+        for record in records:
+            stream.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
     export_csv.write_csv(records, site / "incidents.csv")
     shutil.copyfile(args.schema, site / "incident.schema.json")
     (site / "stats.json").write_text(json.dumps(stats, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
